@@ -13,12 +13,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let unityView = UnityGetGLView()
-        
-//        self.view = unityView!
-        
-        self.view.addSubview(unityView!)
-        unityView!.translatesAutoresizingMaskIntoConstraints = false;
     }
 
     override func didReceiveMemoryWarning() {

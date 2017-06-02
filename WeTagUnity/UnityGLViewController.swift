@@ -7,13 +7,17 @@
 //
 
 import UIKit
-
+import GLKit
 class UnityGLViewController: UIViewController {
 
+    @IBOutlet var glVIew: GLKView!
+    
     override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        let unityView = UnityGetGLView()
+        
+        
+        self.view.addSubview(unityView!)
+        unityView!.translatesAutoresizingMaskIntoConstraints = false;
     }
 
     override func didReceiveMemoryWarning() {
