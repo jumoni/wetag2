@@ -4093,6 +4093,7 @@
 		40A48B261EE1151200D36E16 /* UnityFix */ = {
 			isa = PBXGroup;
 			children = (
+				40A49B261EE1164000D36E16 /* Data */,
 				40A48B2D1EE115F000D36E16 /* Classes */,
 				40A498BF1EE1162B00D36E16 /* Libraries */,
 				40A48B271EE1156600D36E16 /* Unity.xcconfig */,
@@ -7621,7 +7622,6 @@
 		40A498BF1EE1162B00D36E16 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				40A49B261EE1164000D36E16 /* Data */,
 				40A498C01EE1162B00D36E16 /* Il2CppOptions.cpp */,
 				40A498C11EE1162B00D36E16 /* libil2cpp */,
 				40A49A9C1EE1162C00D36E16 /* libiPhone-lib.a */,
