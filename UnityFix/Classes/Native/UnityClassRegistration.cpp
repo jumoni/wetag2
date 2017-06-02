@@ -145,7 +145,7 @@ class SpriteRenderer;
 class TrailRenderer; 
 class Rigidbody; template <> void RegisterClass<Rigidbody>();
 class Rigidbody2D; 
-namespace TextRenderingPrivate { class TextMesh; } 
+namespace TextRenderingPrivate { class TextMesh; } template <> void RegisterClass<TextRenderingPrivate::TextMesh>();
 class Transform; template <> void RegisterClass<Transform>();
 namespace UI { class RectTransform; } template <> void RegisterClass<UI::RectTransform>();
 class Tree; 
@@ -245,7 +245,7 @@ void RegisterAllClasses()
 {
 void RegisterBuiltinTypes();
 RegisterBuiltinTypes();
-	//Total: 71 non stripped classes
+	//Total: 72 non stripped classes
 	//0. Behaviour
 	RegisterClass<Behaviour>();
 	//1. Unity::Component
@@ -378,15 +378,17 @@ RegisterBuiltinTypes();
 	RegisterClass<UnityConnectSettings>();
 	//65. LevelGameManager
 	RegisterClass<LevelGameManager>();
-	//66. RenderSettings
+	//66. TextRenderingPrivate::TextMesh
+	RegisterClass<TextRenderingPrivate::TextMesh>();
+	//67. RenderSettings
 	RegisterClass<RenderSettings>();
-	//67. Light
+	//68. Light
 	RegisterClass<Light>();
-	//68. Animation
+	//69. Animation
 	RegisterClass<Animation>();
-	//69. FlareLayer
+	//70. FlareLayer
 	RegisterClass<FlareLayer>();
-	//70. LightmapSettings
+	//71. LightmapSettings
 	RegisterClass<LightmapSettings>();
 
 }
