@@ -22,6 +22,8 @@ class ViewController: UIViewController {
             let encodedData = imageData.base64EncodedString(options: NSData.Base64EncodingOptions(rawValue: 0))
             
             var request = URLRequest(url: URL(string: cognitiveURL)!)
+            request.addValue("Ocp-Apim-Subscription-Key", forHTTPHeaderField: auth);
+            request.addValue("Content-Type", forHTTPHeaderField: "application/octet-stream")
             request.httpMethod = "POST"
             request.httpBody = encodedData.data(using: .utf8)
             
