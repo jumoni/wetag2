@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4096294C1EE3E0F8003A4297 /* CognitiveAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4096294B1EE3E0F8003A4297 /* CognitiveAPI.swift */; };
 		40A46ACF1EE073A400D36E16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A46ACE1EE073A400D36E16 /* AppDelegate.swift */; };
 		40A46AD11EE073A400D36E16 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A46AD01EE073A400D36E16 /* ViewController.swift */; };
 		40A46AD41EE073A400D36E16 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40A46AD21EE073A400D36E16 /* Main.storyboard */; };
@@ -145,6 +146,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4096294B1EE3E0F8003A4297 /* CognitiveAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CognitiveAPI.swift; sourceTree = "<group>"; };
 		40A46ACB1EE073A400D36E16 /* WeTagUnity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeTagUnity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40A46ACE1EE073A400D36E16 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		40A46AD01EE073A400D36E16 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -4086,6 +4088,7 @@
 				40A46ADA1EE073A400D36E16 /* Info.plist */,
 				40A49B281EE116A300D36E16 /* main.swift */,
 				40A49B2C1EE1346100D36E16 /* UnityGLViewController.swift */,
+				4096294B1EE3E0F8003A4297 /* CognitiveAPI.swift */,
 			);
 			path = WeTagUnity;
 			sourceTree = "<group>";
@@ -8841,6 +8844,7 @@
 				40A49AEC1EE1162C00D36E16 /* Il2CppGenericComDefinitions0.cpp in Sources */,
 				40A49ABB1EE1162C00D36E16 /* Bulk_mscorlib_0.cpp in Sources */,
 				40A49ABE1EE1162C00D36E16 /* Bulk_mscorlib_3.cpp in Sources */,
+				4096294C1EE3E0F8003A4297 /* CognitiveAPI.swift in Sources */,
 				40A49AAA1EE1162C00D36E16 /* iPhone_Sensors.mm in Sources */,
 				40A49AEA1EE1162C00D36E16 /* Il2CppCompilerCalculateTypeValuesTable.cpp in Sources */,
 				40A49B101EE1162D00D36E16 /* InternalProfiler.cpp in Sources */,
