@@ -12,36 +12,6 @@ using Vuforia;
 
 using UnityEngine.Networking;
 
-[System.Serializable]
-public class Metadata
-{
-	public int width;
-	public int height;
-	public string format;
-}
-
-[System.Serializable]
-public class Celebrity
-{
-	public string name;
-	public Rect factRectangle;
-	public float confidence;
-}
-
-[System.Serializable]
-public class Result
-{
-	public Celebrity[] celebrities;
-}
-
-[System.Serializable]
-public class CognitiveResponse
-{
-	public string requestId;
-	public Metadata metadata;
-	public Result result;
-}
-
 public class UDTEventHandler : MonoBehaviour, IUserDefinedTargetEventHandler
 {
 	#region PUBLIC_MEMBERS
@@ -50,17 +20,6 @@ public class UDTEventHandler : MonoBehaviour, IUserDefinedTargetEventHandler
 	/// </summary>
 	public ImageTargetBehaviour ImageTargetTemplate;
 
-	/// <summary>
-	/// The cognitive API Auth.
-	/// </summary>
-	public string cognitiveAPIAuth = "974c0cbdf8b244c28024aaab33ab2fdb";
-
-	/// <summary>
-	/// The cognitive URI.
-	/// </summary>
-	public string cognitiveURI = "https://api.cognitive.azure.cn/vision/v1.0/models/celebrities/analyze";
-
-	public GUIText popUpText;
 
 	public int LastTargetIndex
 	{
@@ -207,7 +166,6 @@ public class UDTEventHandler : MonoBehaviour, IUserDefinedTargetEventHandler
 	/// </summary>
 	public void BuildNewTarget()
 	{
-		StartCoroutine(RecognizeObject());
 		if (mFrameQuality == ImageTargetBuilder.FrameQuality.FRAME_QUALITY_MEDIUM ||
 			mFrameQuality == ImageTargetBuilder.FrameQuality.FRAME_QUALITY_HIGH)
 		{
@@ -233,34 +191,41 @@ public class UDTEventHandler : MonoBehaviour, IUserDefinedTargetEventHandler
 		if (mQualityDialog)
 			mQualityDialog.gameObject.SetActive(false);
 	}
-	#endregion //PUBLIC_METHODS
+    #endregion //PUBLIC_METHODS
 
 
-	#region PRIVATE_METHODS
+    #region PRIVATE_METHODS
 
-	Vuforia.Image.PIXEL_FORMAT mPixelFormat = Vuforia.Image.PIXEL_FORMAT.RGBA8888;
 	private void OnVuforiaStarted()
 	{
 
-		// Vuforia has started, now register camera image format
+        // Vuforia has started, now register camera image format
 
-		if (CameraDevice.Instance.SetFrameFormat(mPixelFormat, true))
-		{
-			Debug.Log("Successfully registered pixel format " + mPixelFormat.ToString());
+        var Formats = new Vuforia.Image.PIXEL_FORMAT[2] { Vuforia.Image.PIXEL_FORMAT.RGB888, Vuforia.Image.PIXEL_FORMAT.RGBA8888 };
 
-			mFormatRegistered = true;
-		}
-		else
-		{
-			Debug.LogError(
-				"Failed to register pixel format " + mPixelFormat.ToString() +
-				"\n the format may be unsupported by your device;" +
-				"\n consider using a different pixel format.");
+        foreach (var format in Formats){
 
-			mFormatRegistered = false;
-		}
+			if (CameraDevice.Instance.SetFrameFormat(format, true))
+			{
+                
+				Debug.Log("Successfully registered pixel format " + format.ToString());
+
+				mFormatRegistered = true;
+                WeTagHandler.mPixelFormat = format;
+                return;
+			}
+			else
+			{
+				Debug.LogError(
+					"Failed to register pixel format " + format.ToString() +
+					"\n the format may be unsupported by your device;" +
+					"\n consider using a different pixel format.");
+
+				mFormatRegistered = false;
+			}
+        }
+
 	}
-
 
 	/// <summary>
 	/// This method only demonstrates how to handle extended tracking feature when you have multiple targets in the scene
@@ -294,83 +259,6 @@ public class UDTEventHandler : MonoBehaviour, IUserDefinedTargetEventHandler
 					Debug.Log("Extended Tracking successfully enabled for " + lastItb.name);
 			}
 		}
-	}
-
-	/// <summary>
-	/// Upload the image to Recognitive API and display tags
-	/// </summary>
-	private IEnumerator RecognizeObject()
-	{
-
-		Debug.Log(this.cognitiveAPIAuth);
-
-		Vuforia.Image image = CameraDevice.Instance.GetCameraImage(mPixelFormat);
-		if (image != null)
-		{
-
-			Texture2D tex = new Texture2D(image.Width, image.Height, TextureFormat.RGBA32, false);
-			tex.LoadRawTextureData(image.Pixels);
-			tex.Apply();
-
-			Debug.Log(
-				"\nImage Format: " + image.PixelFormat +
-				"\nImage Size:   " + image.Width + "x" + image.Height +
-				"\nBuffer Size:  " + image.BufferWidth + "x" + image.BufferHeight +
-				"\nImage Stride: " + image.Stride + "\n"
-			);
-
-			Debug.Log(
-				"\nTexture Format: " + tex.format.ToString() +
-				"\nTexture Size:   " + tex.width + "x" + tex.height
-			);
-
-			byte[] pixels = tex.EncodeToJPG();
-
-			if (pixels != null && pixels.Length > 0)
-			{
-				Debug.Log(
-					"\nImage pixels: " +
-					pixels[0] + ", " +
-					pixels[1] + ", " +
-					pixels[2] + ", ...\n"
-				);
-			}
-			//WWWForm form = new WWWForm();
-			//form.AddField("url", "http://www.tianya999.com/uploads/allimg/130419/2291-13041ZZ126.jpg");
-
-			UnityWebRequest req = UnityWebRequest.Post(cognitiveURI, "");
-			req.SetRequestHeader("Content-Type", "application/octet-stream");
-			req.SetRequestHeader("Ocp-Apim-Subscription-Key", cognitiveAPIAuth);
-
-			UploadHandler uploadHandler = new UploadHandlerRaw(pixels);
-			//uploadHandler.contentType = "application/octet-stream";  // default
-			req.uploadHandler = uploadHandler;
-
-			yield return req.Send();
-			if (req.isError)
-			{
-				Debug.Log(req.error);
-			}
-			else
-			{
-				//string str = "{\r  \"requestId\": \"9669d8c1-9130-48dc-ad93-3403ca27ce4d\",\r  \"metadata\": {\r    \"width\": 4000,\r    \"height\": 2667,\r    \"format\": \"Jpeg\"\r  },\r  \"result\": {\r    \"celebrities\": [\r      {\r        \"name\": \"Jack Ma\",\r        \"faceRectangle\": {\r          \"left\": 2143,\r          \"top\": 623,\r          \"width\": 736,\r          \"height\": 736\r        },\r        \"confidence\": 0.9999925\r      }\r    ]\r  }\r}";
-				CognitiveResponse resp = JsonUtility.FromJson<CognitiveResponse>(System.Text.Encoding.UTF8.GetString(req.downloadHandler.data));
-				//CognitiveResponse resp = JsonUtility.FromJson<CognitiveResponse>(str);
-				Debug.Log("Result = " + JsonUtility.ToJson(resp.result));
-
-				//StartCoroutine(ShowMessage("JsonUtility.ToJson(resp.result)", 5));
-			}
-
-		}
-
-	}
-
-	private IEnumerator ShowMessage(string message, float delay)
-	{
-		popUpText.text = message;
-		popUpText.enabled = true;
-		yield return new WaitForSeconds(delay);
-		popUpText.enabled = false;
 	}
 
 

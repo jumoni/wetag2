@@ -17,15 +17,17 @@ namespace Vuforia
         #region PRIVATE_MEMBER_VARIABLES
  
         private TrackableBehaviour mTrackableBehaviour;
-    
+
         #endregion // PRIVATE_MEMBER_VARIABLES
 
+        private WeTagHandler wetag;
 
 
         #region UNTIY_MONOBEHAVIOUR_METHODS
     
         void Start()
         {
+            wetag = GetComponent<WeTagHandler>();
             mTrackableBehaviour = GetComponent<TrackableBehaviour>();
             if (mTrackableBehaviour)
             {
@@ -70,7 +72,7 @@ namespace Vuforia
         {
             Renderer[] rendererComponents = GetComponentsInChildren<Renderer>(true);
             Collider[] colliderComponents = GetComponentsInChildren<Collider>(true);
-
+            StartCoroutine(wetag.RecognizeObject());
             // Enable rendering:
             foreach (Renderer component in rendererComponents)
             {
