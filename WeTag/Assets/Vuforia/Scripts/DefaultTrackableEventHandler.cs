@@ -21,15 +21,6 @@ namespace Vuforia
 
         #endregion // PRIVATE_MEMBER_VARIABLES
 
-        private WeTagHandler wetag;
-
-        private Dictionary<string, Celebrity> celebrityMap = new Dictionary<string, Celebrity>();
-
-        private Dictionary<string, GameObject> celebrityTags = new Dictionary<string, GameObject>();
-
-        public GameObject celebrityTag;
-
-        public GameObject tagPlane;
 
         #region UNTIY_MONOBEHAVIOUR_METHODS
     
@@ -40,10 +31,6 @@ namespace Vuforia
             //tmp.faceRectangle.left = 123;
             //Debug.Log("serialze=" + JsonUtility.ToJson(tmp));
             //celebrityMap[tmp.name] = tmp;
-
-            tagPlane = GameObject.FindWithTag("TagPlane");
-
-            wetag = GetComponent<WeTagHandler>();
             mTrackableBehaviour = GetComponent<TrackableBehaviour>();
             if (mTrackableBehaviour)
             {
@@ -109,87 +96,19 @@ namespace Vuforia
         }
 
 
-        public void clearTags(){
-            Debug.Log("Clear tags");
-            foreach (var kv in celebrityTags)
-            {
-                Destroy(kv.Value);
-            }
-            celebrityTags.Clear();
-        }
-
-
         #endregion // PUBLIC_METHODS
 
 
 
         #region PRIVATE_METHODS
 
-        private void OnRecognizeFinish(Result res){
-            if( res != null ){
-				foreach (Celebrity item in res.celebrities)
-				{
-					// create a new text on (left, top) of item.faceRect
-					celebrityMap[item.name] = item;
-				}
-				updateTags();
-            }
-        }
-
-        private void updateTags(){
-            foreach(var kv in celebrityMap){
-                Celebrity item = kv.Value;
-				if (celebrityTags.ContainsKey(item.name))
-					Destroy(celebrityTags[item.name]);
-
-				//Vector3 pos = Camera.main.ScreenToWorldPoint(new Vector3(item.faceRectangle.left, item.faceRectangle.top, Camera.main.nearClipPlane));
-				//Quaternion quat = Quaternion.Euler(90, 0, 0);
-				//var newTag = Instantiate(pos, )
-
-				//Ray ray = Camera.main.ScreenPointToRay(new Vector3(item.faceRectangle.left, Screen.height - item.faceRectangle.top));
-
-				Ray ray = Camera.main.ScreenPointToRay(new Vector3(item.faceRectangle.left + item.faceRectangle.width / 2, Screen.height - (item.faceRectangle.top + item.faceRectangle.height/2)));
-				//var xzPlane = tagPlane.GetComponent<Collider>();
-				Quaternion quat = Quaternion.Euler(90, 0, 0);
-
-                RaycastHit hit;
-				if (Physics.Raycast(ray, out hit, Camera.main.farClipPlane) && hit.collider.tag == tagPlane.tag){  // work
-					Debug.Log("Find hit point");
-                    Vector3 hitPoint = ray.GetPoint(hit.distance);
-                    hitPoint.y = 0;
-                    var newTag = Instantiate(celebrityTag, hitPoint, quat);
-                    
-					newTag.transform.parent = gameObject.transform;
-
-					newTag.GetComponent<TextMesh>().text = item.name;
-					newTag.transform.localScale /= 2;
-					//newTag.transform.LookAt(Camera.main.transform);
-					celebrityTags[item.name] = newTag;
-                }else{
-     //               var pos = Camera.main.ScreenToWorldPoint(new Vector3(item.faceRectangle.left, item.faceRectangle.top, Camera.main.nearClipPlane));
-     //               //var pos = new Vector3();
-     //               pos.y = 0;
-     //               //pos.x = -0.5f + item.faceRectangle.left / Screen.width;
-     //               //pos.z = 0.5f - item.faceRectangle.top / Screen.height;
-
-					//Debug.Log("No hit point, pos = " + pos);
-     //               return;
-					//var newTag = Instantiate(celebrityTag, pos, quat);
-					//newTag.transform.parent = gameObject.transform;
-     //               newTag.transform.localScale /= 2;
-					//newTag.GetComponent<TextMesh>().text = item.name;
-					////newTag.transform.LookAt(Camera.main.transform);
-					//celebrityTags[item.name] = newTag;
-                }
-            }
-        }
 
         private void OnTrackingFound()
         {
             Renderer[] rendererComponents = GetComponentsInChildren<Renderer>(true);
             Collider[] colliderComponents = GetComponentsInChildren<Collider>(true);
-            clearTags();
-            StartCoroutine(wetag.RecognizeObject(OnRecognizeFinish));
+            //clearTags();
+            //StartCoroutine(wetag.RecognizeObject(OnRecognizeFinish));
             // Enable rendering:
             foreach (Renderer component in rendererComponents)
             {

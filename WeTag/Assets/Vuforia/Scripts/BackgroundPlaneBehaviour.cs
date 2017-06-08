@@ -18,6 +18,8 @@ namespace Vuforia
     /// </summary>
     public class BackgroundPlaneBehaviour : BackgroundPlaneAbstractBehaviour
     {
+
+        
 	
     }
 }

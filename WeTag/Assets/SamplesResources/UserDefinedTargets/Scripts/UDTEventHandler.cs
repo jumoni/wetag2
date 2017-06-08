@@ -20,6 +20,17 @@ public class UDTEventHandler : MonoBehaviour, IUserDefinedTargetEventHandler
 	/// </summary>
 	public ImageTargetBehaviour ImageTargetTemplate;
 
+
+	private WeTagHandler wetag;
+
+	private Dictionary<string, Celebrity> celebrityMap = new Dictionary<string, Celebrity>();
+
+    private Dictionary<string, GameObject> celebrityTags = new Dictionary<string, GameObject>();
+
+    private bool isRecognizing = false;
+
+	public GameObject tagPlane;
+
 	public int LastTargetIndex
 	{
 		get { return (mTargetCounter - 1) % MAX_TARGETS; }
@@ -51,6 +62,10 @@ public class UDTEventHandler : MonoBehaviour, IUserDefinedTargetEventHandler
 	#region MONOBEHAVIOUR_METHODS
 	public void Start()
 	{
+
+		tagPlane = GameObject.FindWithTag("TagPlane");
+
+		wetag = GetComponent<WeTagHandler>();
 		//popUpText = GameObject.FindWithTag("PopupText") as GUIText;
 		mTargetBuildingBehaviour = GetComponent<UserDefinedTargetBuildingBehaviour>();
 		if (mTargetBuildingBehaviour)
@@ -165,7 +180,12 @@ public class UDTEventHandler : MonoBehaviour, IUserDefinedTargetEventHandler
 	/// </summary>
 	public void BuildNewTarget()
 	{
-        
+		clearTags();
+        if( isRecognizing ){
+            return;
+		}
+		isRecognizing = true;
+        StartCoroutine(wetag.RecognizeObject(OnRecognizeFinish));
 		if (mFrameQuality == ImageTargetBuilder.FrameQuality.FRAME_QUALITY_MEDIUM ||
 			mFrameQuality == ImageTargetBuilder.FrameQuality.FRAME_QUALITY_HIGH)
 		{
@@ -191,10 +211,40 @@ public class UDTEventHandler : MonoBehaviour, IUserDefinedTargetEventHandler
 		if (mQualityDialog)
 			mQualityDialog.gameObject.SetActive(false);
 	}
-    #endregion //PUBLIC_METHODS
 
 
-    #region PRIVATE_METHODS
+	public void clearTags()
+	{
+		Debug.Log("Clear tags");
+		foreach (var kv in celebrityTags)
+		{
+            Debug.Log("Clearing " + kv.Key);
+			DestroyImmediate(kv.Value);
+		}
+		celebrityTags.Clear();
+        foreach(Transform child in transform){
+            Destroy(child.gameObject);
+        }
+	}
+	#endregion //PUBLIC_METHODS
+
+
+	#region PRIVATE_METHODS
+
+
+	private void OnRecognizeFinish(Result res)
+	{
+		if (res != null)
+		{
+			foreach (Celebrity item in res.celebrities)
+			{
+				// create a new text on (left, top) of item.faceRect
+				celebrityMap[item.name] = item;
+			}
+			updateTags();
+			isRecognizing = false;
+		}
+	}
 
 	private void OnVuforiaStarted()
 	{
@@ -225,6 +275,69 @@ public class UDTEventHandler : MonoBehaviour, IUserDefinedTargetEventHandler
 			}
         }
 
+	}
+
+
+	private void updateTags()
+	{
+		foreach (var kv in celebrityMap)
+		{
+			Celebrity item = kv.Value;
+			if (celebrityTags.ContainsKey(item.name))
+			    DestroyImmediate(celebrityTags[item.name]);
+
+			//Vector3 pos = Camera.main.ScreenToWorldPoint(new Vector3(item.faceRectangle.left, item.faceRectangle.top, Camera.main.nearClipPlane));
+			//Quaternion quat = Quaternion.Euler(90, 0, 0);
+			//var newTag = Instantiate(pos, )
+
+			//Ray ray = Camera.main.ScreenPointToRay(new Vector3(item.faceRectangle.left, Screen.height - item.faceRectangle.top));
+
+			Ray ray = Camera.main.ScreenPointToRay(new Vector3(item.faceRectangle.left + item.faceRectangle.width / 2, Screen.height - (item.faceRectangle.top + item.faceRectangle.height / 2)));
+			//var xzPlane = tagPlane.GetComponent<Collider>();
+			Quaternion quat = Quaternion.Euler(90, 0, 0);
+
+			RaycastHit hit;
+			if (Physics.Raycast(ray, out hit, Camera.main.farClipPlane) && hit.collider.tag == tagPlane.tag)
+			{  // work
+				Debug.Log("Find hit point");
+				Vector3 hitPoint = ray.GetPoint(hit.distance);
+				hitPoint.y = 0;
+				var newTag = Instantiate(wetag.celebrityTag, hitPoint, quat);
+
+				newTag.transform.parent = gameObject.transform;
+
+				newTag.GetComponentInChildren<TextMesh>().text = item.name;
+
+				newTag.transform.localScale /= 2;
+
+                var background = newTag.gameObject.transform.Find("TagBackground");
+                Debug.Log("origin scale = " + background.localScale.x + ", " + item.name.Length);
+                background.localScale += new Vector3(0.002f * item.name.Length, 0, 0);
+				//background.localScale.Scale(new Vector3(item.name.Length, 1, 1));
+				Debug.Log("after scale = " + background.localScale.x);
+				//newTag.transform.LookAt(Camera.main.transform);
+				celebrityTags[item.name] = newTag;
+
+                wetag.DrawConnectingLines(item.faceRectangle);
+			}
+			else
+			{
+				//               var pos = Camera.main.ScreenToWorldPoint(new Vector3(item.faceRectangle.left, item.faceRectangle.top, Camera.main.nearClipPlane));
+				//               //var pos = new Vector3();
+				//               pos.y = 0;
+				//               //pos.x = -0.5f + item.faceRectangle.left / Screen.width;
+				//               //pos.z = 0.5f - item.faceRectangle.top / Screen.height;
+
+				//Debug.Log("No hit point, pos = " + pos);
+				//               return;
+				//var newTag = Instantiate(celebrityTag, pos, quat);
+				//newTag.transform.parent = gameObject.transform;
+				//               newTag.transform.localScale /= 2;
+				//newTag.GetComponent<TextMesh>().text = item.name;
+				////newTag.transform.LookAt(Camera.main.transform);
+				//celebrityTags[item.name] = newTag;
+			}
+		}
 	}
 
 	/// <summary>

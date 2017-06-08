@@ -21,6 +21,7 @@ public class FaceRectangle{
 	public int top;
 	public int width;
 	public int height;
+
 }
 
 [System.Serializable]
@@ -70,6 +71,12 @@ public class WeTagHandler : MonoBehaviour
 
 	public TextMesh textmesh;
 
+	public GameObject celebrityTag;
+
+	public Material lineMat;
+
+	//public string sasd;
+
 	// Use this for initialization
 	void Start()
 	{
@@ -83,6 +90,8 @@ public class WeTagHandler : MonoBehaviour
 
 	}
 
+	private Texture2D captureImage;
+
 	/// <summary>
 	/// Upload the image to Recognitive API and display tags
 	/// </summary>
@@ -92,20 +101,29 @@ public class WeTagHandler : MonoBehaviour
 		Debug.Log(this.cognitiveAPIAuth);
 
 		Vuforia.Image image = CameraDevice.Instance.GetCameraImage(mPixelFormat);
-        
+
+        bool isHorizontal = false;
+
 		if (image != null)
 		{
             TextureFormat texFormat;
-            if (mPixelFormat == Vuforia.Image.PIXEL_FORMAT.RGBA8888)
+            if (mPixelFormat == Vuforia.Image.PIXEL_FORMAT.RGBA8888){
                 texFormat = TextureFormat.RGBA32;
-            else
+                isHorizontal = false;
+            }else{
                 texFormat = TextureFormat.RGB24;
+                isHorizontal = false;
+            }
+                
             Texture2D tex = new Texture2D(image.Width, image.Height, texFormat, false);
             
 			tex.LoadRawTextureData(image.Pixels);
 			tex.Apply();
 
-            tex = FlipTexture(tex);
+            tex = FlipTexture(tex, isHorizontal);
+
+			//captureImage = tex;
+            //tex = FlipTexture(tex, isHorizontal);
 
 			Debug.Log(
 				"\nImage Format: " + image.PixelFormat +
@@ -137,6 +155,8 @@ public class WeTagHandler : MonoBehaviour
 			UnityWebRequest req = UnityWebRequest.Post(cognitiveURI, "");
 			req.SetRequestHeader("Content-Type", "application/octet-stream");
 			req.SetRequestHeader("Ocp-Apim-Subscription-Key", cognitiveAPIAuth);
+
+
     //        try{
 				//SaveToFile("/screenshot", "jpg", pixels);
             //}catch(IOException ex){
@@ -162,25 +182,32 @@ public class WeTagHandler : MonoBehaviour
 					textmesh.text = JsonUtility.ToJson(resp.result);
 				else
 					Debug.Log("textmesh is null");
-                if( resp.result != null )
+                if( resp.result != null ){
+					//var celebrities = resp.result.celebrities;
+					foreach (var celebrity in resp.result.celebrities) {
+						//Debug.Log(string.Format("FaceRectangle = {0}, {1}", celebrity.faceRectangle.left, celebrity.faceRectangle.top));
+                        celebrity.faceRectangle.height = (int)(celebrity.faceRectangle.height * (Screen.height * 1.0 / image.Height));
+                        celebrity.faceRectangle.width = (int)(celebrity.faceRectangle.width * (Screen.width * 1.0 / image.Width));
+                        celebrity.faceRectangle.left = (int)(celebrity.faceRectangle.left * (Screen.width * 1.0 / image.Width));
+						celebrity.faceRectangle.top = (int)(celebrity.faceRectangle.top * (Screen.height * 1.0 / image.Height));
+						//Debug.Log(string.Format("FaceRectangle = {0}, {1}", celebrity.faceRectangle.left, celebrity.faceRectangle.top));
+                    }
                     callback(resp.result);
+                }
 				//StartCoroutine(ShowMessage("JsonUtility.ToJson(resp.result)", 5));
 			}
-
         }else{
 			textmesh.text = "Image is null";
 			Debug.Log("Image is null");
         }
-
 	}
 
     private void SaveToFile(string filename, string subfix, byte[] bytes){
         string path;
         int index = 0;
         do{
-
-            path = Application.persistentDataPath + filename + (index++) + "." + subfix;
-
+            //path = System.IO.Path.Combine();
+            path = Application.dataPath + "/" + filename + (index++) + "." + subfix;
         }while (File.Exists(path));
 
         var file = File.Open(path, FileMode.Create);
@@ -191,19 +218,21 @@ public class WeTagHandler : MonoBehaviour
         Debug.Log("SaveToFile: path = " + path);
     }
 
-	Texture2D FlipTexture(Texture2D original)
+	Texture2D FlipTexture(Texture2D original, bool isHorizontal)
 	{
 		Texture2D flipped = new Texture2D(original.width, original.height);
 
 		int xN = original.width;
 		int yN = original.height;
 
-
 		for (int i = 0; i < xN; i++)
 		{
 			for (int j = 0; j < yN; j++)
 			{
-				flipped.SetPixel(i, yN - j - 1, original.GetPixel(i, j));
+                if( isHorizontal )
+                    flipped.SetPixel(xN - i - 1, j, original.GetPixel(i, j));
+                else
+				    flipped.SetPixel(i, yN - j - 1, original.GetPixel(i, j));
 			}
 		}
 		flipped.Apply();
@@ -211,12 +240,69 @@ public class WeTagHandler : MonoBehaviour
 		return flipped;
 	}
 
-	//private IEnumerator ShowMessage(string message, float delay)
-	//{
-	//	popUpText.text = message;
-	//	popUpText.enabled = true;
-	//	yield return new WaitForSeconds(delay);
-	//	popUpText.enabled = false;
-	//}
+	public void DrawConnectingLines(FaceRectangle rect)
+	{
+		var points = new Vector3[4]{
+			new Vector3(rect.left, Screen.height),
+			new Vector3(rect.left+rect.width, Screen.height - rect.top),
+			new Vector3(rect.left+rect.width, Screen.height - (rect.top + rect.height)),
+			new Vector3(rect.left, Screen.height - (rect.top+rect.height))
+		};
+        box = new Rect(rect.left, rect.top, rect.width, rect.height);
+		int N = points.Length;
+
+		for (int i = 0; i < N; i++)
+		{
+			RaycastHit hit;
+			Ray ray = Camera.main.ScreenPointToRay(points[i]);
+			Debug.Log(string.Format("Point[{0}] = {1}", i, points[i]));
+			if (Physics.Raycast(ray, out hit, Camera.main.farClipPlane))
+			{
+				points[i] = ray.GetPoint(hit.distance);
+				points[i].y = 0;
+			}
+			else
+			{
+                Debug.Log("DrawConnectingLines: No hit point for" + points[i]);
+				return;
+			}
+		}
+        Debug.Log("Begin DrawConnectingLines");
+		// Loop through each point to connect to the mainPoint
+		for (int i = 0; i < N; i++)
+		{
+			Vector3 point = points[i];
+			Vector3 lastPoint = points[(i + 1) % N];
+			GL.Begin(GL.LINES);
+			lineMat.SetPass(0);
+			GL.Color(new Color(lineMat.color.r, lineMat.color.g, lineMat.color.b, lineMat.color.a));
+			GL.Vertex3(lastPoint.x, lastPoint.y, lastPoint.z);
+			GL.Vertex3(point.x, point.y, point.z);
+			GL.End();
+		}
+
+	}
+
+    private Rect box;
+    private void OnGUI()
+    {
+		if (box != null){
+			//GUI.Box(box, "box");
+		}
+        if( captureImage != null ){
+			//GUI.DrawTexture(new Rect(0, 0, captureImage.width, captureImage.height), captureImage);
+			//GUI.DrawTexture(new Rect(captureImage.width + 10, 0, captureFlipH.width, captureFlipH.height), captureFlipH);
+			//GUI.DrawTexture(new Rect(captureImage.width * 2 + 20, 0, captureFlipV.width, captureFlipV.height), captureFlipV);
+
+		}
+    }
+
+    //private IEnumerator ShowMessage(string message, float delay)
+    //{
+    //	popUpText.text = message;
+    //	popUpText.enabled = true;
+    //	yield return new WaitForSeconds(delay);
+    //	popUpText.enabled = false;
+    //}
 
 }
