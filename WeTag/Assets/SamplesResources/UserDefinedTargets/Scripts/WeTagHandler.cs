@@ -9,35 +9,40 @@ using Vuforia;
 using UnityEngine.Networking;
 
 [System.Serializable]
-public class Metadata
-{
+public class Metadata{
 	public int width;
 	public int height;
 	public string format;
 }
 
 [System.Serializable]
-public class Celebrity
-{
-	public string name;
-	public Rect factRectangle;
-	public float confidence;
+public class FaceRectangle{
+	public int left;
+	public int top;
+	public int width;
+	public int height;
 }
 
 [System.Serializable]
-public class Result
-{
+public class Celebrity{
+	public string name;
+	public FaceRectangle faceRectangle;
+	public double confidence;
+}
+
+[System.Serializable]
+public class Result{
 	public Celebrity[] celebrities;
 }
 
 [System.Serializable]
-public class CognitiveResponse
-{
+public class CognitiveResponse{
 	public string requestId;
 	public Metadata metadata;
 	public Result result;
 }
 
+[RequireComponent(typeof(Plane))]
 public class WeTagHandler : MonoBehaviour
 {
 
@@ -54,7 +59,14 @@ public class WeTagHandler : MonoBehaviour
 
     public static Vuforia.Image.PIXEL_FORMAT mPixelFormat = Vuforia.Image.PIXEL_FORMAT.RGB888;
 
-	public GUIText popUpText;
+
+    /// <summary>
+    /// Recog finish delegate.
+    /// <param name="res">recognize result</param>
+    /// </summary>
+    public delegate void RecogFinishDelegate(Result res);
+
+	//public GameObject popUpText;
 
 	public TextMesh textmesh;
 
@@ -71,12 +83,10 @@ public class WeTagHandler : MonoBehaviour
 
 	}
 
-
-
 	/// <summary>
 	/// Upload the image to Recognitive API and display tags
 	/// </summary>
-	public IEnumerator RecognizeObject()
+	public IEnumerator RecognizeObject(RecogFinishDelegate callback)
 	{
 
 		Debug.Log(this.cognitiveAPIAuth);
@@ -127,12 +137,11 @@ public class WeTagHandler : MonoBehaviour
 			UnityWebRequest req = UnityWebRequest.Post(cognitiveURI, "");
 			req.SetRequestHeader("Content-Type", "application/octet-stream");
 			req.SetRequestHeader("Ocp-Apim-Subscription-Key", cognitiveAPIAuth);
-            try{
-
-				SaveToFile("/screenshot", "jpg", pixels);
-            }catch(IOException ex){
-                Debug.Log(ex.Message);
-            }
+    //        try{
+				//SaveToFile("/screenshot", "jpg", pixels);
+            //}catch(IOException ex){
+            //    Debug.Log(ex.Message);
+            //}
 
 			UploadHandler uploadHandler = new UploadHandlerRaw(pixels);
 			//uploadHandler.contentType = "application/octet-stream";  // default
@@ -146,7 +155,6 @@ public class WeTagHandler : MonoBehaviour
 			}
 			else
 			{
-				//string str = "{\r  \"requestId\": \"9669d8c1-9130-48dc-ad93-3403ca27ce4d\",\r  \"metadata\": {\r    \"width\": 4000,\r    \"height\": 2667,\r    \"format\": \"Jpeg\"\r  },\r  \"result\": {\r    \"celebrities\": [\r      {\r        \"name\": \"Jack Ma\",\r        \"faceRectangle\": {\r          \"left\": 2143,\r          \"top\": 623,\r          \"width\": 736,\r          \"height\": 736\r        },\r        \"confidence\": 0.9999925\r      }\r    ]\r  }\r}";
 				CognitiveResponse resp = JsonUtility.FromJson<CognitiveResponse>(System.Text.Encoding.UTF8.GetString(req.downloadHandler.data));
 				//CognitiveResponse resp = JsonUtility.FromJson<CognitiveResponse>(str);
 				Debug.Log("Result = " + JsonUtility.ToJson(resp.result));
@@ -154,6 +162,8 @@ public class WeTagHandler : MonoBehaviour
 					textmesh.text = JsonUtility.ToJson(resp.result);
 				else
 					Debug.Log("textmesh is null");
+                if( resp.result != null )
+                    callback(resp.result);
 				//StartCoroutine(ShowMessage("JsonUtility.ToJson(resp.result)", 5));
 			}
 
@@ -201,12 +211,12 @@ public class WeTagHandler : MonoBehaviour
 		return flipped;
 	}
 
-	private IEnumerator ShowMessage(string message, float delay)
-	{
-		popUpText.text = message;
-		popUpText.enabled = true;
-		yield return new WaitForSeconds(delay);
-		popUpText.enabled = false;
-	}
+	//private IEnumerator ShowMessage(string message, float delay)
+	//{
+	//	popUpText.text = message;
+	//	popUpText.enabled = true;
+	//	yield return new WaitForSeconds(delay);
+	//	popUpText.enabled = false;
+	//}
 
 }

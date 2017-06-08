@@ -20,7 +20,6 @@ public class UDTEventHandler : MonoBehaviour, IUserDefinedTargetEventHandler
 	/// </summary>
 	public ImageTargetBehaviour ImageTargetTemplate;
 
-
 	public int LastTargetIndex
 	{
 		get { return (mTargetCounter - 1) % MAX_TARGETS; }
@@ -96,12 +95,12 @@ public class UDTEventHandler : MonoBehaviour, IUserDefinedTargetEventHandler
 	/// </summary>
 	public void OnFrameQualityChanged(ImageTargetBuilder.FrameQuality frameQuality)
 	{
-		Debug.Log("Frame quality changed: " + frameQuality.ToString());
+		//Debug.Log("Frame quality changed: " + frameQuality.ToString());
 		mFrameQuality = frameQuality;
 		if (mFrameQuality == ImageTargetBuilder.FrameQuality.FRAME_QUALITY_LOW)
 		{
 
-			Debug.Log("Low camera image quality");
+			//Debug.Log("Low camera image quality");
 		}
 	}
 
@@ -166,6 +165,7 @@ public class UDTEventHandler : MonoBehaviour, IUserDefinedTargetEventHandler
 	/// </summary>
 	public void BuildNewTarget()
 	{
+        
 		if (mFrameQuality == ImageTargetBuilder.FrameQuality.FRAME_QUALITY_MEDIUM ||
 			mFrameQuality == ImageTargetBuilder.FrameQuality.FRAME_QUALITY_HIGH)
 		{
