@@ -43,23 +43,45 @@ public class CognitiveResponse{
 	public Result result;
 }
 
+[System.Serializable]
+public class WikiItem{
+    public string title;
+    public string snippet;
+    public string timestamp;
+    public int size;
+    public int wordcount;
+}
+
+[System.Serializable]
+public class MediaWikiQuery{
+    public string searchinfo;   // actually not string
+    public WikiItem[] search;
+}
+
+[System.Serializable]
+public class MediaWikiResult{
+    public MediaWikiQuery query;
+}
+
 [RequireComponent(typeof(Plane))]
 public class WeTagHandler : MonoBehaviour
 {
 
+#region PUBLIC_MEMBERS
 
-	/// <summary>
-	/// The cognitive API Auth.
-	/// </summary>
-	public string cognitiveAPIAuth = "974c0cbdf8b244c28024aaab33ab2fdb";
+    /// <summary>
+    /// The cognitive API Auth.
+    /// </summary>
+    public string cognitiveAPIAuth = "974c0cbdf8b244c28024aaab33ab2fdb";
 
 	/// <summary>
 	/// The cognitive URI.
 	/// </summary>
 	public string cognitiveURI = "https://api.cognitive.azure.cn/vision/v1.0/models/celebrities/analyze";
 
-    public static Vuforia.Image.PIXEL_FORMAT mPixelFormat = Vuforia.Image.PIXEL_FORMAT.RGB888;
+    public string mediaWikiURL = "https://en.wikipedia.org/w/api.php?action=query&format=json&list=search&srsearch={0}";
 
+    public static Vuforia.Image.PIXEL_FORMAT mPixelFormat = Vuforia.Image.PIXEL_FORMAT.RGB888;
 
     /// <summary>
     /// Recog finish delegate.
@@ -75,10 +97,22 @@ public class WeTagHandler : MonoBehaviour
 
 	public Material lineMat;
 
-	//public string sasd;
+	#endregion
 
-	// Use this for initialization
-	void Start()
+	#region PRIVATE_MEMBERS
+
+	private Texture2D captureImage;
+	
+    private Rect box;
+
+    private string boxText = "box";
+
+    #endregion
+
+    //public string sasd;
+
+    // Use this for initialization
+    void Start()
 	{
 
 	}
@@ -90,7 +124,6 @@ public class WeTagHandler : MonoBehaviour
 
 	}
 
-	private Texture2D captureImage;
 
 	/// <summary>
 	/// Upload the image to Recognitive API and display tags
@@ -202,6 +235,28 @@ public class WeTagHandler : MonoBehaviour
         }
 	}
 
+    public IEnumerator SearchWiki(string name){
+
+        UnityWebRequest req = UnityWebRequest.Get(string.Format(mediaWikiURL, name));
+
+        yield return req.Send();
+
+        if( req.isError ){
+            Debug.Log("req.isError");
+            Debug.Log(req.error);
+        }else{
+            MediaWikiResult resp = JsonUtility.FromJson<MediaWikiResult>(System.Text.Encoding.UTF8.GetString(req.downloadHandler.data));
+            Debug.Log("Wiki Result = " + JsonUtility.ToJson(resp.query));
+
+			if (resp.query.search.Length > 0){
+				boxText = resp.query.search[0].snippet;
+			}else{
+                Debug.Log("No wiki items");
+            }
+        }
+        //yield return null;
+    }
+
     private void SaveToFile(string filename, string subfix, byte[] bytes){
         string path;
         int index = 0;
@@ -283,11 +338,10 @@ public class WeTagHandler : MonoBehaviour
 
 	}
 
-    private Rect box;
     private void OnGUI()
     {
 		if (box != null){
-			//GUI.Box(box, "box");
+            GUI.Box(box, boxText);
 		}
         if( captureImage != null ){
 			//GUI.DrawTexture(new Rect(0, 0, captureImage.width, captureImage.height), captureImage);

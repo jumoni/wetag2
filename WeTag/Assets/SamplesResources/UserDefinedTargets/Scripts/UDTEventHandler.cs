@@ -185,7 +185,11 @@ public class UDTEventHandler : MonoBehaviour, IUserDefinedTargetEventHandler
             return;
 		}
 		isRecognizing = true;
+
         StartCoroutine(wetag.RecognizeObject(OnRecognizeFinish));
+        StartCoroutine(wetag.SearchWiki("Jack Ma"));
+
+
 		if (mFrameQuality == ImageTargetBuilder.FrameQuality.FRAME_QUALITY_MEDIUM ||
 			mFrameQuality == ImageTargetBuilder.FrameQuality.FRAME_QUALITY_HIGH)
 		{
