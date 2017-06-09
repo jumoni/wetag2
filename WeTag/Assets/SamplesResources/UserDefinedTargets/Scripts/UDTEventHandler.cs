@@ -187,7 +187,6 @@ public class UDTEventHandler : MonoBehaviour, IUserDefinedTargetEventHandler
 		isRecognizing = true;
 
         StartCoroutine(wetag.RecognizeObject(OnRecognizeFinish));
-        StartCoroutine(wetag.SearchWiki("Jack Ma"));
 
 
 		if (mFrameQuality == ImageTargetBuilder.FrameQuality.FRAME_QUALITY_MEDIUM ||
@@ -244,6 +243,7 @@ public class UDTEventHandler : MonoBehaviour, IUserDefinedTargetEventHandler
 			{
 				// create a new text on (left, top) of item.faceRect
 				celebrityMap[item.name] = item;
+				StartCoroutine(wetag.SearchWiki(item.name));
 			}
 			updateTags();
 			isRecognizing = false;
@@ -323,23 +323,6 @@ public class UDTEventHandler : MonoBehaviour, IUserDefinedTargetEventHandler
 				celebrityTags[item.name] = newTag;
 
                 wetag.DrawConnectingLines(item.faceRectangle);
-			}
-			else
-			{
-				//               var pos = Camera.main.ScreenToWorldPoint(new Vector3(item.faceRectangle.left, item.faceRectangle.top, Camera.main.nearClipPlane));
-				//               //var pos = new Vector3();
-				//               pos.y = 0;
-				//               //pos.x = -0.5f + item.faceRectangle.left / Screen.width;
-				//               //pos.z = 0.5f - item.faceRectangle.top / Screen.height;
-
-				//Debug.Log("No hit point, pos = " + pos);
-				//               return;
-				//var newTag = Instantiate(celebrityTag, pos, quat);
-				//newTag.transform.parent = gameObject.transform;
-				//               newTag.transform.localScale /= 2;
-				//newTag.GetComponent<TextMesh>().text = item.name;
-				////newTag.transform.LookAt(Camera.main.transform);
-				//celebrityTags[item.name] = newTag;
 			}
 		}
 	}

@@ -7,6 +7,9 @@ using System.IO;
 using Vuforia;
 
 using UnityEngine.Networking;
+using System.Text.RegularExpressions;
+using SimpleJSON;
+using EasyUIAnimator;
 
 [System.Serializable]
 public class Metadata{
@@ -46,16 +49,16 @@ public class CognitiveResponse{
 [System.Serializable]
 public class WikiItem{
     public string title;
-    public string snippet;
-    public string timestamp;
-    public int size;
-    public int wordcount;
+    public string extract;
+    //public string timestamp;
+    //public int size;
+    //public int wordcount;
 }
 
 [System.Serializable]
 public class MediaWikiQuery{
-    public string searchinfo;   // actually not string
-    public WikiItem[] search;
+    //public string searchinfo;   // actually not string
+    public WikiItem[] pages;
 }
 
 [System.Serializable]
@@ -79,8 +82,7 @@ public class WeTagHandler : MonoBehaviour
 	/// </summary>
 	public string cognitiveURI = "https://api.cognitive.azure.cn/vision/v1.0/models/celebrities/analyze";
 
-    public string mediaWikiURL = "https://en.wikipedia.org/w/api.php?action=query&format=json&list=search&srsearch={0}";
-
+    public string mediaWikiURL = "http://en.wikipedia.org/w/api.php?format=json&action=query&generator=search&gsrsearch={0}&gsrlimit=10&prop=pageimages|extracts&pilimit=max&exintro&explaintext";
     public static Vuforia.Image.PIXEL_FORMAT mPixelFormat = Vuforia.Image.PIXEL_FORMAT.RGB888;
 
     /// <summary>
@@ -245,14 +247,29 @@ public class WeTagHandler : MonoBehaviour
             Debug.Log("req.isError");
             Debug.Log(req.error);
         }else{
-            MediaWikiResult resp = JsonUtility.FromJson<MediaWikiResult>(System.Text.Encoding.UTF8.GetString(req.downloadHandler.data));
-            Debug.Log("Wiki Result = " + JsonUtility.ToJson(resp.query));
 
-			if (resp.query.search.Length > 0){
-				boxText = resp.query.search[0].snippet;
-			}else{
-                Debug.Log("No wiki items");
+			//}
+			var resp = JSON.Parse(System.Text.Encoding.UTF8.GetString(req.downloadHandler.data));
+			Debug.Log(resp.ToString());
+
+			bool isFound = false;
+            //int minIndex = 1;
+
+            foreach(var item in resp["query"]["pages"].Children){
+                if( item["title"].ToString().Contains(name) && item["index"].AsInt == 1 ){
+					//minIndex = System.Math.Max(minIndex, item["index"]);
+					boxText = item["extract"];
+					Debug.Log("BoxText = " + boxText);
+					//boxText = Regex.Replace(boxText, "<[^>]*>", "");
+					var infoText = GameObject.Find("InfoText").GetComponent<Text>();
+					infoText.text = boxText;
+                    GameObject.Find("DetailInfoText").GetComponent<Text>().text = boxText;
+					isFound = true;
+                }
             }
+
+			if( !isFound )
+    			Debug.Log("No wiki items");
         }
         //yield return null;
     }
@@ -340,23 +357,85 @@ public class WeTagHandler : MonoBehaviour
 
     private void OnGUI()
     {
-		if (box != null){
-            GUI.Box(box, boxText);
-		}
-        if( captureImage != null ){
-			//GUI.DrawTexture(new Rect(0, 0, captureImage.width, captureImage.height), captureImage);
-			//GUI.DrawTexture(new Rect(captureImage.width + 10, 0, captureFlipH.width, captureFlipH.height), captureFlipH);
-			//GUI.DrawTexture(new Rect(captureImage.width * 2 + 20, 0, captureFlipV.width, captureFlipV.height), captureFlipV);
-
+		if (box != null)
+		{
+			//GUI.skin.box.wordWrap = true;
+            //GUI.Box(box, boxText);
 		}
     }
 
-    //private IEnumerator ShowMessage(string message, float delay)
-    //{
-    //	popUpText.text = message;
-    //	popUpText.enabled = true;
-    //	yield return new WaitForSeconds(delay);
-    //	popUpText.enabled = false;
-    //}
+    public void scaleBox(){
+        
+        var infoContent = GameObject.Find("InfoBackground").GetComponent<RectTransform>();
+        Vector2 pos = infoContent.position;
+        pos.x /= Screen.width;
+        pos.y /= Screen.height;
+        var move = UIAnimator.MoveVerticalTo(infoContent, -0.5f, 1.0f).SetEffect(Effect.Spring());
+        //move.Play();
+        
+        var infoTitle = GameObject.Find("InfoTitle").GetComponent<RectTransform>();
+        var scaleto = UIAnimator.ScaleTo(infoTitle, new Vector3(0, 0, 0), 0.5f).SetCallback(move.Play);
+        scaleto.Play();
+        //var originSclae = infoContent.transform.localScale;
+        //var afterScale = originSclae;
+        //afterScale *= 2;
+        //var scale = UIAnimator.Scale(infoContent, originSclae, afterScale, 0.5f);
+        //move.Play();
+        //scale.Play();
+
+    }
+
+	//private IEnumerator ShowMessage(string message, float delay)
+	//{
+	//	popUpText.text = message;
+	//	popUpText.enabled = true;
+	//	yield return new WaitForSeconds(delay);
+	//	popUpText.enabled = false;
+	//}
+
+
+	//public static Vector2 NativeResolution = new Vector2(480, 320);
+
+ //   private bool _didResizeUI = false;
+
+	//private static float _guiScaleFactor = -1.0f;
+	//private static Vector3 _offset = Vector3.zero;
+
+	//static List<Matrix4x4> stack = new List<Matrix4x4>();
+	//public void BeginUIResizing()
+	//{
+	//	Vector2 nativeSize = NativeResolution;
+
+	//	_didResizeUI = true;
+
+	//	stack.Add(GUI.matrix);
+	//	Matrix4x4 m = new Matrix4x4();
+	//	var w = (float)Screen.width;
+	//	var h = (float)Screen.height;
+	//	var aspect = w / h;
+	//	var offset = Vector3.zero;
+	//	if (aspect < (nativeSize.x / nativeSize.y))
+	//	{
+	//		//screen is taller
+	//		_guiScaleFactor = (Screen.width / nativeSize.x);
+	//		offset.y += (Screen.height - (nativeSize.y * guiScaleFactor)) * 0.5f;
+	//	}
+	//	else
+	//	{
+	//		// screen is wider
+	//		_guiScaleFactor = (Screen.height / nativeSize.y);
+	//		offset.x += (Screen.width - (nativeSize.x * guiScaleFactor)) * 0.5f;
+	//	}
+
+	//	m.SetTRS(offset, Quaternion.identity, Vector3.one * guiScaleFactor);
+	//	GUI.matrix *= m;
+	//}
+
+	//public void EndUIResizing()
+	//{
+	//	GUI.matrix = stack[stack.Count - 1];
+	//	stack.RemoveAt(stack.Count - 1);
+	//	_didResizeUI = false;
+	//}
 
 }
