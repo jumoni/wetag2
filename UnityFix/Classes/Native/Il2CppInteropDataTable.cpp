@@ -70,6 +70,14 @@ extern "C" void ILTokenInfo_t149559338_marshal_pinvoke(void* managedStructure, v
 extern "C" void ILTokenInfo_t149559338_marshal_pinvoke_back(void* marshaledStructure, void* managedStructure);
 extern "C" void ILTokenInfo_t149559338_marshal_pinvoke_cleanup(void* marshaledStructure);
 extern const Il2CppType ILTokenInfo_t149559338_0_0_0;
+extern "C" void MonoResource_t3127387157_marshal_pinvoke(void* managedStructure, void* marshaledStructure);
+extern "C" void MonoResource_t3127387157_marshal_pinvoke_back(void* marshaledStructure, void* managedStructure);
+extern "C" void MonoResource_t3127387157_marshal_pinvoke_cleanup(void* marshaledStructure);
+extern const Il2CppType MonoResource_t3127387157_0_0_0;
+extern "C" void MonoWin32Resource_t2467306218_marshal_pinvoke(void* managedStructure, void* marshaledStructure);
+extern "C" void MonoWin32Resource_t2467306218_marshal_pinvoke_back(void* marshaledStructure, void* managedStructure);
+extern "C" void MonoWin32Resource_t2467306218_marshal_pinvoke_cleanup(void* marshaledStructure);
+extern const Il2CppType MonoWin32Resource_t2467306218_0_0_0;
 extern "C" void MonoEventInfo_t2190036573_marshal_pinvoke(void* managedStructure, void* marshaledStructure);
 extern "C" void MonoEventInfo_t2190036573_marshal_pinvoke_back(void* marshaledStructure, void* managedStructure);
 extern "C" void MonoEventInfo_t2190036573_marshal_pinvoke_cleanup(void* marshaledStructure);
@@ -144,6 +152,14 @@ extern "C" void UriScheme_t1876590943_marshal_pinvoke_cleanup(void* marshaledStr
 extern const Il2CppType UriScheme_t1876590943_0_0_0;
 extern "C" void DelegatePInvokeWrapper_Action_t3226471752();
 extern const Il2CppType Action_t3226471752_0_0_0;
+extern "C" void CustomEventData_t1269126727_marshal_pinvoke(void* managedStructure, void* marshaledStructure);
+extern "C" void CustomEventData_t1269126727_marshal_pinvoke_back(void* marshaledStructure, void* managedStructure);
+extern "C" void CustomEventData_t1269126727_marshal_pinvoke_cleanup(void* marshaledStructure);
+extern const Il2CppType CustomEventData_t1269126727_0_0_0;
+extern "C" void UnityAnalyticsHandler_t3238795095_marshal_pinvoke(void* managedStructure, void* marshaledStructure);
+extern "C" void UnityAnalyticsHandler_t3238795095_marshal_pinvoke_back(void* marshaledStructure, void* managedStructure);
+extern "C" void UnityAnalyticsHandler_t3238795095_marshal_pinvoke_cleanup(void* marshaledStructure);
+extern const Il2CppType UnityAnalyticsHandler_t3238795095_0_0_0;
 extern "C" void AnimationCurve_t3306541151_marshal_pinvoke(void* managedStructure, void* marshaledStructure);
 extern "C" void AnimationCurve_t3306541151_marshal_pinvoke_back(void* marshaledStructure, void* managedStructure);
 extern "C" void AnimationCurve_t3306541151_marshal_pinvoke_cleanup(void* marshaledStructure);
@@ -330,30 +346,6 @@ extern "C" void YieldInstruction_t3462875981_marshal_pinvoke(void* managedStruct
 extern "C" void YieldInstruction_t3462875981_marshal_pinvoke_back(void* marshaledStructure, void* managedStructure);
 extern "C" void YieldInstruction_t3462875981_marshal_pinvoke_cleanup(void* marshaledStructure);
 extern const Il2CppType YieldInstruction_t3462875981_0_0_0;
-extern "C" void CameraField_t3847513849_marshal_pinvoke(void* managedStructure, void* marshaledStructure);
-extern "C" void CameraField_t3847513849_marshal_pinvoke_back(void* marshaledStructure, void* managedStructure);
-extern "C" void CameraField_t3847513849_marshal_pinvoke_cleanup(void* marshaledStructure);
-extern const Il2CppType CameraField_t3847513849_0_0_0;
-extern "C" void CameraFieldData_t1695136893_marshal_pinvoke(void* managedStructure, void* marshaledStructure);
-extern "C" void CameraFieldData_t1695136893_marshal_pinvoke_back(void* marshaledStructure, void* managedStructure);
-extern "C" void CameraFieldData_t1695136893_marshal_pinvoke_cleanup(void* marshaledStructure);
-extern const Il2CppType CameraFieldData_t1695136893_0_0_0;
-extern "C" void EyewearCalibrationReading_t1521251591_marshal_pinvoke(void* managedStructure, void* marshaledStructure);
-extern "C" void EyewearCalibrationReading_t1521251591_marshal_pinvoke_back(void* marshaledStructure, void* managedStructure);
-extern "C" void EyewearCalibrationReading_t1521251591_marshal_pinvoke_cleanup(void* marshaledStructure);
-extern const Il2CppType EyewearCalibrationReading_t1521251591_0_0_0;
-extern "C" void TargetSearchResult_t1958726506_marshal_pinvoke(void* managedStructure, void* marshaledStructure);
-extern "C" void TargetSearchResult_t1958726506_marshal_pinvoke_back(void* marshaledStructure, void* managedStructure);
-extern "C" void TargetSearchResult_t1958726506_marshal_pinvoke_cleanup(void* marshaledStructure);
-extern const Il2CppType TargetSearchResult_t1958726506_0_0_0;
-extern "C" void AutoRotationState_t3090691518_marshal_pinvoke(void* managedStructure, void* marshaledStructure);
-extern "C" void AutoRotationState_t3090691518_marshal_pinvoke_back(void* marshaledStructure, void* managedStructure);
-extern "C" void AutoRotationState_t3090691518_marshal_pinvoke_cleanup(void* marshaledStructure);
-extern const Il2CppType AutoRotationState_t3090691518_0_0_0;
-extern "C" void ProfileCollection_t3644865120_marshal_pinvoke(void* managedStructure, void* marshaledStructure);
-extern "C" void ProfileCollection_t3644865120_marshal_pinvoke_back(void* marshaledStructure, void* managedStructure);
-extern "C" void ProfileCollection_t3644865120_marshal_pinvoke_cleanup(void* marshaledStructure);
-extern const Il2CppType ProfileCollection_t3644865120_0_0_0;
 extern "C" void RaycastResult_t21186376_marshal_pinvoke(void* managedStructure, void* marshaledStructure);
 extern "C" void RaycastResult_t21186376_marshal_pinvoke_back(void* marshaledStructure, void* managedStructure);
 extern "C" void RaycastResult_t21186376_marshal_pinvoke_cleanup(void* marshaledStructure);
@@ -380,7 +372,63 @@ extern "C" void SpriteState_t1353336012_marshal_pinvoke(void* managedStructure, 
 extern "C" void SpriteState_t1353336012_marshal_pinvoke_back(void* marshaledStructure, void* managedStructure);
 extern "C" void SpriteState_t1353336012_marshal_pinvoke_cleanup(void* marshaledStructure);
 extern const Il2CppType SpriteState_t1353336012_0_0_0;
-extern Il2CppInteropData g_Il2CppInteropData[104] = 
+extern "C" void CameraField_t3847513849_marshal_pinvoke(void* managedStructure, void* marshaledStructure);
+extern "C" void CameraField_t3847513849_marshal_pinvoke_back(void* marshaledStructure, void* managedStructure);
+extern "C" void CameraField_t3847513849_marshal_pinvoke_cleanup(void* marshaledStructure);
+extern const Il2CppType CameraField_t3847513849_0_0_0;
+extern "C" void CameraFieldData_t1695136893_marshal_pinvoke(void* managedStructure, void* marshaledStructure);
+extern "C" void CameraFieldData_t1695136893_marshal_pinvoke_back(void* marshaledStructure, void* managedStructure);
+extern "C" void CameraFieldData_t1695136893_marshal_pinvoke_cleanup(void* marshaledStructure);
+extern const Il2CppType CameraFieldData_t1695136893_0_0_0;
+extern "C" void EyewearCalibrationReading_t1521251591_marshal_pinvoke(void* managedStructure, void* marshaledStructure);
+extern "C" void EyewearCalibrationReading_t1521251591_marshal_pinvoke_back(void* marshaledStructure, void* managedStructure);
+extern "C" void EyewearCalibrationReading_t1521251591_marshal_pinvoke_cleanup(void* marshaledStructure);
+extern const Il2CppType EyewearCalibrationReading_t1521251591_0_0_0;
+extern "C" void TargetSearchResult_t1958726506_marshal_pinvoke(void* managedStructure, void* marshaledStructure);
+extern "C" void TargetSearchResult_t1958726506_marshal_pinvoke_back(void* marshaledStructure, void* managedStructure);
+extern "C" void TargetSearchResult_t1958726506_marshal_pinvoke_cleanup(void* marshaledStructure);
+extern const Il2CppType TargetSearchResult_t1958726506_0_0_0;
+extern "C" void AutoRotationState_t3090691518_marshal_pinvoke(void* managedStructure, void* marshaledStructure);
+extern "C" void AutoRotationState_t3090691518_marshal_pinvoke_back(void* marshaledStructure, void* managedStructure);
+extern "C" void AutoRotationState_t3090691518_marshal_pinvoke_cleanup(void* marshaledStructure);
+extern const Il2CppType AutoRotationState_t3090691518_0_0_0;
+extern "C" void ProfileCollection_t3644865120_marshal_pinvoke(void* managedStructure, void* marshaledStructure);
+extern "C" void ProfileCollection_t3644865120_marshal_pinvoke_back(void* marshaledStructure, void* managedStructure);
+extern "C" void ProfileCollection_t3644865120_marshal_pinvoke_cleanup(void* marshaledStructure);
+extern const Il2CppType ProfileCollection_t3644865120_0_0_0;
+extern "C" void DelegatePInvokeWrapper_EffectBehaviour_t2185791415();
+extern const Il2CppType EffectBehaviour_t2185791415_0_0_0;
+extern "C" void DelegatePInvokeWrapper_EffectGroup_t3838871473();
+extern const Il2CppType EffectGroup_t3838871473_0_0_0;
+extern "C" void DelegatePInvokeWrapper_EffectUpdate_t2668590583();
+extern const Il2CppType EffectUpdate_t2668590583_0_0_0;
+extern "C" void DelegatePInvokeWrapper_AnimationCallback_t525972095();
+extern const Il2CppType AnimationCallback_t525972095_0_0_0;
+extern "C" void DelegatePInvokeWrapper_UpdateBehaviour_t3266695810();
+extern const Il2CppType UpdateBehaviour_t3266695810_0_0_0;
+extern "C" void DelegatePInvokeWrapper_OnLogEvent_t355888959();
+extern const Il2CppType OnLogEvent_t355888959_0_0_0;
+extern "C" void DelegatePInvokeWrapper_AotFileEvent_t2146669432();
+extern const Il2CppType AotFileEvent_t2146669432_0_0_0;
+extern "C" void DelegatePInvokeWrapper_MousePositionResolver2D_t2898051450();
+extern const Il2CppType MousePositionResolver2D_t2898051450_0_0_0;
+extern "C" void DelegatePInvokeWrapper_OnSizeChange_t566739484();
+extern const Il2CppType OnSizeChange_t566739484_0_0_0;
+extern "C" void DelegatePInvokeWrapper_OnUITimer_t3247156572();
+extern const Il2CppType OnUITimer_t3247156572_0_0_0;
+extern "C" void DelegatePInvokeWrapper_GroupResolve_t4162119537();
+extern const Il2CppType GroupResolve_t4162119537_0_0_0;
+extern "C" void DelegatePInvokeWrapper_LanguageChange_t479106978();
+extern const Il2CppType LanguageChange_t479106978_0_0_0;
+extern "C" void DelegatePInvokeWrapper_OnLogEvent_t3913109635();
+extern const Il2CppType OnLogEvent_t3913109635_0_0_0;
+extern "C" void DelegatePInvokeWrapper_OnVariableChange_t4274501541();
+extern const Il2CppType OnVariableChange_t4274501541_0_0_0;
+extern "C" void DelegatePInvokeWrapper_OnVariableFind_t660484292();
+extern const Il2CppType OnVariableFind_t660484292_0_0_0;
+extern "C" void DelegatePInvokeWrapper_TextModifierChange_t3642518626();
+extern const Il2CppType TextModifierChange_t3642518626_0_0_0;
+extern Il2CppInteropData g_Il2CppInteropData[124] = 
 {
 	{ NULL, Context_t2636657155_marshal_pinvoke, Context_t2636657155_marshal_pinvoke_back, Context_t2636657155_marshal_pinvoke_cleanup, NULL, NULL, &Context_t2636657155_0_0_0 } /* Mono.Globalization.Unicode.SimpleCollator/Context */,
 	{ NULL, Escape_t169451053_marshal_pinvoke, Escape_t169451053_marshal_pinvoke_back, Escape_t169451053_marshal_pinvoke_cleanup, NULL, NULL, &Escape_t169451053_0_0_0 } /* Mono.Globalization.Unicode.SimpleCollator/Escape */,
@@ -398,6 +446,8 @@ extern Il2CppInteropData g_Il2CppInteropData[104] =
 	{ NULL, CustomAttributeNamedArgument_t94157543_marshal_pinvoke, CustomAttributeNamedArgument_t94157543_marshal_pinvoke_back, CustomAttributeNamedArgument_t94157543_marshal_pinvoke_cleanup, NULL, NULL, &CustomAttributeNamedArgument_t94157543_0_0_0 } /* System.Reflection.CustomAttributeNamedArgument */,
 	{ NULL, CustomAttributeTypedArgument_t1498197914_marshal_pinvoke, CustomAttributeTypedArgument_t1498197914_marshal_pinvoke_back, CustomAttributeTypedArgument_t1498197914_marshal_pinvoke_cleanup, NULL, NULL, &CustomAttributeTypedArgument_t1498197914_0_0_0 } /* System.Reflection.CustomAttributeTypedArgument */,
 	{ NULL, ILTokenInfo_t149559338_marshal_pinvoke, ILTokenInfo_t149559338_marshal_pinvoke_back, ILTokenInfo_t149559338_marshal_pinvoke_cleanup, NULL, NULL, &ILTokenInfo_t149559338_0_0_0 } /* System.Reflection.Emit.ILTokenInfo */,
+	{ NULL, MonoResource_t3127387157_marshal_pinvoke, MonoResource_t3127387157_marshal_pinvoke_back, MonoResource_t3127387157_marshal_pinvoke_cleanup, NULL, NULL, &MonoResource_t3127387157_0_0_0 } /* System.Reflection.Emit.MonoResource */,
+	{ NULL, MonoWin32Resource_t2467306218_marshal_pinvoke, MonoWin32Resource_t2467306218_marshal_pinvoke_back, MonoWin32Resource_t2467306218_marshal_pinvoke_cleanup, NULL, NULL, &MonoWin32Resource_t2467306218_0_0_0 } /* System.Reflection.Emit.MonoWin32Resource */,
 	{ NULL, MonoEventInfo_t2190036573_marshal_pinvoke, MonoEventInfo_t2190036573_marshal_pinvoke_back, MonoEventInfo_t2190036573_marshal_pinvoke_cleanup, NULL, NULL, &MonoEventInfo_t2190036573_0_0_0 } /* System.Reflection.MonoEventInfo */,
 	{ NULL, MonoMethodInfo_t3646562144_marshal_pinvoke, MonoMethodInfo_t3646562144_marshal_pinvoke_back, MonoMethodInfo_t3646562144_marshal_pinvoke_cleanup, NULL, NULL, &MonoMethodInfo_t3646562144_0_0_0 } /* System.Reflection.MonoMethodInfo */,
 	{ NULL, MonoPropertyInfo_t486106184_marshal_pinvoke, MonoPropertyInfo_t486106184_marshal_pinvoke_back, MonoPropertyInfo_t486106184_marshal_pinvoke_cleanup, NULL, NULL, &MonoPropertyInfo_t486106184_0_0_0 } /* System.Reflection.MonoPropertyInfo */,
@@ -419,6 +469,8 @@ extern Il2CppInteropData g_Il2CppInteropData[104] =
 	{ DelegatePInvokeWrapper_CostDelegate_t1824458113, NULL, NULL, NULL, NULL, NULL, &CostDelegate_t1824458113_0_0_0 } /* System.Text.RegularExpressions.IntervalCollection/CostDelegate */,
 	{ NULL, UriScheme_t1876590943_marshal_pinvoke, UriScheme_t1876590943_marshal_pinvoke_back, UriScheme_t1876590943_marshal_pinvoke_cleanup, NULL, NULL, &UriScheme_t1876590943_0_0_0 } /* System.Uri/UriScheme */,
 	{ DelegatePInvokeWrapper_Action_t3226471752, NULL, NULL, NULL, NULL, NULL, &Action_t3226471752_0_0_0 } /* System.Action */,
+	{ NULL, CustomEventData_t1269126727_marshal_pinvoke, CustomEventData_t1269126727_marshal_pinvoke_back, CustomEventData_t1269126727_marshal_pinvoke_cleanup, NULL, NULL, &CustomEventData_t1269126727_0_0_0 } /* UnityEngine.Analytics.CustomEventData */,
+	{ NULL, UnityAnalyticsHandler_t3238795095_marshal_pinvoke, UnityAnalyticsHandler_t3238795095_marshal_pinvoke_back, UnityAnalyticsHandler_t3238795095_marshal_pinvoke_cleanup, NULL, NULL, &UnityAnalyticsHandler_t3238795095_0_0_0 } /* UnityEngine.Analytics.UnityAnalyticsHandler */,
 	{ NULL, AnimationCurve_t3306541151_marshal_pinvoke, AnimationCurve_t3306541151_marshal_pinvoke_back, AnimationCurve_t3306541151_marshal_pinvoke_cleanup, NULL, NULL, &AnimationCurve_t3306541151_0_0_0 } /* UnityEngine.AnimationCurve */,
 	{ NULL, AnimationEvent_t2428323300_marshal_pinvoke, AnimationEvent_t2428323300_marshal_pinvoke_back, AnimationEvent_t2428323300_marshal_pinvoke_cleanup, NULL, NULL, &AnimationEvent_t2428323300_0_0_0 } /* UnityEngine.AnimationEvent */,
 	{ NULL, AnimatorTransitionInfo_t2410896200_marshal_pinvoke, AnimatorTransitionInfo_t2410896200_marshal_pinvoke_back, AnimatorTransitionInfo_t2410896200_marshal_pinvoke_cleanup, NULL, NULL, &AnimatorTransitionInfo_t2410896200_0_0_0 } /* UnityEngine.AnimatorTransitionInfo */,
@@ -472,12 +524,6 @@ extern Il2CppInteropData g_Il2CppInteropData[104] =
 	{ NULL, WaitForSeconds_t3839502067_marshal_pinvoke, WaitForSeconds_t3839502067_marshal_pinvoke_back, WaitForSeconds_t3839502067_marshal_pinvoke_cleanup, NULL, NULL, &WaitForSeconds_t3839502067_0_0_0 } /* UnityEngine.WaitForSeconds */,
 	{ NULL, WebCamDevice_t3983871389_marshal_pinvoke, WebCamDevice_t3983871389_marshal_pinvoke_back, WebCamDevice_t3983871389_marshal_pinvoke_cleanup, NULL, NULL, &WebCamDevice_t3983871389_0_0_0 } /* UnityEngine.WebCamDevice */,
 	{ NULL, YieldInstruction_t3462875981_marshal_pinvoke, YieldInstruction_t3462875981_marshal_pinvoke_back, YieldInstruction_t3462875981_marshal_pinvoke_cleanup, NULL, NULL, &YieldInstruction_t3462875981_0_0_0 } /* UnityEngine.YieldInstruction */,
-	{ NULL, CameraField_t3847513849_marshal_pinvoke, CameraField_t3847513849_marshal_pinvoke_back, CameraField_t3847513849_marshal_pinvoke_cleanup, NULL, NULL, &CameraField_t3847513849_0_0_0 } /* Vuforia.CameraDevice/CameraField */,
-	{ NULL, CameraFieldData_t1695136893_marshal_pinvoke, CameraFieldData_t1695136893_marshal_pinvoke_back, CameraFieldData_t1695136893_marshal_pinvoke_cleanup, NULL, NULL, &CameraFieldData_t1695136893_0_0_0 } /* Vuforia.CameraDeviceImpl/CameraFieldData */,
-	{ NULL, EyewearCalibrationReading_t1521251591_marshal_pinvoke, EyewearCalibrationReading_t1521251591_marshal_pinvoke_back, EyewearCalibrationReading_t1521251591_marshal_pinvoke_cleanup, NULL, NULL, &EyewearCalibrationReading_t1521251591_0_0_0 } /* Vuforia.EyewearDevice/EyewearCalibrationReading */,
-	{ NULL, TargetSearchResult_t1958726506_marshal_pinvoke, TargetSearchResult_t1958726506_marshal_pinvoke_back, TargetSearchResult_t1958726506_marshal_pinvoke_cleanup, NULL, NULL, &TargetSearchResult_t1958726506_0_0_0 } /* Vuforia.TargetFinder/TargetSearchResult */,
-	{ NULL, AutoRotationState_t3090691518_marshal_pinvoke, AutoRotationState_t3090691518_marshal_pinvoke_back, AutoRotationState_t3090691518_marshal_pinvoke_cleanup, NULL, NULL, &AutoRotationState_t3090691518_0_0_0 } /* Vuforia.VuforiaManagerImpl/AutoRotationState */,
-	{ NULL, ProfileCollection_t3644865120_marshal_pinvoke, ProfileCollection_t3644865120_marshal_pinvoke_back, ProfileCollection_t3644865120_marshal_pinvoke_cleanup, NULL, NULL, &ProfileCollection_t3644865120_0_0_0 } /* Vuforia.WebCamProfile/ProfileCollection */,
 	{ NULL, RaycastResult_t21186376_marshal_pinvoke, RaycastResult_t21186376_marshal_pinvoke_back, RaycastResult_t21186376_marshal_pinvoke_cleanup, NULL, NULL, &RaycastResult_t21186376_0_0_0 } /* UnityEngine.EventSystems.RaycastResult */,
 	{ NULL, ColorTween_t3438117476_marshal_pinvoke, ColorTween_t3438117476_marshal_pinvoke_back, ColorTween_t3438117476_marshal_pinvoke_cleanup, NULL, NULL, &ColorTween_t3438117476_0_0_0 } /* UnityEngine.UI.CoroutineTween.ColorTween */,
 	{ NULL, FloatTween_t2986189219_marshal_pinvoke, FloatTween_t2986189219_marshal_pinvoke_back, FloatTween_t2986189219_marshal_pinvoke_cleanup, NULL, NULL, &FloatTween_t2986189219_0_0_0 } /* UnityEngine.UI.CoroutineTween.FloatTween */,
@@ -485,5 +531,27 @@ extern Il2CppInteropData g_Il2CppInteropData[104] =
 	{ DelegatePInvokeWrapper_OnValidateInput_t1946318473, NULL, NULL, NULL, NULL, NULL, &OnValidateInput_t1946318473_0_0_0 } /* UnityEngine.UI.InputField/OnValidateInput */,
 	{ NULL, Navigation_t1571958496_marshal_pinvoke, Navigation_t1571958496_marshal_pinvoke_back, Navigation_t1571958496_marshal_pinvoke_cleanup, NULL, NULL, &Navigation_t1571958496_0_0_0 } /* UnityEngine.UI.Navigation */,
 	{ NULL, SpriteState_t1353336012_marshal_pinvoke, SpriteState_t1353336012_marshal_pinvoke_back, SpriteState_t1353336012_marshal_pinvoke_cleanup, NULL, NULL, &SpriteState_t1353336012_0_0_0 } /* UnityEngine.UI.SpriteState */,
+	{ NULL, CameraField_t3847513849_marshal_pinvoke, CameraField_t3847513849_marshal_pinvoke_back, CameraField_t3847513849_marshal_pinvoke_cleanup, NULL, NULL, &CameraField_t3847513849_0_0_0 } /* Vuforia.CameraDevice/CameraField */,
+	{ NULL, CameraFieldData_t1695136893_marshal_pinvoke, CameraFieldData_t1695136893_marshal_pinvoke_back, CameraFieldData_t1695136893_marshal_pinvoke_cleanup, NULL, NULL, &CameraFieldData_t1695136893_0_0_0 } /* Vuforia.CameraDeviceImpl/CameraFieldData */,
+	{ NULL, EyewearCalibrationReading_t1521251591_marshal_pinvoke, EyewearCalibrationReading_t1521251591_marshal_pinvoke_back, EyewearCalibrationReading_t1521251591_marshal_pinvoke_cleanup, NULL, NULL, &EyewearCalibrationReading_t1521251591_0_0_0 } /* Vuforia.EyewearDevice/EyewearCalibrationReading */,
+	{ NULL, TargetSearchResult_t1958726506_marshal_pinvoke, TargetSearchResult_t1958726506_marshal_pinvoke_back, TargetSearchResult_t1958726506_marshal_pinvoke_cleanup, NULL, NULL, &TargetSearchResult_t1958726506_0_0_0 } /* Vuforia.TargetFinder/TargetSearchResult */,
+	{ NULL, AutoRotationState_t3090691518_marshal_pinvoke, AutoRotationState_t3090691518_marshal_pinvoke_back, AutoRotationState_t3090691518_marshal_pinvoke_cleanup, NULL, NULL, &AutoRotationState_t3090691518_0_0_0 } /* Vuforia.VuforiaManagerImpl/AutoRotationState */,
+	{ NULL, ProfileCollection_t3644865120_marshal_pinvoke, ProfileCollection_t3644865120_marshal_pinvoke_back, ProfileCollection_t3644865120_marshal_pinvoke_cleanup, NULL, NULL, &ProfileCollection_t3644865120_0_0_0 } /* Vuforia.WebCamProfile/ProfileCollection */,
+	{ DelegatePInvokeWrapper_EffectBehaviour_t2185791415, NULL, NULL, NULL, NULL, NULL, &EffectBehaviour_t2185791415_0_0_0 } /* EasyUIAnimator.Effect/EffectBehaviour */,
+	{ DelegatePInvokeWrapper_EffectGroup_t3838871473, NULL, NULL, NULL, NULL, NULL, &EffectGroup_t3838871473_0_0_0 } /* EasyUIAnimator.Effect/EffectGroup */,
+	{ DelegatePInvokeWrapper_EffectUpdate_t2668590583, NULL, NULL, NULL, NULL, NULL, &EffectUpdate_t2668590583_0_0_0 } /* EasyUIAnimator.Effect/EffectUpdate */,
+	{ DelegatePInvokeWrapper_AnimationCallback_t525972095, NULL, NULL, NULL, NULL, NULL, &AnimationCallback_t525972095_0_0_0 } /* EasyUIAnimator.UIAnimation/AnimationCallback */,
+	{ DelegatePInvokeWrapper_UpdateBehaviour_t3266695810, NULL, NULL, NULL, NULL, NULL, &UpdateBehaviour_t3266695810_0_0_0 } /* EasyUIAnimator.UpdateBehaviour */,
+	{ DelegatePInvokeWrapper_OnLogEvent_t355888959, NULL, NULL, NULL, NULL, NULL, &OnLogEvent_t355888959_0_0_0 } /* InfiniText.OnLogEvent */,
+	{ DelegatePInvokeWrapper_AotFileEvent_t2146669432, NULL, NULL, NULL, NULL, NULL, &AotFileEvent_t2146669432_0_0_0 } /* Nitro.AotFileEvent */,
+	{ DelegatePInvokeWrapper_MousePositionResolver2D_t2898051450, NULL, NULL, NULL, NULL, NULL, &MousePositionResolver2D_t2898051450_0_0_0 } /* PowerUI.MousePositionResolver2D */,
+	{ DelegatePInvokeWrapper_OnSizeChange_t566739484, NULL, NULL, NULL, NULL, NULL, &OnSizeChange_t566739484_0_0_0 } /* PowerUI.OnSizeChange */,
+	{ DelegatePInvokeWrapper_OnUITimer_t3247156572, NULL, NULL, NULL, NULL, NULL, &OnUITimer_t3247156572_0_0_0 } /* PowerUI.OnUITimer */,
+	{ DelegatePInvokeWrapper_GroupResolve_t4162119537, NULL, NULL, NULL, NULL, NULL, &GroupResolve_t4162119537_0_0_0 } /* Wrench.GroupResolve */,
+	{ DelegatePInvokeWrapper_LanguageChange_t479106978, NULL, NULL, NULL, NULL, NULL, &LanguageChange_t479106978_0_0_0 } /* Wrench.LanguageChange */,
+	{ DelegatePInvokeWrapper_OnLogEvent_t3913109635, NULL, NULL, NULL, NULL, NULL, &OnLogEvent_t3913109635_0_0_0 } /* Wrench.OnLogEvent */,
+	{ DelegatePInvokeWrapper_OnVariableChange_t4274501541, NULL, NULL, NULL, NULL, NULL, &OnVariableChange_t4274501541_0_0_0 } /* Wrench.OnVariableChange */,
+	{ DelegatePInvokeWrapper_OnVariableFind_t660484292, NULL, NULL, NULL, NULL, NULL, &OnVariableFind_t660484292_0_0_0 } /* Wrench.OnVariableFind */,
+	{ DelegatePInvokeWrapper_TextModifierChange_t3642518626, NULL, NULL, NULL, NULL, NULL, &TextModifierChange_t3642518626_0_0_0 } /* Wrench.TextModifierChange */,
 	NULL,
 };

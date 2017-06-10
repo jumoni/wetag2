@@ -845,11 +845,11 @@ extern const MethodInfo* List_1_Clear_m576262818_MethodInfo_var;
 extern const MethodInfo* List_1_Clear_m3889887144_MethodInfo_var;
 extern const MethodInfo* List_1_Clear_m1402865383_MethodInfo_var;
 extern const MethodInfo* List_1_Clear_m981597149_MethodInfo_var;
-extern const MethodInfo* List_1_Clear_m1375489236_MethodInfo_var;
+extern const MethodInfo* List_1_Clear_m3644677550_MethodInfo_var;
 extern const uint32_t VertexHelper_Clear_m648714328_MetadataUsageId;
 extern const MethodInfo* List_1_get_Count_m4027941115_MethodInfo_var;
 extern const uint32_t VertexHelper_get_currentVertCount_m1723889923_MetadataUsageId;
-extern const MethodInfo* List_1_get_Count_m3338876699_MethodInfo_var;
+extern const MethodInfo* List_1_get_Count_m852068579_MethodInfo_var;
 extern const uint32_t VertexHelper_get_currentIndexCount_m136081244_MetadataUsageId;
 extern const MethodInfo* List_1_get_Item_m2503489122_MethodInfo_var;
 extern const MethodInfo* List_1_get_Item_m2079323980_MethodInfo_var;
@@ -1382,11 +1382,11 @@ extern "C"  void List_1_Clear_m1402865383_gshared (List_1_t1612828711 * __this, 
 // System.Void System.Collections.Generic.List`1<UnityEngine.Vector4>::Clear()
 extern "C"  void List_1_Clear_m981597149_gshared (List_1_t1612828713 * __this, const MethodInfo* method);
 // System.Void System.Collections.Generic.List`1<System.Int32>::Clear()
-extern "C"  void List_1_Clear_m1375489236_gshared (List_1_t1440998580 * __this, const MethodInfo* method);
+extern "C"  void List_1_Clear_m3644677550_gshared (List_1_t1440998580 * __this, const MethodInfo* method);
 // System.Int32 System.Collections.Generic.List`1<UnityEngine.Vector3>::get_Count()
 extern "C"  int32_t List_1_get_Count_m4027941115_gshared (List_1_t1612828712 * __this, const MethodInfo* method);
 // System.Int32 System.Collections.Generic.List`1<System.Int32>::get_Count()
-extern "C"  int32_t List_1_get_Count_m3338876699_gshared (List_1_t1440998580 * __this, const MethodInfo* method);
+extern "C"  int32_t List_1_get_Count_m852068579_gshared (List_1_t1440998580 * __this, const MethodInfo* method);
 // !0 System.Collections.Generic.List`1<UnityEngine.Vector3>::get_Item(System.Int32)
 extern "C"  Vector3_t2243707580  List_1_get_Item_m2503489122_gshared (List_1_t1612828712 * __this, int32_t p0, const MethodInfo* method);
 // !0 System.Collections.Generic.List`1<UnityEngine.Color32>::get_Item(System.Int32)
@@ -2565,11 +2565,11 @@ extern "C"  Int32U5BU5D_t3030399641* Mesh_GetIndices_m3085881884 (Mesh_t13561565
 // System.Void System.Collections.Generic.List`1<UnityEngine.Vector4>::Clear()
 #define List_1_Clear_m981597149(__this, method) ((  void (*) (List_1_t1612828713 *, const MethodInfo*))List_1_Clear_m981597149_gshared)(__this, method)
 // System.Void System.Collections.Generic.List`1<System.Int32>::Clear()
-#define List_1_Clear_m1375489236(__this, method) ((  void (*) (List_1_t1440998580 *, const MethodInfo*))List_1_Clear_m1375489236_gshared)(__this, method)
+#define List_1_Clear_m3644677550(__this, method) ((  void (*) (List_1_t1440998580 *, const MethodInfo*))List_1_Clear_m3644677550_gshared)(__this, method)
 // System.Int32 System.Collections.Generic.List`1<UnityEngine.Vector3>::get_Count()
 #define List_1_get_Count_m4027941115(__this, method) ((  int32_t (*) (List_1_t1612828712 *, const MethodInfo*))List_1_get_Count_m4027941115_gshared)(__this, method)
 // System.Int32 System.Collections.Generic.List`1<System.Int32>::get_Count()
-#define List_1_get_Count_m3338876699(__this, method) ((  int32_t (*) (List_1_t1440998580 *, const MethodInfo*))List_1_get_Count_m3338876699_gshared)(__this, method)
+#define List_1_get_Count_m852068579(__this, method) ((  int32_t (*) (List_1_t1440998580 *, const MethodInfo*))List_1_get_Count_m852068579_gshared)(__this, method)
 // !0 System.Collections.Generic.List`1<UnityEngine.Vector3>::get_Item(System.Int32)
 #define List_1_get_Item_m2503489122(__this, p0, method) ((  Vector3_t2243707580  (*) (List_1_t1612828712 *, int32_t, const MethodInfo*))List_1_get_Item_m2503489122_gshared)(__this, p0, method)
 // !0 System.Collections.Generic.List`1<UnityEngine.Color32>::get_Item(System.Int32)
@@ -7444,7 +7444,7 @@ extern "C"  void ReflectionMethodsCache__ctor_m1835220 (ReflectionMethodsCache_t
 		TypeU5BU5D_t1664964607* L_3 = L_1;
 		Type_t * L_4 = Type_GetTypeFromHandle_m432505302(NULL /*static, unused*/, LoadTypeToken(RaycastHit_t87180320_0_0_0_var), /*hidden argument*/NULL);
 		NullCheck(L_4);
-		Type_t * L_5 = VirtFuncInvoker0< Type_t * >::Invoke(80 /* System.Type System.Type::MakeByRefType() */, L_4);
+		Type_t * L_5 = VirtFuncInvoker0< Type_t * >::Invoke(94 /* System.Type System.Type::MakeByRefType() */, L_4);
 		NullCheck(L_3);
 		ArrayElementTypeCheck (L_3, L_5);
 		(L_3)->SetAt(static_cast<il2cpp_array_size_t>(1), (Type_t *)L_5);
@@ -23007,7 +23007,7 @@ extern "C"  void VertexHelper_Clear_m648714328 (VertexHelper_t385374196 * __this
 		List_1_Clear_m981597149(L_7, /*hidden argument*/List_1_Clear_m981597149_MethodInfo_var);
 		List_1_t1440998580 * L_8 = __this->get_m_Indices_8();
 		NullCheck(L_8);
-		List_1_Clear_m1375489236(L_8, /*hidden argument*/List_1_Clear_m1375489236_MethodInfo_var);
+		List_1_Clear_m3644677550(L_8, /*hidden argument*/List_1_Clear_m3644677550_MethodInfo_var);
 		return;
 	}
 }
@@ -23048,7 +23048,7 @@ extern "C"  int32_t VertexHelper_get_currentIndexCount_m136081244 (VertexHelper_
 	{
 		List_1_t1440998580 * L_0 = __this->get_m_Indices_8();
 		NullCheck(L_0);
-		int32_t L_1 = List_1_get_Count_m3338876699(L_0, /*hidden argument*/List_1_get_Count_m3338876699_MethodInfo_var);
+		int32_t L_1 = List_1_get_Count_m852068579(L_0, /*hidden argument*/List_1_get_Count_m852068579_MethodInfo_var);
 		V_0 = L_1;
 		goto IL_0012;
 	}

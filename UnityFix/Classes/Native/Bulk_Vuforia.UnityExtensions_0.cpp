@@ -743,7 +743,7 @@ extern const uint32_t ARController_UnregisterCamera_m318967997_MetadataUsageId;
 extern Il2CppClass* VuforiaARController_t4061728485_il2cpp_TypeInfo_var;
 extern const MethodInfo* BackgroundPlaneAbstractBehaviour_OnBackgroundTextureChanged_m4072941017_MethodInfo_var;
 extern const MethodInfo* BackgroundPlaneAbstractBehaviour_OnTrackablesUpdated_m2623229581_MethodInfo_var;
-extern const MethodInfo* Component_GetComponent_TisCamera_t189460977_m1978993906_MethodInfo_var;
+extern const MethodInfo* Component_GetComponent_TisCamera_t189460977_m3276577584_MethodInfo_var;
 extern const uint32_t BackgroundPlaneAbstractBehaviour_Start_m142659071_MetadataUsageId;
 extern const uint32_t BackgroundPlaneAbstractBehaviour_OnDestroy_m2138993976_MetadataUsageId;
 extern Il2CppClass* VuforiaRenderer_t2933102835_il2cpp_TypeInfo_var;
@@ -2250,7 +2250,7 @@ extern "C"  void Action_1__ctor_m782011149_gshared (Action_1_t3627374100 * __thi
 // !!0 UnityEngine.Component::GetComponent<System.Object>()
 extern "C"  Il2CppObject * Component_GetComponent_TisIl2CppObject_m4109961936_gshared (Component_t3819376471 * __this, const MethodInfo* method);
 // !!0 UnityEngine.GameObject::AddComponent<System.Object>()
-extern "C"  Il2CppObject * GameObject_AddComponent_TisIl2CppObject_m2231772097_gshared (GameObject_t1756533147 * __this, const MethodInfo* method);
+extern "C"  Il2CppObject * GameObject_AddComponent_TisIl2CppObject_m3813873105_gshared (GameObject_t1756533147 * __this, const MethodInfo* method);
 // System.Void System.Collections.Generic.Dictionary`2<System.Object,System.Object>::.ctor()
 extern "C"  void Dictionary_2__ctor_m584589095_gshared (Dictionary_2_t2281509423 * __this, const MethodInfo* method);
 // System.Collections.Generic.Dictionary`2/ValueCollection<!0,!1> System.Collections.Generic.Dictionary`2<System.Object,System.Object>::get_Values()
@@ -2332,13 +2332,13 @@ extern "C"  Il2CppObject * Object_FindObjectOfType_TisIl2CppObject_m758847274_gs
 // !!0[] UnityEngine.Component::GetComponentsInChildren<System.Object>(System.Boolean)
 extern "C"  ObjectU5BU5D_t3614634134* Component_GetComponentsInChildren_TisIl2CppObject_m4164830438_gshared (Component_t3819376471 * __this, bool p0, const MethodInfo* method);
 // !!0 UnityEngine.Object::Instantiate<System.Object>(!!0)
-extern "C"  Il2CppObject * Object_Instantiate_TisIl2CppObject_m2184336183_gshared (Il2CppObject * __this /* static, unused */, Il2CppObject * p0, const MethodInfo* method);
+extern "C"  Il2CppObject * Object_Instantiate_TisIl2CppObject_m447919519_gshared (Il2CppObject * __this /* static, unused */, Il2CppObject * p0, const MethodInfo* method);
 // !!0 UnityEngine.Component::GetComponentInChildren<System.Object>()
-extern "C"  Il2CppObject * Component_GetComponentInChildren_TisIl2CppObject_m2641795278_gshared (Component_t3819376471 * __this, const MethodInfo* method);
+extern "C"  Il2CppObject * Component_GetComponentInChildren_TisIl2CppObject_m2461586036_gshared (Component_t3819376471 * __this, const MethodInfo* method);
 // !!0[] UnityEngine.Component::GetComponentsInChildren<System.Object>()
 extern "C"  ObjectU5BU5D_t3614634134* Component_GetComponentsInChildren_TisIl2CppObject_m1631085023_gshared (Component_t3819376471 * __this, const MethodInfo* method);
 // !!0 UnityEngine.GameObject::GetComponent<System.Object>()
-extern "C"  Il2CppObject * GameObject_GetComponent_TisIl2CppObject_m4211544902_gshared (GameObject_t1756533147 * __this, const MethodInfo* method);
+extern "C"  Il2CppObject * GameObject_GetComponent_TisIl2CppObject_m2812611596_gshared (GameObject_t1756533147 * __this, const MethodInfo* method);
 // System.Boolean System.Collections.Generic.HashSet`1<System.Int32>::Contains(!0)
 extern "C"  bool HashSet_1_Contains_m3728309091_gshared (HashSet_1_t405338302 * __this, int32_t p0, const MethodInfo* method);
 // System.Boolean System.Collections.Generic.Dictionary`2<Vuforia.VuforiaManager/TrackableIdPair,Vuforia.HoloLensExtendedTrackingManager/PoseAgeEntry>::ContainsKey(!0)
@@ -2400,7 +2400,7 @@ extern "C"  void Dictionary_2__ctor_m951123880_gshared (Dictionary_2_t2395898666
 // System.Void System.Collections.Generic.Dictionary`2<Vuforia.VuforiaManager/TrackableIdPair,Vuforia.TrackableBehaviour/Status>::.ctor()
 extern "C"  void Dictionary_2__ctor_m1159307844_gshared (Dictionary_2_t997184670 * __this, const MethodInfo* method);
 // !!0 UnityEngine.GameObject::GetComponentInChildren<System.Object>()
-extern "C"  Il2CppObject * GameObject_GetComponentInChildren_TisIl2CppObject_m2009062234_gshared (GameObject_t1756533147 * __this, const MethodInfo* method);
+extern "C"  Il2CppObject * GameObject_GetComponentInChildren_TisIl2CppObject_m327292296_gshared (GameObject_t1756533147 * __this, const MethodInfo* method);
 // System.Void System.Collections.Generic.Dictionary`2<System.Int32,System.Object>::Add(!0,!1)
 extern "C"  void Dictionary_2_Add_m1296007576_gshared (Dictionary_2_t1697274930 * __this, int32_t p0, Il2CppObject * p1, const MethodInfo* method);
 // System.Boolean System.Collections.Generic.Dictionary`2<System.Int32,System.Object>::TryGetValue(!0,!1&)
@@ -2485,7 +2485,7 @@ extern "C"  Transform_t3275118058 * Component_get_transform_m2697483695 (Compone
 // UnityEngine.Transform UnityEngine.Transform::get_parent()
 extern "C"  Transform_t3275118058 * Transform_get_parent_m147407266 (Transform_t3275118058 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // !!0 UnityEngine.Component::GetComponent<UnityEngine.Camera>()
-#define Component_GetComponent_TisCamera_t189460977_m1978993906(__this, method) ((  Camera_t189460977 * (*) (Component_t3819376471 *, const MethodInfo*))Component_GetComponent_TisIl2CppObject_m4109961936_gshared)(__this, method)
+#define Component_GetComponent_TisCamera_t189460977_m3276577584(__this, method) ((  Camera_t189460977 * (*) (Component_t3819376471 *, const MethodInfo*))Component_GetComponent_TisIl2CppObject_m4109961936_gshared)(__this, method)
 // System.Single Vuforia.UnityCameraExtensions::GetMaxDepthForVideoBackground(UnityEngine.Camera)
 extern "C"  float UnityCameraExtensions_GetMaxDepthForVideoBackground_m2452083041 (Il2CppObject * __this /* static, unused */, Camera_t189460977 * ___camera0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Boolean Vuforia.VuforiaARController::UnregisterVideoBgEventHandler(Vuforia.IVideoBackgroundEventHandler)
@@ -2515,7 +2515,7 @@ extern "C"  Quaternion_t4030073918  Quaternion_AngleAxis_m2806222563 (Il2CppObje
 // UnityEngine.GameObject UnityEngine.Component::get_gameObject()
 extern "C"  GameObject_t1756533147 * Component_get_gameObject_m3105766835 (Component_t3819376471 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // !!0 UnityEngine.GameObject::AddComponent<UnityEngine.MeshFilter>()
-#define GameObject_AddComponent_TisMeshFilter_t3026937449_m3614166859(__this, method) ((  MeshFilter_t3026937449 * (*) (GameObject_t1756533147 *, const MethodInfo*))GameObject_AddComponent_TisIl2CppObject_m2231772097_gshared)(__this, method)
+#define GameObject_AddComponent_TisMeshFilter_t3026937449_m3614166859(__this, method) ((  MeshFilter_t3026937449 * (*) (GameObject_t1756533147 *, const MethodInfo*))GameObject_AddComponent_TisIl2CppObject_m3813873105_gshared)(__this, method)
 // UnityEngine.Mesh UnityEngine.MeshFilter::get_mesh()
 extern "C"  Mesh_t1356156583 * MeshFilter_get_mesh_m977520135 (MeshFilter_t3026937449 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void UnityEngine.Mesh::Clear()
@@ -3349,7 +3349,7 @@ extern "C"  void VuforiaExtendedTrackingManager__ctor_m3622223881 (VuforiaExtend
 // System.Void Vuforia.DigitalEyewearARController::ConfigureView()
 extern "C"  void DigitalEyewearARController_ConfigureView_m3593949134 (DigitalEyewearARController_t1398758191 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // !!0 UnityEngine.GameObject::AddComponent<Vuforia.DistortionRenderingBehaviour>()
-#define GameObject_AddComponent_TisDistortionRenderingBehaviour_t2945034146_m1059883513(__this, method) ((  DistortionRenderingBehaviour_t2945034146 * (*) (GameObject_t1756533147 *, const MethodInfo*))GameObject_AddComponent_TisIl2CppObject_m2231772097_gshared)(__this, method)
+#define GameObject_AddComponent_TisDistortionRenderingBehaviour_t2945034146_m1059883513(__this, method) ((  DistortionRenderingBehaviour_t2945034146 * (*) (GameObject_t1756533147 *, const MethodInfo*))GameObject_AddComponent_TisIl2CppObject_m3813873105_gshared)(__this, method)
 // System.Void Vuforia.DistortionRenderingBehaviour::set_RenderLayer(System.Int32)
 extern "C"  void DistortionRenderingBehaviour_set_RenderLayer_m1808232559 (DistortionRenderingBehaviour_t2945034146 * __this, int32_t ___value0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void Vuforia.DistortionRenderingBehaviour::set_UseSingleTexture(System.Boolean)
@@ -3373,11 +3373,11 @@ extern "C"  void Rect__ctor_m3896897500 (Rect_t3681755626 * __this, Rect_t368175
 // System.Void UnityEngine.Object::set_name(System.String)
 extern "C"  void Object_set_name_m4157836998 (Object_t1021602117 * __this, String_t* p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // !!0 UnityEngine.Object::Instantiate<UnityEngine.Camera>(!!0)
-#define Object_Instantiate_TisCamera_t189460977_m3065696391(__this /* static, unused */, p0, method) ((  Camera_t189460977 * (*) (Il2CppObject * /* static, unused */, Camera_t189460977 *, const MethodInfo*))Object_Instantiate_TisIl2CppObject_m2184336183_gshared)(__this /* static, unused */, p0, method)
+#define Object_Instantiate_TisCamera_t189460977_m3065696391(__this /* static, unused */, p0, method) ((  Camera_t189460977 * (*) (Il2CppObject * /* static, unused */, Camera_t189460977 *, const MethodInfo*))Object_Instantiate_TisIl2CppObject_m447919519_gshared)(__this /* static, unused */, p0, method)
 // System.Void UnityEngine.Transform::set_parent(UnityEngine.Transform)
 extern "C"  void Transform_set_parent_m3281327839 (Transform_t3275118058 * __this, Transform_t3275118058 * p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // !!0 UnityEngine.Component::GetComponentInChildren<Vuforia.BackgroundPlaneAbstractBehaviour>()
-#define Component_GetComponentInChildren_TisBackgroundPlaneAbstractBehaviour_t3732945727_m1061170659(__this, method) ((  BackgroundPlaneAbstractBehaviour_t3732945727 * (*) (Component_t3819376471 *, const MethodInfo*))Component_GetComponentInChildren_TisIl2CppObject_m2641795278_gshared)(__this, method)
+#define Component_GetComponentInChildren_TisBackgroundPlaneAbstractBehaviour_t3732945727_m1061170659(__this, method) ((  BackgroundPlaneAbstractBehaviour_t3732945727 * (*) (Component_t3819376471 *, const MethodInfo*))Component_GetComponentInChildren_TisIl2CppObject_m2461586036_gshared)(__this, method)
 // System.Void UnityEngine.Object::Destroy(UnityEngine.Object)
 extern "C"  void Object_Destroy_m4145850038 (Il2CppObject * __this /* static, unused */, Object_t1021602117 * p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void Vuforia.VideoBackgroundAbstractBehaviour::DisconnectFromBackgroundBehaviour()
@@ -3439,11 +3439,11 @@ extern "C"  void Camera_set_cullingMask_m2396665826 (Camera_t189460977 * __this,
 // System.Boolean Vuforia.DistortionRenderingBehaviour::HaveDualTextureViewportsChanged()
 extern "C"  bool DistortionRenderingBehaviour_HaveDualTextureViewportsChanged_m3294872394 (DistortionRenderingBehaviour_t2945034146 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // !!0 UnityEngine.GameObject::GetComponent<UnityEngine.MeshRenderer>()
-#define GameObject_GetComponent_TisMeshRenderer_t1268241104_m3084294969(__this, method) ((  MeshRenderer_t1268241104 * (*) (GameObject_t1756533147 *, const MethodInfo*))GameObject_GetComponent_TisIl2CppObject_m4211544902_gshared)(__this, method)
+#define GameObject_GetComponent_TisMeshRenderer_t1268241104_m3084294969(__this, method) ((  MeshRenderer_t1268241104 * (*) (GameObject_t1756533147 *, const MethodInfo*))GameObject_GetComponent_TisIl2CppObject_m2812611596_gshared)(__this, method)
 // UnityEngine.AsyncOperation UnityEngine.Resources::UnloadUnusedAssets()
 extern "C"  AsyncOperation_t3814632279 * Resources_UnloadUnusedAssets_m2770025609 (Il2CppObject * __this /* static, unused */, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // !!0 UnityEngine.GameObject::GetComponent<UnityEngine.MeshFilter>()
-#define GameObject_GetComponent_TisMeshFilter_t3026937449_m1728707518(__this, method) ((  MeshFilter_t3026937449 * (*) (GameObject_t1756533147 *, const MethodInfo*))GameObject_GetComponent_TisIl2CppObject_m4211544902_gshared)(__this, method)
+#define GameObject_GetComponent_TisMeshFilter_t3026937449_m1728707518(__this, method) ((  MeshFilter_t3026937449 * (*) (GameObject_t1756533147 *, const MethodInfo*))GameObject_GetComponent_TisIl2CppObject_m2812611596_gshared)(__this, method)
 // UnityEngine.Mesh UnityEngine.MeshFilter::get_sharedMesh()
 extern "C"  Mesh_t1356156583 * MeshFilter_get_sharedMesh_m1310789932 (MeshFilter_t3026937449 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // UnityEngine.Mesh Vuforia.Device::GetDistortionMesh(Vuforia.View,UnityEngine.Mesh)
@@ -3455,7 +3455,7 @@ extern "C"  void Mesh__ctor_m2975981674 (Mesh_t1356156583 * __this, const Method
 // System.Int32 UnityEngine.Mesh::get_vertexCount()
 extern "C"  int32_t Mesh_get_vertexCount_m989566320 (Mesh_t1356156583 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // !!0 UnityEngine.GameObject::AddComponent<UnityEngine.MeshRenderer>()
-#define GameObject_AddComponent_TisMeshRenderer_t1268241104_m2130352940(__this, method) ((  MeshRenderer_t1268241104 * (*) (GameObject_t1756533147 *, const MethodInfo*))GameObject_AddComponent_TisIl2CppObject_m2231772097_gshared)(__this, method)
+#define GameObject_AddComponent_TisMeshRenderer_t1268241104_m2130352940(__this, method) ((  MeshRenderer_t1268241104 * (*) (GameObject_t1756533147 *, const MethodInfo*))GameObject_AddComponent_TisIl2CppObject_m3813873105_gshared)(__this, method)
 // UnityEngine.Object UnityEngine.Resources::Load(System.String)
 extern "C"  Object_t1021602117 * Resources_Load_m2041782325 (Il2CppObject * __this /* static, unused */, String_t* p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void UnityEngine.Renderer::set_sharedMaterial(UnityEngine.Material)
@@ -3483,7 +3483,7 @@ extern "C"  bool RenderTexture_Create_m1259588374 (RenderTexture_t2666733923 * _
 // System.Void UnityEngine.Material::SetTexture(System.String,UnityEngine.Texture)
 extern "C"  void Material_SetTexture_m141095205 (Material_t193706927 * __this, String_t* p0, Texture_t2243626319 * p1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // !!0 UnityEngine.GameObject::AddComponent<UnityEngine.Camera>()
-#define GameObject_AddComponent_TisCamera_t189460977_m408472993(__this, method) ((  Camera_t189460977 * (*) (GameObject_t1756533147 *, const MethodInfo*))GameObject_AddComponent_TisIl2CppObject_m2231772097_gshared)(__this, method)
+#define GameObject_AddComponent_TisCamera_t189460977_m408472993(__this, method) ((  Camera_t189460977 * (*) (GameObject_t1756533147 *, const MethodInfo*))GameObject_AddComponent_TisIl2CppObject_m3813873105_gshared)(__this, method)
 // System.Void UnityEngine.Camera::set_orthographic(System.Boolean)
 extern "C"  void Camera_set_orthographic_m2132888580 (Camera_t189460977 * __this, bool p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void UnityEngine.Camera::set_orthographicSize(System.Single)
@@ -3691,7 +3691,7 @@ extern "C"  void VirtualButtonAbstractBehaviour_set_UnregisterOnDestroy_m3412426
 // UnityEngine.Transform UnityEngine.Transform::get_root()
 extern "C"  Transform_t3275118058 * Transform_get_root_m3891257842 (Transform_t3275118058 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // !!0 UnityEngine.GameObject::GetComponentInChildren<Vuforia.ImageTargetAbstractBehaviour>()
-#define GameObject_GetComponentInChildren_TisImageTargetAbstractBehaviour_t3327552701_m2417824533(__this, method) ((  ImageTargetAbstractBehaviour_t3327552701 * (*) (GameObject_t1756533147 *, const MethodInfo*))GameObject_GetComponentInChildren_TisIl2CppObject_m2009062234_gshared)(__this, method)
+#define GameObject_GetComponentInChildren_TisImageTargetAbstractBehaviour_t3327552701_m2417824533(__this, method) ((  ImageTargetAbstractBehaviour_t3327552701 * (*) (GameObject_t1756533147 *, const MethodInfo*))GameObject_GetComponentInChildren_TisIl2CppObject_m327292296_gshared)(__this, method)
 // Vuforia.ImageTarget Vuforia.ImageTargetAbstractBehaviour::get_ImageTarget()
 extern "C"  Il2CppObject * ImageTargetAbstractBehaviour_get_ImageTarget_m3261756177 (ImageTargetAbstractBehaviour_t3327552701 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Collections.Generic.Dictionary`2/ValueCollection<!0,!1> System.Collections.Generic.Dictionary`2<System.Int32,Vuforia.VirtualButtonAbstractBehaviour>::get_Values()
@@ -3807,11 +3807,11 @@ extern "C"  GameObject_t1756533147 * GameObject_CreatePrimitive_m973880764 (Il2C
 // System.Void UnityEngine.Material::.ctor(UnityEngine.Shader)
 extern "C"  void Material__ctor_m1897560860 (Material_t193706927 * __this, Shader_t2430389951 * p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // !!0 UnityEngine.GameObject::GetComponent<UnityEngine.Renderer>()
-#define GameObject_GetComponent_TisRenderer_t257310565_m697787402(__this, method) ((  Renderer_t257310565 * (*) (GameObject_t1756533147 *, const MethodInfo*))GameObject_GetComponent_TisIl2CppObject_m4211544902_gshared)(__this, method)
+#define GameObject_GetComponent_TisRenderer_t257310565_m697787402(__this, method) ((  Renderer_t257310565 * (*) (GameObject_t1756533147 *, const MethodInfo*))GameObject_GetComponent_TisIl2CppObject_m2812611596_gshared)(__this, method)
 // System.Void UnityEngine.Renderer::set_material(UnityEngine.Material)
 extern "C"  void Renderer_set_material_m1053097112 (Renderer_t257310565 * __this, Material_t193706927 * p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // !!0 UnityEngine.GameObject::GetComponent<UnityEngine.Collider>()
-#define GameObject_GetComponent_TisCollider_t3497673348_m4279804853(__this, method) ((  Collider_t3497673348 * (*) (GameObject_t1756533147 *, const MethodInfo*))GameObject_GetComponent_TisIl2CppObject_m4211544902_gshared)(__this, method)
+#define GameObject_GetComponent_TisCollider_t3497673348_m4279804853(__this, method) ((  Collider_t3497673348 * (*) (GameObject_t1756533147 *, const MethodInfo*))GameObject_GetComponent_TisIl2CppObject_m2812611596_gshared)(__this, method)
 // System.Boolean UnityEngine.Vector3::op_Inequality(UnityEngine.Vector3,UnityEngine.Vector3)
 extern "C"  bool Vector3_op_Inequality_m799191452 (Il2CppObject * __this /* static, unused */, Vector3_t2243707580  p0, Vector3_t2243707580  p1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void Vuforia.LegacyHideExcessAreaClipping::SetPlanesRenderingActive(System.Boolean)
@@ -3833,7 +3833,7 @@ extern "C"  void HideExcessAreaAbstractBehaviour_SetPlanesRenderingActive_m31113
 // System.Void System.Collections.Generic.List`1/Enumerator<Vuforia.HideExcessAreaAbstractBehaviour>::Dispose()
 #define Enumerator_Dispose_m3433311933(__this, method) ((  void (*) (Enumerator_t1591428133 *, const MethodInfo*))Enumerator_Dispose_m3736175406_gshared)(__this, method)
 // !!0 UnityEngine.GameObject::GetComponent<UnityEngine.Camera>()
-#define GameObject_GetComponent_TisCamera_t189460977_m846435662(__this, method) ((  Camera_t189460977 * (*) (GameObject_t1756533147 *, const MethodInfo*))GameObject_GetComponent_TisIl2CppObject_m4211544902_gshared)(__this, method)
+#define GameObject_GetComponent_TisCamera_t189460977_m846435662(__this, method) ((  Camera_t189460977 * (*) (GameObject_t1756533147 *, const MethodInfo*))GameObject_GetComponent_TisIl2CppObject_m2812611596_gshared)(__this, method)
 // UnityEngine.Transform Vuforia.DigitalEyewearARController::get_CentralAnchorPoint()
 extern "C"  Transform_t3275118058 * DigitalEyewearARController_get_CentralAnchorPoint_m1690577486 (DigitalEyewearARController_t1398758191 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // !!0[] UnityEngine.Object::FindObjectsOfType<Vuforia.HideExcessAreaAbstractBehaviour>()
@@ -3907,7 +3907,7 @@ extern "C"  void DigitalEyewearARController_set_PrimaryCamera_m3357350685 (Digit
 // System.Void Vuforia.DigitalEyewearARController::set_SecondaryCamera(UnityEngine.Camera)
 extern "C"  void DigitalEyewearARController_set_SecondaryCamera_m954119115 (DigitalEyewearARController_t1398758191 * __this, Camera_t189460977 * ___value0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // !!0 UnityEngine.Component::GetComponentInChildren<UnityEngine.Camera>()
-#define Component_GetComponentInChildren_TisCamera_t189460977_m2723361302(__this, method) ((  Camera_t189460977 * (*) (Component_t3819376471 *, const MethodInfo*))Component_GetComponentInChildren_TisIl2CppObject_m2641795278_gshared)(__this, method)
+#define Component_GetComponentInChildren_TisCamera_t189460977_m2723361302(__this, method) ((  Camera_t189460977 * (*) (Component_t3819376471 *, const MethodInfo*))Component_GetComponentInChildren_TisIl2CppObject_m2461586036_gshared)(__this, method)
 // System.Void Vuforia.DigitalEyewearARController::SetViewerActive(System.Boolean)
 extern "C"  void DigitalEyewearARController_SetViewerActive_m2271981682 (DigitalEyewearARController_t1398758191 * __this, bool ___isActive0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void UnityEngine.Application::set_targetFrameRate(System.Int32)
@@ -4412,7 +4412,7 @@ extern "C"  void BackgroundPlaneAbstractBehaviour_Start_m142659071 (BackgroundPl
 		NullCheck(L_8);
 		Transform_t3275118058 * L_9 = Transform_get_parent_m147407266(L_8, /*hidden argument*/NULL);
 		NullCheck(L_9);
-		Camera_t189460977 * L_10 = Component_GetComponent_TisCamera_t189460977_m1978993906(L_9, /*hidden argument*/Component_GetComponent_TisCamera_t189460977_m1978993906_MethodInfo_var);
+		Camera_t189460977 * L_10 = Component_GetComponent_TisCamera_t189460977_m3276577584(L_9, /*hidden argument*/Component_GetComponent_TisCamera_t189460977_m3276577584_MethodInfo_var);
 		__this->set_mCamera_6(L_10);
 		Camera_t189460977 * L_11 = __this->get_mCamera_6();
 		float L_12 = UnityCameraExtensions_GetMaxDepthForVideoBackground_m2452083041(NULL /*static, unused*/, L_11, /*hidden argument*/NULL);
@@ -21377,7 +21377,7 @@ extern "C"  Camera_t189460977 * DistortionRenderingBehaviour_SetupOrthographicCa
 	int32_t V_10 = 0;
 	Camera_t189460977 * V_11 = NULL;
 	{
-		Camera_t189460977 * L_0 = Component_GetComponent_TisCamera_t189460977_m1978993906(__this, /*hidden argument*/Component_GetComponent_TisCamera_t189460977_m1978993906_MethodInfo_var);
+		Camera_t189460977 * L_0 = Component_GetComponent_TisCamera_t189460977_m3276577584(__this, /*hidden argument*/Component_GetComponent_TisCamera_t189460977_m3276577584_MethodInfo_var);
 		V_0 = L_0;
 		Camera_t189460977 * L_1 = V_0;
 		IL2CPP_RUNTIME_CLASS_INIT(Object_t1021602117_il2cpp_TypeInfo_var);

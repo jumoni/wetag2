@@ -29,6 +29,7 @@
 
     id<RenderPluginDelegate>    _renderDelegate;
 }
+
 // ** ADDED ** All six of these function prototypes were added
 - (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions;
 - (void)applicationWillResignActive:(UIApplication*)application;
@@ -86,13 +87,12 @@
     AppControllerClassName = #ClassName;        \
 }                                               \
 @end                                            \
-
+//
 //inline UnityAppController*  GetAppController()
 //{
 //    return (UnityAppController*)[UIApplication sharedApplication].delegate;
 //}
 
-//替换为此方法
 NS_INLINE UnityAppController* GetAppController()
 {
     NSObject<UIApplicationDelegate>* delegate = [UIApplication sharedApplication].delegate;

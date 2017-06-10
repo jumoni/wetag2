@@ -654,7 +654,7 @@ IL_00fa:
 extern "C"  void SymmetricTransform_System_IDisposable_Dispose_m2454577762 (SymmetricTransform_t1394030014 * __this, const MethodInfo* method)
 {
 	{
-		VirtActionInvoker1< bool >::Invoke(8 /* System.Void Mono.Security.Cryptography.SymmetricTransform::Dispose(System.Boolean) */, __this, (bool)1);
+		VirtActionInvoker1< bool >::Invoke(11 /* System.Void Mono.Security.Cryptography.SymmetricTransform::Dispose(System.Boolean) */, __this, (bool)1);
 		GC_SuppressFinalize_m953228702(NULL /*static, unused*/, __this, /*hidden argument*/NULL);
 		return;
 	}
@@ -672,7 +672,7 @@ extern "C"  void SymmetricTransform_Finalize_m2220170723 (SymmetricTransform_t13
 IL_0000:
 	try
 	{ // begin try (depth: 1)
-		VirtActionInvoker1< bool >::Invoke(8 /* System.Void Mono.Security.Cryptography.SymmetricTransform::Dispose(System.Boolean) */, __this, (bool)0);
+		VirtActionInvoker1< bool >::Invoke(11 /* System.Void Mono.Security.Cryptography.SymmetricTransform::Dispose(System.Boolean) */, __this, (bool)0);
 		IL2CPP_LEAVE(0x13, FINALLY_000c);
 	} // end try (depth: 1)
 	catch(Il2CppExceptionWrapper& e)
@@ -735,11 +735,34 @@ IL_004a:
 		return;
 	}
 }
+// System.Boolean Mono.Security.Cryptography.SymmetricTransform::get_CanTransformMultipleBlocks()
+extern "C"  bool SymmetricTransform_get_CanTransformMultipleBlocks_m1752313288 (SymmetricTransform_t1394030014 * __this, const MethodInfo* method)
+{
+	{
+		return (bool)1;
+	}
+}
 // System.Boolean Mono.Security.Cryptography.SymmetricTransform::get_CanReuseTransform()
 extern "C"  bool SymmetricTransform_get_CanReuseTransform_m1428518336 (SymmetricTransform_t1394030014 * __this, const MethodInfo* method)
 {
 	{
 		return (bool)0;
+	}
+}
+// System.Int32 Mono.Security.Cryptography.SymmetricTransform::get_InputBlockSize()
+extern "C"  int32_t SymmetricTransform_get_InputBlockSize_m3264284364 (SymmetricTransform_t1394030014 * __this, const MethodInfo* method)
+{
+	{
+		int32_t L_0 = __this->get_BlockSizeByte_2();
+		return L_0;
+	}
+}
+// System.Int32 Mono.Security.Cryptography.SymmetricTransform::get_OutputBlockSize()
+extern "C"  int32_t SymmetricTransform_get_OutputBlockSize_m2278045573 (SymmetricTransform_t1394030014 * __this, const MethodInfo* method)
+{
+	{
+		int32_t L_0 = __this->get_BlockSizeByte_2();
+		return L_0;
 	}
 }
 // System.Void Mono.Security.Cryptography.SymmetricTransform::Transform(System.Byte[],System.Byte[])
@@ -790,7 +813,7 @@ IL_002d:
 	{
 		ByteU5BU5D_t3397334013* L_3 = ___input0;
 		ByteU5BU5D_t3397334013* L_4 = ___output1;
-		VirtActionInvoker2< ByteU5BU5D_t3397334013*, ByteU5BU5D_t3397334013* >::Invoke(11 /* System.Void Mono.Security.Cryptography.SymmetricTransform::ECB(System.Byte[],System.Byte[]) */, __this, L_3, L_4);
+		VirtActionInvoker2< ByteU5BU5D_t3397334013*, ByteU5BU5D_t3397334013* >::Invoke(17 /* System.Void Mono.Security.Cryptography.SymmetricTransform::ECB(System.Byte[],System.Byte[]) */, __this, L_3, L_4);
 		goto IL_0093;
 	}
 
@@ -798,7 +821,7 @@ IL_003a:
 	{
 		ByteU5BU5D_t3397334013* L_5 = ___input0;
 		ByteU5BU5D_t3397334013* L_6 = ___output1;
-		VirtActionInvoker2< ByteU5BU5D_t3397334013*, ByteU5BU5D_t3397334013* >::Invoke(12 /* System.Void Mono.Security.Cryptography.SymmetricTransform::CBC(System.Byte[],System.Byte[]) */, __this, L_5, L_6);
+		VirtActionInvoker2< ByteU5BU5D_t3397334013*, ByteU5BU5D_t3397334013* >::Invoke(18 /* System.Void Mono.Security.Cryptography.SymmetricTransform::CBC(System.Byte[],System.Byte[]) */, __this, L_5, L_6);
 		goto IL_0093;
 	}
 
@@ -806,7 +829,7 @@ IL_0047:
 	{
 		ByteU5BU5D_t3397334013* L_7 = ___input0;
 		ByteU5BU5D_t3397334013* L_8 = ___output1;
-		VirtActionInvoker2< ByteU5BU5D_t3397334013*, ByteU5BU5D_t3397334013* >::Invoke(13 /* System.Void Mono.Security.Cryptography.SymmetricTransform::CFB(System.Byte[],System.Byte[]) */, __this, L_7, L_8);
+		VirtActionInvoker2< ByteU5BU5D_t3397334013*, ByteU5BU5D_t3397334013* >::Invoke(19 /* System.Void Mono.Security.Cryptography.SymmetricTransform::CFB(System.Byte[],System.Byte[]) */, __this, L_7, L_8);
 		goto IL_0093;
 	}
 
@@ -814,7 +837,7 @@ IL_0054:
 	{
 		ByteU5BU5D_t3397334013* L_9 = ___input0;
 		ByteU5BU5D_t3397334013* L_10 = ___output1;
-		VirtActionInvoker2< ByteU5BU5D_t3397334013*, ByteU5BU5D_t3397334013* >::Invoke(14 /* System.Void Mono.Security.Cryptography.SymmetricTransform::OFB(System.Byte[],System.Byte[]) */, __this, L_9, L_10);
+		VirtActionInvoker2< ByteU5BU5D_t3397334013*, ByteU5BU5D_t3397334013* >::Invoke(20 /* System.Void Mono.Security.Cryptography.SymmetricTransform::OFB(System.Byte[],System.Byte[]) */, __this, L_9, L_10);
 		goto IL_0093;
 	}
 
@@ -822,7 +845,7 @@ IL_0061:
 	{
 		ByteU5BU5D_t3397334013* L_11 = ___input0;
 		ByteU5BU5D_t3397334013* L_12 = ___output1;
-		VirtActionInvoker2< ByteU5BU5D_t3397334013*, ByteU5BU5D_t3397334013* >::Invoke(15 /* System.Void Mono.Security.Cryptography.SymmetricTransform::CTS(System.Byte[],System.Byte[]) */, __this, L_11, L_12);
+		VirtActionInvoker2< ByteU5BU5D_t3397334013*, ByteU5BU5D_t3397334013* >::Invoke(21 /* System.Void Mono.Security.Cryptography.SymmetricTransform::CTS(System.Byte[],System.Byte[]) */, __this, L_11, L_12);
 		goto IL_0093;
 	}
 
@@ -892,7 +915,7 @@ IL_002a:
 	{
 		ByteU5BU5D_t3397334013* L_11 = __this->get_temp_3();
 		ByteU5BU5D_t3397334013* L_12 = ___output1;
-		VirtActionInvoker2< ByteU5BU5D_t3397334013*, ByteU5BU5D_t3397334013* >::Invoke(11 /* System.Void Mono.Security.Cryptography.SymmetricTransform::ECB(System.Byte[],System.Byte[]) */, __this, L_11, L_12);
+		VirtActionInvoker2< ByteU5BU5D_t3397334013*, ByteU5BU5D_t3397334013* >::Invoke(17 /* System.Void Mono.Security.Cryptography.SymmetricTransform::ECB(System.Byte[],System.Byte[]) */, __this, L_11, L_12);
 		ByteU5BU5D_t3397334013* L_13 = ___output1;
 		ByteU5BU5D_t3397334013* L_14 = __this->get_temp_3();
 		int32_t L_15 = __this->get_BlockSizeByte_2();
@@ -908,7 +931,7 @@ IL_005c:
 		Buffer_BlockCopy_m1586717258(NULL /*static, unused*/, (Il2CppArray *)(Il2CppArray *)L_16, 0, (Il2CppArray *)(Il2CppArray *)L_17, 0, L_18, /*hidden argument*/NULL);
 		ByteU5BU5D_t3397334013* L_19 = ___input0;
 		ByteU5BU5D_t3397334013* L_20 = ___output1;
-		VirtActionInvoker2< ByteU5BU5D_t3397334013*, ByteU5BU5D_t3397334013* >::Invoke(11 /* System.Void Mono.Security.Cryptography.SymmetricTransform::ECB(System.Byte[],System.Byte[]) */, __this, L_19, L_20);
+		VirtActionInvoker2< ByteU5BU5D_t3397334013*, ByteU5BU5D_t3397334013* >::Invoke(17 /* System.Void Mono.Security.Cryptography.SymmetricTransform::ECB(System.Byte[],System.Byte[]) */, __this, L_19, L_20);
 		V_1 = 0;
 		goto IL_0097;
 	}
@@ -973,7 +996,7 @@ IL_0012:
 	{
 		ByteU5BU5D_t3397334013* L_1 = __this->get_temp_3();
 		ByteU5BU5D_t3397334013* L_2 = __this->get_temp2_4();
-		VirtActionInvoker2< ByteU5BU5D_t3397334013*, ByteU5BU5D_t3397334013* >::Invoke(11 /* System.Void Mono.Security.Cryptography.SymmetricTransform::ECB(System.Byte[],System.Byte[]) */, __this, L_1, L_2);
+		VirtActionInvoker2< ByteU5BU5D_t3397334013*, ByteU5BU5D_t3397334013* >::Invoke(17 /* System.Void Mono.Security.Cryptography.SymmetricTransform::ECB(System.Byte[],System.Byte[]) */, __this, L_1, L_2);
 		V_1 = 0;
 		goto IL_0043;
 	}
@@ -1051,7 +1074,7 @@ IL_00b0:
 		__this->set_encrypt_1((bool)1);
 		ByteU5BU5D_t3397334013* L_32 = __this->get_temp_3();
 		ByteU5BU5D_t3397334013* L_33 = __this->get_temp2_4();
-		VirtActionInvoker2< ByteU5BU5D_t3397334013*, ByteU5BU5D_t3397334013* >::Invoke(11 /* System.Void Mono.Security.Cryptography.SymmetricTransform::ECB(System.Byte[],System.Byte[]) */, __this, L_32, L_33);
+		VirtActionInvoker2< ByteU5BU5D_t3397334013*, ByteU5BU5D_t3397334013* >::Invoke(17 /* System.Void Mono.Security.Cryptography.SymmetricTransform::ECB(System.Byte[],System.Byte[]) */, __this, L_32, L_33);
 		__this->set_encrypt_1((bool)0);
 		ByteU5BU5D_t3397334013* L_34 = __this->get_temp_3();
 		int32_t L_35 = __this->get_FeedBackByte_7();
@@ -1514,7 +1537,7 @@ IL_0045:
 	{
 		ByteU5BU5D_t3397334013* L_11 = __this->get_workBuff_5();
 		ByteU5BU5D_t3397334013* L_12 = __this->get_workout_6();
-		VirtActionInvoker2< ByteU5BU5D_t3397334013*, ByteU5BU5D_t3397334013* >::Invoke(10 /* System.Void Mono.Security.Cryptography.SymmetricTransform::Transform(System.Byte[],System.Byte[]) */, __this, L_11, L_12);
+		VirtActionInvoker2< ByteU5BU5D_t3397334013*, ByteU5BU5D_t3397334013* >::Invoke(16 /* System.Void Mono.Security.Cryptography.SymmetricTransform::Transform(System.Byte[],System.Byte[]) */, __this, L_11, L_12);
 		ByteU5BU5D_t3397334013* L_13 = __this->get_workout_6();
 		ByteU5BU5D_t3397334013* L_14 = ___outputBuffer3;
 		int32_t L_15 = ___outputOffset4;
@@ -1544,7 +1567,7 @@ IL_009c:
 		Buffer_BlockCopy_m1586717258(NULL /*static, unused*/, (Il2CppArray *)(Il2CppArray *)L_21, L_22, (Il2CppArray *)(Il2CppArray *)L_23, 0, L_24, /*hidden argument*/NULL);
 		ByteU5BU5D_t3397334013* L_25 = __this->get_workBuff_5();
 		ByteU5BU5D_t3397334013* L_26 = __this->get_workout_6();
-		VirtActionInvoker2< ByteU5BU5D_t3397334013*, ByteU5BU5D_t3397334013* >::Invoke(10 /* System.Void Mono.Security.Cryptography.SymmetricTransform::Transform(System.Byte[],System.Byte[]) */, __this, L_25, L_26);
+		VirtActionInvoker2< ByteU5BU5D_t3397334013*, ByteU5BU5D_t3397334013* >::Invoke(16 /* System.Void Mono.Security.Cryptography.SymmetricTransform::Transform(System.Byte[],System.Byte[]) */, __this, L_25, L_26);
 		ByteU5BU5D_t3397334013* L_27 = __this->get_workout_6();
 		ByteU5BU5D_t3397334013* L_28 = ___outputBuffer3;
 		int32_t L_29 = ___outputOffset4;
@@ -2100,7 +2123,7 @@ IL_0066:
 	{
 		ByteU5BU5D_t3397334013* L_22 = __this->get_workBuff_5();
 		ByteU5BU5D_t3397334013* L_23 = __this->get_workout_6();
-		VirtActionInvoker2< ByteU5BU5D_t3397334013*, ByteU5BU5D_t3397334013* >::Invoke(10 /* System.Void Mono.Security.Cryptography.SymmetricTransform::Transform(System.Byte[],System.Byte[]) */, __this, L_22, L_23);
+		VirtActionInvoker2< ByteU5BU5D_t3397334013*, ByteU5BU5D_t3397334013* >::Invoke(16 /* System.Void Mono.Security.Cryptography.SymmetricTransform::Transform(System.Byte[],System.Byte[]) */, __this, L_22, L_23);
 		ByteU5BU5D_t3397334013* L_24 = __this->get_workout_6();
 		ByteU5BU5D_t3397334013* L_25 = V_1;
 		int32_t L_26 = V_2;

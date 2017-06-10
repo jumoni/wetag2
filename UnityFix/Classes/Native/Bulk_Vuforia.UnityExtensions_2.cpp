@@ -722,7 +722,7 @@ extern Il2CppCodeGenString* _stringLiteral2172369320;
 extern Il2CppCodeGenString* _stringLiteral3833654800;
 extern const uint32_t VuMarkManagerImpl_CreateOrGetUnusedBehaviour_m4109115014_MetadataUsageId;
 extern const uint32_t VuMarkManagerImpl_GetVuMarkTemplate_m1492647889_MetadataUsageId;
-extern const MethodInfo* Object_Instantiate_TisGameObject_t1756533147_m3614337661_MethodInfo_var;
+extern const MethodInfo* Object_Instantiate_TisGameObject_t1756533147_m3664764861_MethodInfo_var;
 extern const MethodInfo* GameObject_GetComponent_TisVuMarkAbstractBehaviour_t1830666997_m2223927077_MethodInfo_var;
 extern const uint32_t VuMarkManagerImpl_CopyGameObject_m2594454544_MetadataUsageId;
 extern const MethodInfo* Enumerable_ToList_TisVuMarkAbstractBehaviour_t1830666997_m577402485_MethodInfo_var;
@@ -1523,7 +1523,7 @@ extern "C"  void DelegateHelper_InvokeWithExceptionHandling_TisInitError_t214939
 // System.Void System.Action`1<Vuforia.VuforiaUnity/InitError>::Invoke(!0)
 extern "C"  void Action_1_Invoke_m2649252155_gshared (Action_1_t1951195598 * __this, int32_t p0, const MethodInfo* method);
 // !!0 UnityEngine.GameObject::AddComponent<System.Object>()
-extern "C"  Il2CppObject * GameObject_AddComponent_TisIl2CppObject_m2231772097_gshared (GameObject_t1756533147 * __this, const MethodInfo* method);
+extern "C"  Il2CppObject * GameObject_AddComponent_TisIl2CppObject_m3813873105_gshared (GameObject_t1756533147 * __this, const MethodInfo* method);
 // System.Boolean System.Linq.Enumerable::Any<System.Object>(System.Collections.Generic.IEnumerable`1<!!0>)
 extern "C"  bool Enumerable_Any_TisIl2CppObject_m2208185096_gshared (Il2CppObject * __this /* static, unused */, Il2CppObject* p0, const MethodInfo* method);
 // System.Boolean System.Collections.Generic.Dictionary`2<System.Int32,System.Object>::ContainsKey(!0)
@@ -1593,9 +1593,9 @@ extern "C"  bool HashSet_1_Contains_m3728309091_gshared (HashSet_1_t405338302 * 
 // System.Boolean System.Collections.Generic.List`1<System.Object>::Remove(!0)
 extern "C"  bool List_1_Remove_m3164383811_gshared (List_1_t2058570427 * __this, Il2CppObject * p0, const MethodInfo* method);
 // !!0 UnityEngine.Object::Instantiate<System.Object>(!!0)
-extern "C"  Il2CppObject * Object_Instantiate_TisIl2CppObject_m2184336183_gshared (Il2CppObject * __this /* static, unused */, Il2CppObject * p0, const MethodInfo* method);
+extern "C"  Il2CppObject * Object_Instantiate_TisIl2CppObject_m447919519_gshared (Il2CppObject * __this /* static, unused */, Il2CppObject * p0, const MethodInfo* method);
 // !!0 UnityEngine.GameObject::GetComponent<System.Object>()
-extern "C"  Il2CppObject * GameObject_GetComponent_TisIl2CppObject_m4211544902_gshared (GameObject_t1756533147 * __this, const MethodInfo* method);
+extern "C"  Il2CppObject * GameObject_GetComponent_TisIl2CppObject_m2812611596_gshared (GameObject_t1756533147 * __this, const MethodInfo* method);
 // System.Collections.Generic.List`1<!!0> System.Linq.Enumerable::ToList<System.Object>(System.Collections.Generic.IEnumerable`1<!!0>)
 extern "C"  List_1_t2058570427 * Enumerable_ToList_TisIl2CppObject_m2472981332_gshared (Il2CppObject * __this /* static, unused */, Il2CppObject* p0, const MethodInfo* method);
 // System.Void System.Collections.Generic.Dictionary`2<System.Int32,System.Object>::.ctor()
@@ -2230,7 +2230,7 @@ extern "C"  Delegate_t3022476291 * Delegate_Remove_m2626518725 (Il2CppObject * _
 // System.Void UnityEngine.GameObject::.ctor(System.String)
 extern "C"  void GameObject__ctor_m962601984 (GameObject_t1756533147 * __this, String_t* p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // !!0 UnityEngine.GameObject::AddComponent<Vuforia.VuforiaDeinitBehaviour>()
-#define GameObject_AddComponent_TisVuforiaDeinitBehaviour_t3012637764_m2970997935(__this, method) ((  VuforiaDeinitBehaviour_t3012637764 * (*) (GameObject_t1756533147 *, const MethodInfo*))GameObject_AddComponent_TisIl2CppObject_m2231772097_gshared)(__this, method)
+#define GameObject_AddComponent_TisVuforiaDeinitBehaviour_t3012637764_m2970997935(__this, method) ((  VuforiaDeinitBehaviour_t3012637764 * (*) (GameObject_t1756533147 *, const MethodInfo*))GameObject_AddComponent_TisIl2CppObject_m3813873105_gshared)(__this, method)
 // System.Void UnityEngine.Object::set_hideFlags(UnityEngine.HideFlags)
 extern "C"  void Object_set_hideFlags_m2204253440 (Object_t1021602117 * __this, int32_t p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Boolean Vuforia.VuforiaRuntimeUtilities::IsWSARuntime()
@@ -2536,9 +2536,9 @@ extern "C"  VuMarkAbstractBehaviour_t1830666997 * VuMarkManagerImpl_CopyGameObje
 // System.Void Vuforia.DelegateHelper::InvokeWithExceptionHandling<Vuforia.VuMarkAbstractBehaviour>(System.Action`1<T>,T)
 #define DelegateHelper_InvokeWithExceptionHandling_TisVuMarkAbstractBehaviour_t1830666997_m2100424390(__this /* static, unused */, ___action0, ___arg1, method) ((  void (*) (Il2CppObject * /* static, unused */, Action_1_t1632466379 *, VuMarkAbstractBehaviour_t1830666997 *, const MethodInfo*))DelegateHelper_InvokeWithExceptionHandling_TisIl2CppObject_m126668859_gshared)(__this /* static, unused */, ___action0, ___arg1, method)
 // !!0 UnityEngine.Object::Instantiate<UnityEngine.GameObject>(!!0)
-#define Object_Instantiate_TisGameObject_t1756533147_m3614337661(__this /* static, unused */, p0, method) ((  GameObject_t1756533147 * (*) (Il2CppObject * /* static, unused */, GameObject_t1756533147 *, const MethodInfo*))Object_Instantiate_TisIl2CppObject_m2184336183_gshared)(__this /* static, unused */, p0, method)
+#define Object_Instantiate_TisGameObject_t1756533147_m3664764861(__this /* static, unused */, p0, method) ((  GameObject_t1756533147 * (*) (Il2CppObject * /* static, unused */, GameObject_t1756533147 *, const MethodInfo*))Object_Instantiate_TisIl2CppObject_m447919519_gshared)(__this /* static, unused */, p0, method)
 // !!0 UnityEngine.GameObject::GetComponent<Vuforia.VuMarkAbstractBehaviour>()
-#define GameObject_GetComponent_TisVuMarkAbstractBehaviour_t1830666997_m2223927077(__this, method) ((  VuMarkAbstractBehaviour_t1830666997 * (*) (GameObject_t1756533147 *, const MethodInfo*))GameObject_GetComponent_TisIl2CppObject_m4211544902_gshared)(__this, method)
+#define GameObject_GetComponent_TisVuMarkAbstractBehaviour_t1830666997_m2223927077(__this, method) ((  VuMarkAbstractBehaviour_t1830666997 * (*) (GameObject_t1756533147 *, const MethodInfo*))GameObject_GetComponent_TisIl2CppObject_m2812611596_gshared)(__this, method)
 // System.Void Vuforia.VuMarkAbstractBehaviour::set_VuMarkResultId(System.Int32)
 extern "C"  void VuMarkAbstractBehaviour_set_VuMarkResultId_m2892526623 (VuMarkAbstractBehaviour_t1830666997 * __this, int32_t ___value0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void UnityEngine.GameObject::SetActive(System.Boolean)
@@ -2994,7 +2994,7 @@ extern "C"  void WordAbstractBehaviour_InitializeWord_m1938025803 (WordAbstractB
 // System.Void System.Collections.Generic.Dictionary`2<System.Int32,Vuforia.WordAbstractBehaviour>::Add(!0,!1)
 #define Dictionary_2_Add_m938495191(__this, p0, p1, method) ((  void (*) (Dictionary_2_t1886284360 *, int32_t, WordAbstractBehaviour_t2878458725 *, const MethodInfo*))Dictionary_2_Add_m1296007576_gshared)(__this, p0, p1, method)
 // !!0 UnityEngine.GameObject::GetComponent<Vuforia.WordAbstractBehaviour>()
-#define GameObject_GetComponent_TisWordAbstractBehaviour_t2878458725_m4244081605(__this, method) ((  WordAbstractBehaviour_t2878458725 * (*) (GameObject_t1756533147 *, const MethodInfo*))GameObject_GetComponent_TisIl2CppObject_m4211544902_gshared)(__this, method)
+#define GameObject_GetComponent_TisWordAbstractBehaviour_t2878458725_m4244081605(__this, method) ((  WordAbstractBehaviour_t2878458725 * (*) (GameObject_t1756533147 *, const MethodInfo*))GameObject_GetComponent_TisIl2CppObject_m2812611596_gshared)(__this, method)
 // Vuforia.IBehaviourComponentFactory Vuforia.BehaviourComponentFactory::get_Instance()
 extern "C"  Il2CppObject * BehaviourComponentFactory_get_Instance_m3607279548 (Il2CppObject * __this /* static, unused */, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Collections.Generic.Dictionary`2<System.Int32,Vuforia.WordResult>::.ctor()
@@ -18437,7 +18437,7 @@ extern "C"  VuMarkAbstractBehaviour_t1830666997 * VuMarkManagerImpl_CopyGameObje
 		NullCheck(L_0);
 		GameObject_t1756533147 * L_1 = Component_get_gameObject_m3105766835(L_0, /*hidden argument*/NULL);
 		IL2CPP_RUNTIME_CLASS_INIT(Object_t1021602117_il2cpp_TypeInfo_var);
-		GameObject_t1756533147 * L_2 = Object_Instantiate_TisGameObject_t1756533147_m3614337661(NULL /*static, unused*/, L_1, /*hidden argument*/Object_Instantiate_TisGameObject_t1756533147_m3614337661_MethodInfo_var);
+		GameObject_t1756533147 * L_2 = Object_Instantiate_TisGameObject_t1756533147_m3664764861(NULL /*static, unused*/, L_1, /*hidden argument*/Object_Instantiate_TisGameObject_t1756533147_m3664764861_MethodInfo_var);
 		NullCheck(L_2);
 		VuMarkAbstractBehaviour_t1830666997 * L_3 = GameObject_GetComponent_TisVuMarkAbstractBehaviour_t1830666997_m2223927077(L_2, /*hidden argument*/GameObject_GetComponent_TisVuMarkAbstractBehaviour_t1830666997_m2223927077_MethodInfo_var);
 		VuMarkAbstractBehaviour_t1830666997 * L_4 = L_3;
@@ -24144,7 +24144,7 @@ extern "C"  WordAbstractBehaviour_t2878458725 * WordManagerImpl_InstantiateWordB
 		NullCheck(L_0);
 		GameObject_t1756533147 * L_1 = Component_get_gameObject_m3105766835(L_0, /*hidden argument*/NULL);
 		IL2CPP_RUNTIME_CLASS_INIT(Object_t1021602117_il2cpp_TypeInfo_var);
-		GameObject_t1756533147 * L_2 = Object_Instantiate_TisGameObject_t1756533147_m3614337661(NULL /*static, unused*/, L_1, /*hidden argument*/Object_Instantiate_TisGameObject_t1756533147_m3614337661_MethodInfo_var);
+		GameObject_t1756533147 * L_2 = Object_Instantiate_TisGameObject_t1756533147_m3664764861(NULL /*static, unused*/, L_1, /*hidden argument*/Object_Instantiate_TisGameObject_t1756533147_m3664764861_MethodInfo_var);
 		NullCheck(L_2);
 		WordAbstractBehaviour_t2878458725 * L_3 = GameObject_GetComponent_TisWordAbstractBehaviour_t2878458725_m4244081605(L_2, /*hidden argument*/GameObject_GetComponent_TisWordAbstractBehaviour_t2878458725_m4244081605_MethodInfo_var);
 		return L_3;

@@ -131,7 +131,6 @@ extern "C" void VuforiaRenderEvent(int marker);
 #endif
 }
 
-
 - (void)preStartUnity               {}
 
 

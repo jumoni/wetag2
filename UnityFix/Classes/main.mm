@@ -20,7 +20,7 @@ const char* AppControllerClassName = "UnityAppController";
 //    {
 //        UnitySetStartupTime(startTime);
 //        UnityInitTrampoline();
-//        UnityInitRunTimeUnityInitRunTimeUnityInitRunTime(argc, argv);
+//        UnityInitRuntime(argc, argv);
 //
 //        RegisterMonoModules();
 //        NSLog(@"-> registered mono modules %p\n", &constsection);
@@ -61,6 +61,7 @@ int main_unity_default(int argc, char* argv[])
     
     return 0;
 }
+
 
 #if TARGET_IPHONE_SIMULATOR && TARGET_TVOS_SIMULATOR
 

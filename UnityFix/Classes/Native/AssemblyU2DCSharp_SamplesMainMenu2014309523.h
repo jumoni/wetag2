@@ -91,8 +91,8 @@ public:
 	bool ___isAboutScreenVisible_5;
 	// SamplesMainMenu/MenuItem SamplesMainMenu::menuItem
 	int32_t ___menuItem_6;
-	// System.Collections.Generic.Dictionary`2<System.String,System.Int32> SamplesMainMenu::<>f__switch$map0
-	Dictionary_2_t3986656710 * ___U3CU3Ef__switchU24map0_10;
+	// System.Collections.Generic.Dictionary`2<System.String,System.Int32> SamplesMainMenu::<>f__switch$map2
+	Dictionary_2_t3986656710 * ___U3CU3Ef__switchU24map2_10;
 
 public:
 	inline static int32_t get_offset_of_isAboutScreenVisible_5() { return static_cast<int32_t>(offsetof(SamplesMainMenu_t2014309523_StaticFields, ___isAboutScreenVisible_5)); }
@@ -111,13 +111,13 @@ public:
 		___menuItem_6 = value;
 	}
 
-	inline static int32_t get_offset_of_U3CU3Ef__switchU24map0_10() { return static_cast<int32_t>(offsetof(SamplesMainMenu_t2014309523_StaticFields, ___U3CU3Ef__switchU24map0_10)); }
-	inline Dictionary_2_t3986656710 * get_U3CU3Ef__switchU24map0_10() const { return ___U3CU3Ef__switchU24map0_10; }
-	inline Dictionary_2_t3986656710 ** get_address_of_U3CU3Ef__switchU24map0_10() { return &___U3CU3Ef__switchU24map0_10; }
-	inline void set_U3CU3Ef__switchU24map0_10(Dictionary_2_t3986656710 * value)
+	inline static int32_t get_offset_of_U3CU3Ef__switchU24map2_10() { return static_cast<int32_t>(offsetof(SamplesMainMenu_t2014309523_StaticFields, ___U3CU3Ef__switchU24map2_10)); }
+	inline Dictionary_2_t3986656710 * get_U3CU3Ef__switchU24map2_10() const { return ___U3CU3Ef__switchU24map2_10; }
+	inline Dictionary_2_t3986656710 ** get_address_of_U3CU3Ef__switchU24map2_10() { return &___U3CU3Ef__switchU24map2_10; }
+	inline void set_U3CU3Ef__switchU24map2_10(Dictionary_2_t3986656710 * value)
 	{
-		___U3CU3Ef__switchU24map0_10 = value;
-		Il2CppCodeGenWriteBarrier(&___U3CU3Ef__switchU24map0_10, value);
+		___U3CU3Ef__switchU24map2_10 = value;
+		Il2CppCodeGenWriteBarrier(&___U3CU3Ef__switchU24map2_10, value);
 	}
 };
 

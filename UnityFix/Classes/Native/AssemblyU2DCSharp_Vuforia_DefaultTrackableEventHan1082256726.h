@@ -11,6 +11,7 @@
 #include <stdint.h>
 
 #include "UnityEngine_UnityEngine_MonoBehaviour1158329972.h"
+#include "UnityEngine_UnityEngine_Vector32243707580.h"
 
 // Vuforia.TrackableBehaviour
 struct TrackableBehaviour_t1779888572;
@@ -30,6 +31,10 @@ struct  DefaultTrackableEventHandler_t1082256726  : public MonoBehaviour_t115832
 public:
 	// Vuforia.TrackableBehaviour Vuforia.DefaultTrackableEventHandler::mTrackableBehaviour
 	TrackableBehaviour_t1779888572 * ___mTrackableBehaviour_2;
+	// UnityEngine.Vector3 Vuforia.DefaultTrackableEventHandler::lastPos
+	Vector3_t2243707580  ___lastPos_3;
+	// System.Boolean Vuforia.DefaultTrackableEventHandler::first
+	bool ___first_4;
 
 public:
 	inline static int32_t get_offset_of_mTrackableBehaviour_2() { return static_cast<int32_t>(offsetof(DefaultTrackableEventHandler_t1082256726, ___mTrackableBehaviour_2)); }
@@ -39,6 +44,22 @@ public:
 	{
 		___mTrackableBehaviour_2 = value;
 		Il2CppCodeGenWriteBarrier(&___mTrackableBehaviour_2, value);
+	}
+
+	inline static int32_t get_offset_of_lastPos_3() { return static_cast<int32_t>(offsetof(DefaultTrackableEventHandler_t1082256726, ___lastPos_3)); }
+	inline Vector3_t2243707580  get_lastPos_3() const { return ___lastPos_3; }
+	inline Vector3_t2243707580 * get_address_of_lastPos_3() { return &___lastPos_3; }
+	inline void set_lastPos_3(Vector3_t2243707580  value)
+	{
+		___lastPos_3 = value;
+	}
+
+	inline static int32_t get_offset_of_first_4() { return static_cast<int32_t>(offsetof(DefaultTrackableEventHandler_t1082256726, ___first_4)); }
+	inline bool get_first_4() const { return ___first_4; }
+	inline bool* get_address_of_first_4() { return &___first_4; }
+	inline void set_first_4(bool value)
+	{
+		___first_4 = value;
 	}
 };
 

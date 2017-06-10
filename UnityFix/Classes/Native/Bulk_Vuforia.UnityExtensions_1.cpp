@@ -996,7 +996,7 @@ extern const MethodInfo* Object_Instantiate_TisMesh_t1356156583_m2599955457_Meth
 extern const uint32_t ReconstructionAbstractBehaviour_ScaleEditorMeshesByFactor_m2714981886_MetadataUsageId;
 extern const MethodInfo* Component_GetComponentsInChildren_TisPropAbstractBehaviour_t1047177596_m2329368187_MethodInfo_var;
 extern const uint32_t ReconstructionAbstractBehaviour_ScaleEditorPropPositionsByFactor_m2992528058_MetadataUsageId;
-extern const MethodInfo* Object_Instantiate_TisGameObject_t1756533147_m3614337661_MethodInfo_var;
+extern const MethodInfo* Object_Instantiate_TisGameObject_t1756533147_m3664764861_MethodInfo_var;
 extern const MethodInfo* GameObject_GetComponent_TisPropAbstractBehaviour_t1047177596_m4166805674_MethodInfo_var;
 extern const uint32_t ReconstructionAbstractBehaviour_InstantiatePropBehaviour_m2652920676_MetadataUsageId;
 extern const MethodInfo* GameObject_GetComponent_TisSurfaceAbstractBehaviour_t2669615494_m3756579306_MethodInfo_var;
@@ -1243,7 +1243,7 @@ extern const MethodInfo* Enumerable_ToArray_TisInt32_t2071877448_m4256125082_Met
 extern const uint32_t StateManagerImpl_RemoveDestroyedTrackables_m3493103741_MetadataUsageId;
 extern const MethodInfo* Dictionary_2_Clear_m946355513_MethodInfo_var;
 extern const MethodInfo* List_1_Clear_m3754318129_MethodInfo_var;
-extern const MethodInfo* List_1_Clear_m1375489236_MethodInfo_var;
+extern const MethodInfo* List_1_Clear_m3644677550_MethodInfo_var;
 extern const uint32_t StateManagerImpl_ClearTrackableBehaviours_m948612896_MetadataUsageId;
 extern Il2CppClass* IBehaviourComponentFactory_t3575155525_il2cpp_TypeInfo_var;
 extern Il2CppClass* ImageTargetAbstractBehaviour_t3327552701_il2cpp_TypeInfo_var;
@@ -1467,7 +1467,7 @@ extern Il2CppClass* Vector2U5BU5D_t686124026_il2cpp_TypeInfo_var;
 extern const MethodInfo* GameObject_AddComponent_TisCamera_t189460977_m408472993_MethodInfo_var;
 extern const MethodInfo* GameObject_GetComponent_TisMeshRenderer_t1268241104_m3084294969_MethodInfo_var;
 extern const MethodInfo* GameObject_GetComponent_TisMeshFilter_t3026937449_m1728707518_MethodInfo_var;
-extern FieldInfo* U3CPrivateImplementationDetailsU3E_t1486305141____898C2022A0C02FCE602BF05E1C09BD48301606E5_0_FieldInfo_var;
+extern FieldInfo* U3CPrivateImplementationDetailsU3E_t1486305142____898C2022A0C02FCE602BF05E1C09BD48301606E5_0_FieldInfo_var;
 extern Il2CppCodeGenString* _stringLiteral3322629072;
 extern Il2CppCodeGenString* _stringLiteral2322865604;
 extern Il2CppCodeGenString* _stringLiteral79588818;
@@ -1547,7 +1547,7 @@ extern const uint32_t VideoBackgroundAbstractBehaviour_DisconnectFromBackgroundB
 extern Il2CppClass* VideoBackgroundAbstractBehaviour_t395384314_il2cpp_TypeInfo_var;
 extern Il2CppClass* VuforiaManagerImpl_t3289840897_il2cpp_TypeInfo_var;
 extern const uint32_t VideoBackgroundAbstractBehaviour_RenderOnUpdate_m1780198690_MetadataUsageId;
-extern const MethodInfo* Component_GetComponent_TisCamera_t189460977_m1978993906_MethodInfo_var;
+extern const MethodInfo* Component_GetComponent_TisCamera_t189460977_m3276577584_MethodInfo_var;
 extern const MethodInfo* VideoBackgroundAbstractBehaviour_RenderOnUpdate_m1780198690_MethodInfo_var;
 extern const uint32_t VideoBackgroundAbstractBehaviour_Awake_m2283072941_MetadataUsageId;
 extern Il2CppClass* Display_t3666191348_il2cpp_TypeInfo_var;
@@ -1577,8 +1577,8 @@ extern Il2CppClass* HashSet_1_t3023812464_il2cpp_TypeInfo_var;
 extern Il2CppClass* HashSet_1_t2066406581_il2cpp_TypeInfo_var;
 extern Il2CppClass* HashSet_1_t1021038181_il2cpp_TypeInfo_var;
 extern Il2CppClass* ICameraConfiguration_t2507317352_il2cpp_TypeInfo_var;
-extern const MethodInfo* List_1__ctor_m4060301668_MethodInfo_var;
-extern const MethodInfo* List_1_Add_m2950330400_MethodInfo_var;
+extern const MethodInfo* List_1__ctor_m704351054_MethodInfo_var;
+extern const MethodInfo* List_1_Add_m3441471442_MethodInfo_var;
 extern const MethodInfo* HashSet_1__ctor_m2242826610_MethodInfo_var;
 extern const MethodInfo* List_1_GetEnumerator_m551074735_MethodInfo_var;
 extern const MethodInfo* Enumerator_get_Current_m672581823_MethodInfo_var;
@@ -1944,7 +1944,7 @@ extern const MethodInfo* Dictionary_2__ctor_m942879653_MethodInfo_var;
 extern const MethodInfo* Dictionary_2_ContainsKey_m539864208_MethodInfo_var;
 extern const MethodInfo* Dictionary_2_set_Item_m3898378626_MethodInfo_var;
 extern const MethodInfo* Dictionary_2_get_Item_m644204263_MethodInfo_var;
-extern const MethodInfo* List_1_get_Count_m3338876699_MethodInfo_var;
+extern const MethodInfo* List_1_get_Count_m852068579_MethodInfo_var;
 extern const MethodInfo* List_1_RemoveAt_m718233485_MethodInfo_var;
 extern const MethodInfo* Enumerable_ToList_TisVuMarkTargetResultData_t4188455712_m3664517786_MethodInfo_var;
 extern const MethodInfo* List_1_Add_m1682697872_MethodInfo_var;
@@ -3163,9 +3163,9 @@ extern "C"  void Enumerator_Dispose_m2243145188_gshared (Enumerator_t3017299632 
 // !!0[] UnityEngine.Component::GetComponentsInChildren<System.Object>()
 extern "C"  ObjectU5BU5D_t3614634134* Component_GetComponentsInChildren_TisIl2CppObject_m1631085023_gshared (Component_t3819376471 * __this, const MethodInfo* method);
 // !!0 UnityEngine.Object::Instantiate<System.Object>(!!0)
-extern "C"  Il2CppObject * Object_Instantiate_TisIl2CppObject_m2184336183_gshared (Il2CppObject * __this /* static, unused */, Il2CppObject * p0, const MethodInfo* method);
+extern "C"  Il2CppObject * Object_Instantiate_TisIl2CppObject_m447919519_gshared (Il2CppObject * __this /* static, unused */, Il2CppObject * p0, const MethodInfo* method);
 // !!0 UnityEngine.GameObject::GetComponent<System.Object>()
-extern "C"  Il2CppObject * GameObject_GetComponent_TisIl2CppObject_m4211544902_gshared (GameObject_t1756533147 * __this, const MethodInfo* method);
+extern "C"  Il2CppObject * GameObject_GetComponent_TisIl2CppObject_m2812611596_gshared (GameObject_t1756533147 * __this, const MethodInfo* method);
 // System.Void Vuforia.DelegateHelper::InvokeWithExceptionHandling<System.Object>(System.Action`1<T>,T)
 extern "C"  void DelegateHelper_InvokeWithExceptionHandling_TisIl2CppObject_m126668859_gshared (Il2CppObject * __this /* static, unused */, Action_1_t2491248677 * ___action0, Il2CppObject * ___arg1, const MethodInfo* method);
 // System.Boolean System.Collections.Generic.Dictionary`2<System.Int32,System.Object>::Remove(!0)
@@ -3209,7 +3209,7 @@ extern "C"  void Dictionary_2_set_Item_m3180425769_gshared (Dictionary_2_t169727
 // !!0[] System.Linq.Enumerable::ToArray<System.Int32>(System.Collections.Generic.IEnumerable`1<!!0>)
 extern "C"  Int32U5BU5D_t3030399641* Enumerable_ToArray_TisInt32_t2071877448_m4256125082_gshared (Il2CppObject * __this /* static, unused */, Il2CppObject* p0, const MethodInfo* method);
 // System.Void System.Collections.Generic.List`1<System.Int32>::Clear()
-extern "C"  void List_1_Clear_m1375489236_gshared (List_1_t1440998580 * __this, const MethodInfo* method);
+extern "C"  void List_1_Clear_m3644677550_gshared (List_1_t1440998580 * __this, const MethodInfo* method);
 // System.Collections.Generic.LinkedListNode`1<!0> System.Collections.Generic.LinkedList`1<Vuforia.VuforiaManager/TrackableIdPair>::get_First()
 extern "C"  LinkedListNode_1_t225461189 * LinkedList_1_get_First_m498112509_gshared (LinkedList_1_t1634063505 * __this, const MethodInfo* method);
 // System.Collections.Generic.LinkedListNode`1<!0> System.Collections.Generic.LinkedListNode`1<Vuforia.VuforiaManager/TrackableIdPair>::get_Next()
@@ -3237,7 +3237,7 @@ extern "C"  void List_1_Add_m688682013_gshared (List_1_t1440998580 * __this, int
 // System.Void System.Collections.Generic.List`1<System.Int32>::.ctor()
 extern "C"  void List_1__ctor_m1598946593_gshared (List_1_t1440998580 * __this, const MethodInfo* method);
 // !!0 UnityEngine.Component::GetComponentInChildren<System.Object>()
-extern "C"  Il2CppObject * Component_GetComponentInChildren_TisIl2CppObject_m2641795278_gshared (Component_t3819376471 * __this, const MethodInfo* method);
+extern "C"  Il2CppObject * Component_GetComponentInChildren_TisIl2CppObject_m2461586036_gshared (Component_t3819376471 * __this, const MethodInfo* method);
 // !1 System.Collections.Generic.Dictionary`2<System.Object,System.Object>::get_Item(!0)
 extern "C"  Il2CppObject * Dictionary_2_get_Item_m4062719145_gshared (Dictionary_2_t2281509423 * __this, Il2CppObject * p0, const MethodInfo* method);
 // System.Void System.Collections.Generic.List`1<Vuforia.TargetFinder/TargetSearchResult>::.ctor()
@@ -3245,7 +3245,7 @@ extern "C"  void List_1__ctor_m2666023750_gshared (List_1_t1327847638 * __this, 
 // System.Void System.Collections.Generic.List`1<Vuforia.TargetFinder/TargetSearchResult>::Add(!0)
 extern "C"  void List_1_Add_m3975453498_gshared (List_1_t1327847638 * __this, TargetSearchResult_t1958726506  p0, const MethodInfo* method);
 // !!0 UnityEngine.GameObject::AddComponent<System.Object>()
-extern "C"  Il2CppObject * GameObject_AddComponent_TisIl2CppObject_m2231772097_gshared (GameObject_t1756533147 * __this, const MethodInfo* method);
+extern "C"  Il2CppObject * GameObject_AddComponent_TisIl2CppObject_m3813873105_gshared (GameObject_t1756533147 * __this, const MethodInfo* method);
 // !1 System.Collections.Generic.Dictionary`2<System.Object,System.UInt16>::get_Item(!0)
 extern "C"  uint16_t Dictionary_2_get_Item_m3892127677_gshared (Dictionary_2_t578942739 * __this, Il2CppObject * p0, const MethodInfo* method);
 // System.Void System.Collections.Generic.Dictionary`2<System.Object,System.UInt16>::.ctor()
@@ -3341,7 +3341,7 @@ extern "C"  void Enumerator_Dispose_m2767861417_gshared (Enumerator_t456969527 *
 // !!0[] System.Linq.Enumerable::ToArray<Vuforia.VuforiaManager/TrackableIdPair>(System.Collections.Generic.IEnumerable`1<!!0>)
 extern "C"  TrackableIdPairU5BU5D_t961847365* Enumerable_ToArray_TisTrackableIdPair_t1329355276_m2018147143_gshared (Il2CppObject * __this /* static, unused */, Il2CppObject* p0, const MethodInfo* method);
 // System.Int32 System.Collections.Generic.List`1<System.Int32>::get_Count()
-extern "C"  int32_t List_1_get_Count_m3338876699_gshared (List_1_t1440998580 * __this, const MethodInfo* method);
+extern "C"  int32_t List_1_get_Count_m852068579_gshared (List_1_t1440998580 * __this, const MethodInfo* method);
 // System.Void System.Collections.Generic.List`1<System.Int32>::RemoveAt(System.Int32)
 extern "C"  void List_1_RemoveAt_m718233485_gshared (List_1_t1440998580 * __this, int32_t p0, const MethodInfo* method);
 // System.Collections.Generic.List`1<!!0> System.Linq.Enumerable::ToList<Vuforia.VuforiaManagerImpl/VuMarkTargetResultData>(System.Collections.Generic.IEnumerable`1<!!0>)
@@ -3564,7 +3564,7 @@ extern "C"  Mesh_t1356156583 * MeshFilter_get_sharedMesh_m1310789932 (MeshFilter
 // UnityEngine.Vector3[] UnityEngine.Mesh::get_vertices()
 extern "C"  Vector3U5BU5D_t1172311765* Mesh_get_vertices_m626989480 (Mesh_t1356156583 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // !!0 UnityEngine.Object::Instantiate<UnityEngine.Mesh>(!!0)
-#define Object_Instantiate_TisMesh_t1356156583_m2599955457(__this /* static, unused */, p0, method) ((  Mesh_t1356156583 * (*) (Il2CppObject * /* static, unused */, Mesh_t1356156583 *, const MethodInfo*))Object_Instantiate_TisIl2CppObject_m2184336183_gshared)(__this /* static, unused */, p0, method)
+#define Object_Instantiate_TisMesh_t1356156583_m2599955457(__this /* static, unused */, p0, method) ((  Mesh_t1356156583 * (*) (Il2CppObject * /* static, unused */, Mesh_t1356156583 *, const MethodInfo*))Object_Instantiate_TisIl2CppObject_m447919519_gshared)(__this /* static, unused */, p0, method)
 // System.Void UnityEngine.Mesh::set_vertices(UnityEngine.Vector3[])
 extern "C"  void Mesh_set_vertices_m2936804213 (Mesh_t1356156583 * __this, Vector3U5BU5D_t1172311765* p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void UnityEngine.MeshFilter::set_sharedMesh(UnityEngine.Mesh)
@@ -3576,13 +3576,13 @@ extern "C"  AsyncOperation_t3814632279 * Resources_UnloadUnusedAssets_m277002560
 // UnityEngine.Vector3 UnityEngine.Transform::get_localPosition()
 extern "C"  Vector3_t2243707580  Transform_get_localPosition_m2533925116 (Transform_t3275118058 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // !!0 UnityEngine.Object::Instantiate<UnityEngine.GameObject>(!!0)
-#define Object_Instantiate_TisGameObject_t1756533147_m3614337661(__this /* static, unused */, p0, method) ((  GameObject_t1756533147 * (*) (Il2CppObject * /* static, unused */, GameObject_t1756533147 *, const MethodInfo*))Object_Instantiate_TisIl2CppObject_m2184336183_gshared)(__this /* static, unused */, p0, method)
+#define Object_Instantiate_TisGameObject_t1756533147_m3664764861(__this /* static, unused */, p0, method) ((  GameObject_t1756533147 * (*) (Il2CppObject * /* static, unused */, GameObject_t1756533147 *, const MethodInfo*))Object_Instantiate_TisIl2CppObject_m447919519_gshared)(__this /* static, unused */, p0, method)
 // !!0 UnityEngine.GameObject::GetComponent<Vuforia.PropAbstractBehaviour>()
-#define GameObject_GetComponent_TisPropAbstractBehaviour_t1047177596_m4166805674(__this, method) ((  PropAbstractBehaviour_t1047177596 * (*) (GameObject_t1756533147 *, const MethodInfo*))GameObject_GetComponent_TisIl2CppObject_m4211544902_gshared)(__this, method)
+#define GameObject_GetComponent_TisPropAbstractBehaviour_t1047177596_m4166805674(__this, method) ((  PropAbstractBehaviour_t1047177596 * (*) (GameObject_t1756533147 *, const MethodInfo*))GameObject_GetComponent_TisIl2CppObject_m2812611596_gshared)(__this, method)
 // System.Void Vuforia.PropAbstractBehaviour::InitializeProp(Vuforia.Prop)
 extern "C"  void PropAbstractBehaviour_InitializeProp_m1798106226 (PropAbstractBehaviour_t1047177596 * __this, Il2CppObject * ___prop0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // !!0 UnityEngine.GameObject::GetComponent<Vuforia.SurfaceAbstractBehaviour>()
-#define GameObject_GetComponent_TisSurfaceAbstractBehaviour_t2669615494_m3756579306(__this, method) ((  SurfaceAbstractBehaviour_t2669615494 * (*) (GameObject_t1756533147 *, const MethodInfo*))GameObject_GetComponent_TisIl2CppObject_m4211544902_gshared)(__this, method)
+#define GameObject_GetComponent_TisSurfaceAbstractBehaviour_t2669615494_m3756579306(__this, method) ((  SurfaceAbstractBehaviour_t2669615494 * (*) (GameObject_t1756533147 *, const MethodInfo*))GameObject_GetComponent_TisIl2CppObject_m2812611596_gshared)(__this, method)
 // System.Void Vuforia.SurfaceAbstractBehaviour::InitializeSurface(Vuforia.Surface)
 extern "C"  void SurfaceAbstractBehaviour_InitializeSurface_m2451600064 (SurfaceAbstractBehaviour_t2669615494 * __this, Il2CppObject * ___surface0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Boolean System.Collections.Generic.Dictionary`2<System.Int32,Vuforia.Surface>::ContainsKey(!0)
@@ -4004,13 +4004,13 @@ extern "C"  String_t* String_Concat_m56707527 (Il2CppObject * __this /* static, 
 // System.Void System.Collections.Generic.List`1<Vuforia.TrackableBehaviour>::Clear()
 #define List_1_Clear_m3754318129(__this, method) ((  void (*) (List_1_t1149009704 *, const MethodInfo*))List_1_Clear_m4254626809_gshared)(__this, method)
 // System.Void System.Collections.Generic.List`1<System.Int32>::Clear()
-#define List_1_Clear_m1375489236(__this, method) ((  void (*) (List_1_t1440998580 *, const MethodInfo*))List_1_Clear_m1375489236_gshared)(__this, method)
+#define List_1_Clear_m3644677550(__this, method) ((  void (*) (List_1_t1440998580 *, const MethodInfo*))List_1_Clear_m3644677550_gshared)(__this, method)
 // System.Void Vuforia.VuMarkManagerImpl::ClearBehaviours()
 extern "C"  void VuMarkManagerImpl_ClearBehaviours_m3239519372 (VuMarkManagerImpl_t1660847547 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // Vuforia.ImageTargetAbstractBehaviour Vuforia.StateManagerImpl::FindOrCreateImageTargetBehaviourForTrackable(Vuforia.ImageTarget,UnityEngine.GameObject,Vuforia.DataSet)
 extern "C"  ImageTargetAbstractBehaviour_t3327552701 * StateManagerImpl_FindOrCreateImageTargetBehaviourForTrackable_m1783817517 (StateManagerImpl_t3885489748 * __this, Il2CppObject * ___trackable0, GameObject_t1756533147 * ___gameObject1, DataSet_t626511550 * ___dataSet2, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // !!0 UnityEngine.GameObject::GetComponent<Vuforia.DataSetTrackableBehaviour>()
-#define GameObject_GetComponent_TisDataSetTrackableBehaviour_t3452781876_m3435722506(__this, method) ((  DataSetTrackableBehaviour_t3452781876 * (*) (GameObject_t1756533147 *, const MethodInfo*))GameObject_GetComponent_TisIl2CppObject_m4211544902_gshared)(__this, method)
+#define GameObject_GetComponent_TisDataSetTrackableBehaviour_t3452781876_m3435722506(__this, method) ((  DataSetTrackableBehaviour_t3452781876 * (*) (GameObject_t1756533147 *, const MethodInfo*))GameObject_GetComponent_TisIl2CppObject_m2812611596_gshared)(__this, method)
 // Vuforia.IBehaviourComponentFactory Vuforia.BehaviourComponentFactory::get_Instance()
 extern "C"  Il2CppObject * BehaviourComponentFactory_get_Instance_m3607279548 (Il2CppObject * __this /* static, unused */, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Type System.Object::GetType()
@@ -4172,11 +4172,11 @@ extern "C"  void Object_set_name_m4157836998 (Object_t1021602117 * __this, Strin
 // System.Void UnityEngine.Material::.ctor(UnityEngine.Shader)
 extern "C"  void Material__ctor_m1897560860 (Material_t193706927 * __this, Shader_t2430389951 * p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // !!0 UnityEngine.GameObject::GetComponent<UnityEngine.Renderer>()
-#define GameObject_GetComponent_TisRenderer_t257310565_m697787402(__this, method) ((  Renderer_t257310565 * (*) (GameObject_t1756533147 *, const MethodInfo*))GameObject_GetComponent_TisIl2CppObject_m4211544902_gshared)(__this, method)
+#define GameObject_GetComponent_TisRenderer_t257310565_m697787402(__this, method) ((  Renderer_t257310565 * (*) (GameObject_t1756533147 *, const MethodInfo*))GameObject_GetComponent_TisIl2CppObject_m2812611596_gshared)(__this, method)
 // System.Void UnityEngine.Renderer::set_material(UnityEngine.Material)
 extern "C"  void Renderer_set_material_m1053097112 (Renderer_t257310565 * __this, Material_t193706927 * p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // !!0 UnityEngine.GameObject::GetComponent<UnityEngine.Collider>()
-#define GameObject_GetComponent_TisCollider_t3497673348_m4279804853(__this, method) ((  Collider_t3497673348 * (*) (GameObject_t1756533147 *, const MethodInfo*))GameObject_GetComponent_TisIl2CppObject_m4211544902_gshared)(__this, method)
+#define GameObject_GetComponent_TisCollider_t3497673348_m4279804853(__this, method) ((  Collider_t3497673348 * (*) (GameObject_t1756533147 *, const MethodInfo*))GameObject_GetComponent_TisIl2CppObject_m2812611596_gshared)(__this, method)
 // System.Boolean UnityEngine.Object::op_Implicit(UnityEngine.Object)
 extern "C"  bool Object_op_Implicit_m2856731593 (Il2CppObject * __this /* static, unused */, Object_t1021602117 * p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void UnityEngine.GameObject::set_layer(System.Int32)
@@ -4198,11 +4198,11 @@ extern "C"  bool Rect_op_Inequality_m3595915756 (Il2CppObject * __this /* static
 // Vuforia.DigitalEyewearARController Vuforia.DigitalEyewearARController::get_Instance()
 extern "C"  DigitalEyewearARController_t1398758191 * DigitalEyewearARController_get_Instance_m277595763 (Il2CppObject * __this /* static, unused */, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // !!0 UnityEngine.GameObject::GetComponent<UnityEngine.Camera>()
-#define GameObject_GetComponent_TisCamera_t189460977_m846435662(__this, method) ((  Camera_t189460977 * (*) (GameObject_t1756533147 *, const MethodInfo*))GameObject_GetComponent_TisIl2CppObject_m4211544902_gshared)(__this, method)
+#define GameObject_GetComponent_TisCamera_t189460977_m846435662(__this, method) ((  Camera_t189460977 * (*) (GameObject_t1756533147 *, const MethodInfo*))GameObject_GetComponent_TisIl2CppObject_m2812611596_gshared)(__this, method)
 // UnityEngine.Transform Vuforia.DigitalEyewearARController::get_CentralAnchorPoint()
 extern "C"  Transform_t3275118058 * DigitalEyewearARController_get_CentralAnchorPoint_m1690577486 (DigitalEyewearARController_t1398758191 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // !!0 UnityEngine.Component::GetComponentInChildren<Vuforia.BackgroundPlaneAbstractBehaviour>()
-#define Component_GetComponentInChildren_TisBackgroundPlaneAbstractBehaviour_t3732945727_m1061170659(__this, method) ((  BackgroundPlaneAbstractBehaviour_t3732945727 * (*) (Component_t3819376471 *, const MethodInfo*))Component_GetComponentInChildren_TisIl2CppObject_m2641795278_gshared)(__this, method)
+#define Component_GetComponentInChildren_TisBackgroundPlaneAbstractBehaviour_t3732945727_m1061170659(__this, method) ((  BackgroundPlaneAbstractBehaviour_t3732945727 * (*) (Component_t3819376471 *, const MethodInfo*))Component_GetComponentInChildren_TisIl2CppObject_m2461586036_gshared)(__this, method)
 // System.Int32 UnityEngine.GameObject::get_layer()
 extern "C"  int32_t GameObject_get_layer_m725607808 (GameObject_t1756533147 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // UnityEngine.GameObject Vuforia.StencilHideExcessAreaClipping::CreateQuad(UnityEngine.GameObject,System.String,UnityEngine.Vector3,UnityEngine.Quaternion,UnityEngine.Vector3,System.Int32)
@@ -4390,7 +4390,7 @@ extern "C"  void WordListImpl__ctor_m2953304286 (WordListImpl_t2150426444 * __th
 // System.Void Vuforia.TextTracker::.ctor()
 extern "C"  void TextTracker__ctor_m3185043435 (TextTracker_t89845299 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // !!0 UnityEngine.GameObject::AddComponent<UnityEngine.Camera>()
-#define GameObject_AddComponent_TisCamera_t189460977_m408472993(__this, method) ((  Camera_t189460977 * (*) (GameObject_t1756533147 *, const MethodInfo*))GameObject_AddComponent_TisIl2CppObject_m2231772097_gshared)(__this, method)
+#define GameObject_AddComponent_TisCamera_t189460977_m408472993(__this, method) ((  Camera_t189460977 * (*) (GameObject_t1756533147 *, const MethodInfo*))GameObject_AddComponent_TisIl2CppObject_m3813873105_gshared)(__this, method)
 // System.Void UnityEngine.Camera::set_orthographic(System.Boolean)
 extern "C"  void Camera_set_orthographic_m2132888580 (Camera_t189460977 * __this, bool p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void UnityEngine.Camera::set_orthographicSize(System.Single)
@@ -4416,7 +4416,7 @@ extern "C"  void RuntimeHelpers_InitializeArray_m3920580167 (Il2CppObject * __th
 // System.Void UnityEngine.Mesh::set_triangles(System.Int32[])
 extern "C"  void Mesh_set_triangles_m3244966865 (Mesh_t1356156583 * __this, Int32U5BU5D_t3030399641* p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // !!0 UnityEngine.GameObject::GetComponent<UnityEngine.MeshRenderer>()
-#define GameObject_GetComponent_TisMeshRenderer_t1268241104_m3084294969(__this, method) ((  MeshRenderer_t1268241104 * (*) (GameObject_t1756533147 *, const MethodInfo*))GameObject_GetComponent_TisIl2CppObject_m4211544902_gshared)(__this, method)
+#define GameObject_GetComponent_TisMeshRenderer_t1268241104_m3084294969(__this, method) ((  MeshRenderer_t1268241104 * (*) (GameObject_t1756533147 *, const MethodInfo*))GameObject_GetComponent_TisIl2CppObject_m2812611596_gshared)(__this, method)
 // UnityEngine.Shader UnityEngine.Shader::Find(System.String)
 extern "C"  Shader_t2430389951 * Shader_Find_m4179408078 (Il2CppObject * __this /* static, unused */, String_t* p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // UnityEngine.Material UnityEngine.Renderer::get_material()
@@ -4424,7 +4424,7 @@ extern "C"  Material_t193706927 * Renderer_get_material_m2553789785 (Renderer_t2
 // System.Void UnityEngine.Material::set_mainTexture(UnityEngine.Texture)
 extern "C"  void Material_set_mainTexture_m3584203343 (Material_t193706927 * __this, Texture_t2243626319 * p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // !!0 UnityEngine.GameObject::GetComponent<UnityEngine.MeshFilter>()
-#define GameObject_GetComponent_TisMeshFilter_t3026937449_m1728707518(__this, method) ((  MeshFilter_t3026937449 * (*) (GameObject_t1756533147 *, const MethodInfo*))GameObject_GetComponent_TisIl2CppObject_m4211544902_gshared)(__this, method)
+#define GameObject_GetComponent_TisMeshFilter_t3026937449_m1728707518(__this, method) ((  MeshFilter_t3026937449 * (*) (GameObject_t1756533147 *, const MethodInfo*))GameObject_GetComponent_TisIl2CppObject_m2812611596_gshared)(__this, method)
 // System.Void UnityEngine.MeshFilter::set_mesh(UnityEngine.Mesh)
 extern "C"  void MeshFilter_set_mesh_m3839924176 (MeshFilter_t3026937449 * __this, Mesh_t1356156583 * p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // UnityEngine.RenderTexture UnityEngine.RenderTexture::GetTemporary(System.Int32,System.Int32,System.Int32)
@@ -4534,7 +4534,7 @@ extern "C"  int32_t Time_get_frameCount_m1198768813 (Il2CppObject * __this /* st
 // System.Void Vuforia.VuforiaManagerImpl::StartRendering()
 extern "C"  void VuforiaManagerImpl_StartRendering_m1927564155 (VuforiaManagerImpl_t3289840897 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // !!0 UnityEngine.Component::GetComponent<UnityEngine.Camera>()
-#define Component_GetComponent_TisCamera_t189460977_m1978993906(__this, method) ((  Camera_t189460977 * (*) (Component_t3819376471 *, const MethodInfo*))Component_GetComponent_TisIl2CppObject_m4109961936_gshared)(__this, method)
+#define Component_GetComponent_TisCamera_t189460977_m3276577584(__this, method) ((  Camera_t189460977 * (*) (Component_t3819376471 *, const MethodInfo*))Component_GetComponent_TisIl2CppObject_m4109961936_gshared)(__this, method)
 // System.Void Vuforia.VuforiaARController::RegisterRenderOnUpdateCallback(System.Action)
 extern "C"  void VuforiaARController_RegisterRenderOnUpdateCallback_m4049043910 (VuforiaARController_t4061728485 * __this, Action_t3226471752 * ___callback0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void Vuforia.VideoBackgroundAbstractBehaviour::ResetBackgroundPlane(System.Boolean)
@@ -4610,9 +4610,9 @@ extern "C"  Camera_t189460977 * DigitalEyewearARController_get_PrimaryCamera_m33
 // UnityEngine.Camera Vuforia.DigitalEyewearARController::get_SecondaryCamera()
 extern "C"  Camera_t189460977 * DigitalEyewearARController_get_SecondaryCamera_m1083705270 (DigitalEyewearARController_t1398758191 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Collections.Generic.List`1<UnityEngine.GameObject>::.ctor()
-#define List_1__ctor_m4060301668(__this, method) ((  void (*) (List_1_t1125654279 *, const MethodInfo*))List_1__ctor_m310736118_gshared)(__this, method)
+#define List_1__ctor_m704351054(__this, method) ((  void (*) (List_1_t1125654279 *, const MethodInfo*))List_1__ctor_m310736118_gshared)(__this, method)
 // System.Void System.Collections.Generic.List`1<UnityEngine.GameObject>::Add(!0)
-#define List_1_Add_m2950330400(__this, p0, method) ((  void (*) (List_1_t1125654279 *, GameObject_t1756533147 *, const MethodInfo*))List_1_Add_m4157722533_gshared)(__this, p0, method)
+#define List_1_Add_m3441471442(__this, p0, method) ((  void (*) (List_1_t1125654279 *, GameObject_t1756533147 *, const MethodInfo*))List_1_Add_m4157722533_gshared)(__this, p0, method)
 // System.Void System.Collections.Generic.HashSet`1<Vuforia.VideoBackgroundAbstractBehaviour>::.ctor()
 #define HashSet_1__ctor_m2242826610(__this, method) ((  void (*) (HashSet_1_t3023812464 *, const MethodInfo*))HashSet_1__ctor_m2858247305_gshared)(__this, method)
 // System.Collections.Generic.List`1/Enumerator<!0> System.Collections.Generic.List`1<UnityEngine.GameObject>::GetEnumerator()
@@ -4724,7 +4724,7 @@ extern "C"  bool VirtualButtonAbstractBehaviour_UpdateEnabled_m3641096346 (Virtu
 // System.Void System.Collections.Generic.List`1/Enumerator<Vuforia.IVirtualButtonEventHandler>::Dispose()
 #define Enumerator_Dispose_m4212889442(__this, method) ((  void (*) (Enumerator_t1379265698 *, const MethodInfo*))Enumerator_Dispose_m3736175406_gshared)(__this, method)
 // !!0 UnityEngine.GameObject::GetComponent<Vuforia.ImageTargetAbstractBehaviour>()
-#define GameObject_GetComponent_TisImageTargetAbstractBehaviour_t3327552701_m4019461701(__this, method) ((  ImageTargetAbstractBehaviour_t3327552701 * (*) (GameObject_t1756533147 *, const MethodInfo*))GameObject_GetComponent_TisIl2CppObject_m4211544902_gshared)(__this, method)
+#define GameObject_GetComponent_TisImageTargetAbstractBehaviour_t3327552701_m4019461701(__this, method) ((  ImageTargetAbstractBehaviour_t3327552701 * (*) (GameObject_t1756533147 *, const MethodInfo*))GameObject_GetComponent_TisIl2CppObject_m2812611596_gshared)(__this, method)
 // System.Single UnityEngine.Vector2::get_Item(System.Int32)
 extern "C"  float Vector2_get_Item_m2792130561 (Vector2_t2243707579 * __this, int32_t p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // UnityEngine.Vector3 UnityEngine.Vector3::op_Division(UnityEngine.Vector3,System.Single)
@@ -4748,7 +4748,7 @@ extern "C"  void VirtualButton__ctor_m3096451101 (VirtualButton_t3703236737 * __
 // Vuforia.VuforiaAbstractConfiguration Vuforia.VuforiaAbstractConfiguration::CreateInstance()
 extern "C"  VuforiaAbstractConfiguration_t1891710424 * VuforiaAbstractConfiguration_CreateInstance_m70843896 (Il2CppObject * __this /* static, unused */, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // !!0 UnityEngine.Object::Instantiate<Vuforia.VuforiaAbstractConfiguration>(!!0)
-#define Object_Instantiate_TisVuforiaAbstractConfiguration_t1891710424_m3323457515(__this /* static, unused */, p0, method) ((  VuforiaAbstractConfiguration_t1891710424 * (*) (Il2CppObject * /* static, unused */, VuforiaAbstractConfiguration_t1891710424 *, const MethodInfo*))Object_Instantiate_TisIl2CppObject_m2184336183_gshared)(__this /* static, unused */, p0, method)
+#define Object_Instantiate_TisVuforiaAbstractConfiguration_t1891710424_m3323457515(__this /* static, unused */, p0, method) ((  VuforiaAbstractConfiguration_t1891710424 * (*) (Il2CppObject * /* static, unused */, VuforiaAbstractConfiguration_t1891710424 *, const MethodInfo*))Object_Instantiate_TisIl2CppObject_m447919519_gshared)(__this /* static, unused */, p0, method)
 // System.Void Vuforia.VuforiaAbstractConfiguration/VideoBackgroundConfiguration::SetDefaultMatteShader()
 extern "C"  void VideoBackgroundConfiguration_SetDefaultMatteShader_m2477821507 (VideoBackgroundConfiguration_t469199736 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void Vuforia.VuforiaAbstractConfiguration/GenericVuforiaConfiguration::.ctor()
@@ -5094,7 +5094,7 @@ extern "C"  Il2CppObject * VuMarkAbstractBehaviour_get_VuMarkTarget_m4042803881 
 // !1 System.Collections.Generic.Dictionary`2<System.Int32,System.Collections.Generic.List`1<System.Int32>>::get_Item(!0)
 #define Dictionary_2_get_Item_m644204263(__this, p0, method) ((  List_1_t1440998580 * (*) (Dictionary_2_t448824215 *, int32_t, const MethodInfo*))Dictionary_2_get_Item_m1573979506_gshared)(__this, p0, method)
 // System.Int32 System.Collections.Generic.List`1<System.Int32>::get_Count()
-#define List_1_get_Count_m3338876699(__this, method) ((  int32_t (*) (List_1_t1440998580 *, const MethodInfo*))List_1_get_Count_m3338876699_gshared)(__this, method)
+#define List_1_get_Count_m852068579(__this, method) ((  int32_t (*) (List_1_t1440998580 *, const MethodInfo*))List_1_get_Count_m852068579_gshared)(__this, method)
 // System.Void System.Collections.Generic.List`1<System.Int32>::RemoveAt(System.Int32)
 #define List_1_RemoveAt_m718233485(__this, p0, method) ((  void (*) (List_1_t1440998580 *, int32_t, const MethodInfo*))List_1_RemoveAt_m718233485_gshared)(__this, p0, method)
 // System.Collections.Generic.List`1<!!0> System.Linq.Enumerable::ToList<Vuforia.VuforiaManagerImpl/VuMarkTargetResultData>(System.Collections.Generic.IEnumerable`1<!!0>)
@@ -7217,7 +7217,7 @@ extern "C"  PropAbstractBehaviour_t1047177596 * ReconstructionAbstractBehaviour_
 		NullCheck(L_0);
 		GameObject_t1756533147 * L_1 = Component_get_gameObject_m3105766835(L_0, /*hidden argument*/NULL);
 		IL2CPP_RUNTIME_CLASS_INIT(Object_t1021602117_il2cpp_TypeInfo_var);
-		GameObject_t1756533147 * L_2 = Object_Instantiate_TisGameObject_t1756533147_m3614337661(NULL /*static, unused*/, L_1, /*hidden argument*/Object_Instantiate_TisGameObject_t1756533147_m3614337661_MethodInfo_var);
+		GameObject_t1756533147 * L_2 = Object_Instantiate_TisGameObject_t1756533147_m3664764861(NULL /*static, unused*/, L_1, /*hidden argument*/Object_Instantiate_TisGameObject_t1756533147_m3664764861_MethodInfo_var);
 		GameObject_t1756533147 * L_3 = L_2;
 		NullCheck(L_3);
 		Transform_t3275118058 * L_4 = GameObject_get_transform_m909382139(L_3, /*hidden argument*/NULL);
@@ -7254,7 +7254,7 @@ extern "C"  SurfaceAbstractBehaviour_t2669615494 * ReconstructionAbstractBehavio
 		NullCheck(L_0);
 		GameObject_t1756533147 * L_1 = Component_get_gameObject_m3105766835(L_0, /*hidden argument*/NULL);
 		IL2CPP_RUNTIME_CLASS_INIT(Object_t1021602117_il2cpp_TypeInfo_var);
-		GameObject_t1756533147 * L_2 = Object_Instantiate_TisGameObject_t1756533147_m3614337661(NULL /*static, unused*/, L_1, /*hidden argument*/Object_Instantiate_TisGameObject_t1756533147_m3614337661_MethodInfo_var);
+		GameObject_t1756533147 * L_2 = Object_Instantiate_TisGameObject_t1756533147_m3664764861(NULL /*static, unused*/, L_1, /*hidden argument*/Object_Instantiate_TisGameObject_t1756533147_m3664764861_MethodInfo_var);
 		GameObject_t1756533147 * L_3 = L_2;
 		NullCheck(L_3);
 		Transform_t3275118058 * L_4 = GameObject_get_transform_m909382139(L_3, /*hidden argument*/NULL);
@@ -14131,7 +14131,7 @@ extern "C"  void StateManagerImpl_ClearTrackableBehaviours_m948612896 (StateMana
 		List_1_Clear_m3754318129(L_1, /*hidden argument*/List_1_Clear_m3754318129_MethodInfo_var);
 		List_1_t1440998580 * L_2 = __this->get_mAutomaticallyCreatedBehaviours_1();
 		NullCheck(L_2);
-		List_1_Clear_m1375489236(L_2, /*hidden argument*/List_1_Clear_m1375489236_MethodInfo_var);
+		List_1_Clear_m3644677550(L_2, /*hidden argument*/List_1_Clear_m3644677550_MethodInfo_var);
 		List_1_t1149009704 * L_3 = __this->get_mBehavioursMarkedForDeletion_2();
 		NullCheck(L_3);
 		List_1_Clear_m3754318129(L_3, /*hidden argument*/List_1_Clear_m3754318129_MethodInfo_var);
@@ -20230,7 +20230,7 @@ IL_0016:
 		Mesh_set_uv_m1497318906(L_53, L_60, /*hidden argument*/NULL);
 		Mesh_t1356156583 * L_62 = V_4;
 		Int32U5BU5D_t3030399641* L_63 = ((Int32U5BU5D_t3030399641*)SZArrayNew(Int32U5BU5D_t3030399641_il2cpp_TypeInfo_var, (uint32_t)6));
-		RuntimeHelpers_InitializeArray_m3920580167(NULL /*static, unused*/, (Il2CppArray *)(Il2CppArray *)L_63, LoadFieldToken(U3CPrivateImplementationDetailsU3E_t1486305141____898C2022A0C02FCE602BF05E1C09BD48301606E5_0_FieldInfo_var), /*hidden argument*/NULL);
+		RuntimeHelpers_InitializeArray_m3920580167(NULL /*static, unused*/, (Il2CppArray *)(Il2CppArray *)L_63, LoadFieldToken(U3CPrivateImplementationDetailsU3E_t1486305142____898C2022A0C02FCE602BF05E1C09BD48301606E5_0_FieldInfo_var), /*hidden argument*/NULL);
 		NullCheck(L_62);
 		Mesh_set_triangles_m3244966865(L_62, L_63, /*hidden argument*/NULL);
 		Mesh_t1356156583 * L_64 = V_4;
@@ -22295,7 +22295,7 @@ extern "C"  void VideoBackgroundAbstractBehaviour_Awake_m2283072941 (VideoBackgr
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		Camera_t189460977 * L_0 = Component_GetComponent_TisCamera_t189460977_m1978993906(__this, /*hidden argument*/Component_GetComponent_TisCamera_t189460977_m1978993906_MethodInfo_var);
+		Camera_t189460977 * L_0 = Component_GetComponent_TisCamera_t189460977_m3276577584(__this, /*hidden argument*/Component_GetComponent_TisCamera_t189460977_m3276577584_MethodInfo_var);
 		__this->set_mCamera_5(L_0);
 		IL2CPP_RUNTIME_CLASS_INIT(VuforiaARController_t4061728485_il2cpp_TypeInfo_var);
 		VuforiaARController_t4061728485 * L_1 = VuforiaARController_get_Instance_m3759800119(NULL /*static, unused*/, /*hidden argument*/NULL);
@@ -22379,7 +22379,7 @@ extern "C"  void VideoBackgroundAbstractBehaviour_OnPreRender_m2914454742 (Video
 		}
 	}
 	{
-		Camera_t189460977 * L_7 = Component_GetComponent_TisCamera_t189460977_m1978993906(__this, /*hidden argument*/Component_GetComponent_TisCamera_t189460977_m1978993906_MethodInfo_var);
+		Camera_t189460977 * L_7 = Component_GetComponent_TisCamera_t189460977_m3276577584(__this, /*hidden argument*/Component_GetComponent_TisCamera_t189460977_m3276577584_MethodInfo_var);
 		NullCheck(L_7);
 		RenderTexture_t2666733923 * L_8 = Camera_get_targetTexture_m705925974(L_7, /*hidden argument*/NULL);
 		V_0 = L_8;
@@ -22468,7 +22468,7 @@ extern "C"  void VideoBackgroundAbstractBehaviour_OnPostRender_m3296587151 (Vide
 		}
 	}
 	{
-		Camera_t189460977 * L_5 = Component_GetComponent_TisCamera_t189460977_m1978993906(__this, /*hidden argument*/Component_GetComponent_TisCamera_t189460977_m1978993906_MethodInfo_var);
+		Camera_t189460977 * L_5 = Component_GetComponent_TisCamera_t189460977_m3276577584(__this, /*hidden argument*/Component_GetComponent_TisCamera_t189460977_m3276577584_MethodInfo_var);
 		NullCheck(L_5);
 		RenderTexture_t2666733923 * L_6 = Camera_get_targetTexture_m705925974(L_5, /*hidden argument*/NULL);
 		V_0 = L_6;
@@ -23348,11 +23348,11 @@ extern "C"  void VideoBackgroundManager_UpdateVideoBackgroundEnabled_m3879780185
 		GameObject_t1756533147 * L_6 = Component_get_gameObject_m3105766835(L_5, /*hidden argument*/NULL);
 		V_3 = L_6;
 		List_1_t1125654279 * L_7 = (List_1_t1125654279 *)il2cpp_codegen_object_new(List_1_t1125654279_il2cpp_TypeInfo_var);
-		List_1__ctor_m4060301668(L_7, /*hidden argument*/List_1__ctor_m4060301668_MethodInfo_var);
+		List_1__ctor_m704351054(L_7, /*hidden argument*/List_1__ctor_m704351054_MethodInfo_var);
 		List_1_t1125654279 * L_8 = L_7;
 		GameObject_t1756533147 * L_9 = V_3;
 		NullCheck(L_8);
-		List_1_Add_m2950330400(L_8, L_9, /*hidden argument*/List_1_Add_m2950330400_MethodInfo_var);
+		List_1_Add_m3441471442(L_8, L_9, /*hidden argument*/List_1_Add_m3441471442_MethodInfo_var);
 		V_4 = L_8;
 		Camera_t189460977 * L_10 = V_1;
 		bool L_11 = Object_op_Inequality_m2402264703(NULL /*static, unused*/, L_10, (Object_t1021602117 *)NULL, /*hidden argument*/NULL);
@@ -23367,7 +23367,7 @@ extern "C"  void VideoBackgroundManager_UpdateVideoBackgroundEnabled_m3879780185
 		NullCheck(L_13);
 		GameObject_t1756533147 * L_14 = Component_get_gameObject_m3105766835(L_13, /*hidden argument*/NULL);
 		NullCheck(L_12);
-		List_1_Add_m2950330400(L_12, L_14, /*hidden argument*/List_1_Add_m2950330400_MethodInfo_var);
+		List_1_Add_m3441471442(L_12, L_14, /*hidden argument*/List_1_Add_m3441471442_MethodInfo_var);
 	}
 
 IL_0043:
@@ -23386,7 +23386,7 @@ IL_0043:
 		NullCheck(L_18);
 		GameObject_t1756533147 * L_19 = Component_get_gameObject_m3105766835(L_18, /*hidden argument*/NULL);
 		NullCheck(L_17);
-		List_1_Add_m2950330400(L_17, L_19, /*hidden argument*/List_1_Add_m2950330400_MethodInfo_var);
+		List_1_Add_m3441471442(L_17, L_19, /*hidden argument*/List_1_Add_m3441471442_MethodInfo_var);
 	}
 
 IL_0059:
@@ -34237,7 +34237,7 @@ IL_00f1:
 		V_16 = L_62;
 		List_1_t1440998580 * L_63 = V_16;
 		NullCheck(L_63);
-		int32_t L_64 = List_1_get_Count_m3338876699(L_63, /*hidden argument*/List_1_get_Count_m3338876699_MethodInfo_var);
+		int32_t L_64 = List_1_get_Count_m852068579(L_63, /*hidden argument*/List_1_get_Count_m852068579_MethodInfo_var);
 		if ((((int32_t)L_64) <= ((int32_t)0)))
 		{
 			goto IL_01c1;
@@ -34247,14 +34247,14 @@ IL_00f1:
 		List_1_t1440998580 * L_65 = V_16;
 		List_1_t1440998580 * L_66 = V_16;
 		NullCheck(L_66);
-		int32_t L_67 = List_1_get_Count_m3338876699(L_66, /*hidden argument*/List_1_get_Count_m3338876699_MethodInfo_var);
+		int32_t L_67 = List_1_get_Count_m852068579(L_66, /*hidden argument*/List_1_get_Count_m852068579_MethodInfo_var);
 		NullCheck(L_65);
 		int32_t L_68 = List_1_get_Item_m3472206364(L_65, ((int32_t)((int32_t)L_67-(int32_t)1)), /*hidden argument*/List_1_get_Item_m3472206364_MethodInfo_var);
 		V_17 = L_68;
 		List_1_t1440998580 * L_69 = V_16;
 		List_1_t1440998580 * L_70 = V_16;
 		NullCheck(L_70);
-		int32_t L_71 = List_1_get_Count_m3338876699(L_70, /*hidden argument*/List_1_get_Count_m3338876699_MethodInfo_var);
+		int32_t L_71 = List_1_get_Count_m852068579(L_70, /*hidden argument*/List_1_get_Count_m852068579_MethodInfo_var);
 		NullCheck(L_69);
 		List_1_RemoveAt_m718233485(L_69, ((int32_t)((int32_t)L_71-(int32_t)1)), /*hidden argument*/List_1_RemoveAt_m718233485_MethodInfo_var);
 		ObjectU5BU5D_t3614634134* L_72 = ((ObjectU5BU5D_t3614634134*)SZArrayNew(ObjectU5BU5D_t3614634134_il2cpp_TypeInfo_var, (uint32_t)4));

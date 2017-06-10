@@ -42,6 +42,10 @@ public:
 	ByteU5BU5D_t3397334013* ___buffer_3;
 	// System.Boolean System.IO.BinaryWriter::disposed
 	bool ___disposed_4;
+	// System.Byte[] System.IO.BinaryWriter::stringBuffer
+	ByteU5BU5D_t3397334013* ___stringBuffer_5;
+	// System.Int32 System.IO.BinaryWriter::maxCharsPerRound
+	int32_t ___maxCharsPerRound_6;
 
 public:
 	inline static int32_t get_offset_of_OutStream_1() { return static_cast<int32_t>(offsetof(BinaryWriter_t3179371318, ___OutStream_1)); }
@@ -77,6 +81,23 @@ public:
 	inline void set_disposed_4(bool value)
 	{
 		___disposed_4 = value;
+	}
+
+	inline static int32_t get_offset_of_stringBuffer_5() { return static_cast<int32_t>(offsetof(BinaryWriter_t3179371318, ___stringBuffer_5)); }
+	inline ByteU5BU5D_t3397334013* get_stringBuffer_5() const { return ___stringBuffer_5; }
+	inline ByteU5BU5D_t3397334013** get_address_of_stringBuffer_5() { return &___stringBuffer_5; }
+	inline void set_stringBuffer_5(ByteU5BU5D_t3397334013* value)
+	{
+		___stringBuffer_5 = value;
+		Il2CppCodeGenWriteBarrier(&___stringBuffer_5, value);
+	}
+
+	inline static int32_t get_offset_of_maxCharsPerRound_6() { return static_cast<int32_t>(offsetof(BinaryWriter_t3179371318, ___maxCharsPerRound_6)); }
+	inline int32_t get_maxCharsPerRound_6() const { return ___maxCharsPerRound_6; }
+	inline int32_t* get_address_of_maxCharsPerRound_6() { return &___maxCharsPerRound_6; }
+	inline void set_maxCharsPerRound_6(int32_t value)
+	{
+		___maxCharsPerRound_6 = value;
 	}
 };
 

@@ -16,8 +16,12 @@
 struct Type_t;
 // System.MarshalByRefObject
 struct MarshalByRefObject_t1285298191;
+// System.Runtime.Remoting.Messaging.IMessageSink
+struct IMessageSink_t2189618969;
 // System.Runtime.Remoting.Contexts.Context
 struct Context_t502196753;
+// System.Runtime.Remoting.Lifetime.Lease
+struct Lease_t3663008028;
 
 
 
@@ -36,8 +40,12 @@ public:
 	Type_t * ____objectType_7;
 	// System.MarshalByRefObject System.Runtime.Remoting.ServerIdentity::_serverObject
 	MarshalByRefObject_t1285298191 * ____serverObject_8;
+	// System.Runtime.Remoting.Messaging.IMessageSink System.Runtime.Remoting.ServerIdentity::_serverSink
+	Il2CppObject * ____serverSink_9;
 	// System.Runtime.Remoting.Contexts.Context System.Runtime.Remoting.ServerIdentity::_context
-	Context_t502196753 * ____context_9;
+	Context_t502196753 * ____context_10;
+	// System.Runtime.Remoting.Lifetime.Lease System.Runtime.Remoting.ServerIdentity::_lease
+	Lease_t3663008028 * ____lease_11;
 
 public:
 	inline static int32_t get_offset_of__objectType_7() { return static_cast<int32_t>(offsetof(ServerIdentity_t1656058977, ____objectType_7)); }
@@ -58,13 +66,31 @@ public:
 		Il2CppCodeGenWriteBarrier(&____serverObject_8, value);
 	}
 
-	inline static int32_t get_offset_of__context_9() { return static_cast<int32_t>(offsetof(ServerIdentity_t1656058977, ____context_9)); }
-	inline Context_t502196753 * get__context_9() const { return ____context_9; }
-	inline Context_t502196753 ** get_address_of__context_9() { return &____context_9; }
-	inline void set__context_9(Context_t502196753 * value)
+	inline static int32_t get_offset_of__serverSink_9() { return static_cast<int32_t>(offsetof(ServerIdentity_t1656058977, ____serverSink_9)); }
+	inline Il2CppObject * get__serverSink_9() const { return ____serverSink_9; }
+	inline Il2CppObject ** get_address_of__serverSink_9() { return &____serverSink_9; }
+	inline void set__serverSink_9(Il2CppObject * value)
 	{
-		____context_9 = value;
-		Il2CppCodeGenWriteBarrier(&____context_9, value);
+		____serverSink_9 = value;
+		Il2CppCodeGenWriteBarrier(&____serverSink_9, value);
+	}
+
+	inline static int32_t get_offset_of__context_10() { return static_cast<int32_t>(offsetof(ServerIdentity_t1656058977, ____context_10)); }
+	inline Context_t502196753 * get__context_10() const { return ____context_10; }
+	inline Context_t502196753 ** get_address_of__context_10() { return &____context_10; }
+	inline void set__context_10(Context_t502196753 * value)
+	{
+		____context_10 = value;
+		Il2CppCodeGenWriteBarrier(&____context_10, value);
+	}
+
+	inline static int32_t get_offset_of__lease_11() { return static_cast<int32_t>(offsetof(ServerIdentity_t1656058977, ____lease_11)); }
+	inline Lease_t3663008028 * get__lease_11() const { return ____lease_11; }
+	inline Lease_t3663008028 ** get_address_of__lease_11() { return &____lease_11; }
+	inline void set__lease_11(Lease_t3663008028 * value)
+	{
+		____lease_11 = value;
+		Il2CppCodeGenWriteBarrier(&____lease_11, value);
 	}
 };
 

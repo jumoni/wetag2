@@ -16,6 +16,8 @@
 struct ByteU5BU5D_t3397334013;
 // System.String
 struct String_t;
+// System.Security.Cryptography.RSA
+struct RSA_t3719518354;
 
 
 
@@ -38,6 +40,8 @@ public:
 	bool ____keyPairExported_2;
 	// System.Byte[] System.Reflection.StrongNameKeyPair::_keyPairArray
 	ByteU5BU5D_t3397334013* ____keyPairArray_3;
+	// System.Security.Cryptography.RSA System.Reflection.StrongNameKeyPair::_rsa
+	RSA_t3719518354 * ____rsa_4;
 
 public:
 	inline static int32_t get_offset_of__publicKey_0() { return static_cast<int32_t>(offsetof(StrongNameKeyPair_t4090869089, ____publicKey_0)); }
@@ -73,6 +77,15 @@ public:
 	{
 		____keyPairArray_3 = value;
 		Il2CppCodeGenWriteBarrier(&____keyPairArray_3, value);
+	}
+
+	inline static int32_t get_offset_of__rsa_4() { return static_cast<int32_t>(offsetof(StrongNameKeyPair_t4090869089, ____rsa_4)); }
+	inline RSA_t3719518354 * get__rsa_4() const { return ____rsa_4; }
+	inline RSA_t3719518354 ** get_address_of__rsa_4() { return &____rsa_4; }
+	inline void set__rsa_4(RSA_t3719518354 * value)
+	{
+		____rsa_4 = value;
+		Il2CppCodeGenWriteBarrier(&____rsa_4, value);
 	}
 };
 
