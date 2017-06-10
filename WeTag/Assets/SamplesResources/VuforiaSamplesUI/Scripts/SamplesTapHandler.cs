@@ -115,6 +115,10 @@ public class SamplesTapHandler : MonoBehaviour
 
     protected virtual void OnDoubleTap()
     {
+        
+    }
+
+    public virtual void showMenu(){
         if (mMenuAnim && !mMenuAnim.IsVisible())
         {
             mMenuAnim.Show();

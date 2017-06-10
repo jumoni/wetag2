@@ -23,9 +23,7 @@ public class UDTEventHandler : MonoBehaviour, IUserDefinedTargetEventHandler
 
 	private WeTagHandler wetag;
 
-	private Dictionary<string, Celebrity> celebrityMap = new Dictionary<string, Celebrity>();
-
-    private Dictionary<string, GameObject> celebrityTags = new Dictionary<string, GameObject>();
+    private Dictionary<string, string> celebrityTags = new Dictionary<string, string>();
 
     private bool isRecognizing = false;
 
@@ -222,12 +220,9 @@ public class UDTEventHandler : MonoBehaviour, IUserDefinedTargetEventHandler
 		foreach (var kv in celebrityTags)
 		{
             Debug.Log("Clearing " + kv.Key);
-			DestroyImmediate(kv.Value);
+            Destroy(GameObject.Find(kv.Value));
 		}
 		celebrityTags.Clear();
-        foreach(Transform child in transform){
-            Destroy(child.gameObject);
-        }
 	}
 	#endregion //PUBLIC_METHODS
 
@@ -239,13 +234,15 @@ public class UDTEventHandler : MonoBehaviour, IUserDefinedTargetEventHandler
 	{
 		if (res != null)
 		{
-			foreach (Celebrity item in res.celebrities)
+            var array = wetag.tagOption == TagOption.Celebrity ? res.celebrities : res.landmarks;
+            var recogItemMap = new Dictionary<string, RecogItem>();
+			foreach (RecogItem item in array)
 			{
 				// create a new text on (left, top) of item.faceRect
-				celebrityMap[item.name] = item;
+                recogItemMap[item.name] = item;
 				StartCoroutine(wetag.SearchWiki(item.name));
 			}
-			updateTags();
+			updateTags(recogItemMap);
 			isRecognizing = false;
 		}
 	}
@@ -282,13 +279,13 @@ public class UDTEventHandler : MonoBehaviour, IUserDefinedTargetEventHandler
 	}
 
 
-	private void updateTags()
+    private void updateTags(Dictionary<string, RecogItem> recogItemMap)
 	{
-		foreach (var kv in celebrityMap)
+		foreach (var kv in recogItemMap)
 		{
-			Celebrity item = kv.Value;
+			RecogItem item = kv.Value;
 			if (celebrityTags.ContainsKey(item.name))
-			    DestroyImmediate(celebrityTags[item.name]);
+			    Destroy(GameObject.Find(celebrityTags[item.name]));
 
 			//Vector3 pos = Camera.main.ScreenToWorldPoint(new Vector3(item.faceRectangle.left, item.faceRectangle.top, Camera.main.nearClipPlane));
 			//Quaternion quat = Quaternion.Euler(90, 0, 0);
@@ -303,11 +300,11 @@ public class UDTEventHandler : MonoBehaviour, IUserDefinedTargetEventHandler
 			RaycastHit hit;
 			if (Physics.Raycast(ray, out hit, Camera.main.farClipPlane) && hit.collider.tag == tagPlane.tag)
 			{  // work
-				Debug.Log("Find hit point");
 				Vector3 hitPoint = ray.GetPoint(hit.distance);
 				hitPoint.y = 0;
 				var newTag = Instantiate(wetag.celebrityTag, hitPoint, quat);
-
+				newTag.name = "Tag_" + celebrityTags.Count() + 1;
+				Debug.Log("Instantiating " + newTag.name);
 				newTag.transform.parent = gameObject.transform;
 
 				newTag.GetComponentInChildren<TextMesh>().text = item.name;
@@ -320,7 +317,7 @@ public class UDTEventHandler : MonoBehaviour, IUserDefinedTargetEventHandler
 				//background.localScale.Scale(new Vector3(item.name.Length, 1, 1));
 				Debug.Log("after scale = " + background.localScale.x);
 				//newTag.transform.LookAt(Camera.main.transform);
-				celebrityTags[item.name] = newTag;
+				celebrityTags[item.name] = newTag.name;
 
                 wetag.DrawConnectingLines(item.faceRectangle);
 			}
