@@ -147,12 +147,47 @@ public class WeTagHandler : MonoBehaviour
         }
     }
 
-    #endregion
 
-    //public string sasd;
+	public bool isDetailShown
+	{
+		get
+		{
+			return _isDetailShown;
+		}
+		set
+		{
+			if (_isDetailShown != value)
+			{
+				float duration = 0.2f;
 
-    // Use this for initialization
-    void Start()
+				var infoTitle = GameObject.Find("InfoTitle").GetComponent<RectTransform>();
+				var infoContent = GameObject.Find("InfoBackground").GetComponent<RectTransform>();
+
+				if (value)
+				{        // hide -> show
+					var scaleto = UIAnimator.ScaleTo(infoContent, Vector3.one, duration);
+					var move = UIAnimator.MoveVerticalTo(infoTitle, titlePosition, duration).SetCallback(scaleto.Play);
+					move.Play();
+				}
+				else
+				{          // show -> hide
+					var move = UIAnimator.MoveVerticalTo(infoTitle, 0, duration);
+					var scaleto = UIAnimator.ScaleTo(infoContent, new Vector3(0, 1, 0), duration).SetCallback(move.Play);
+					//move.Play();
+					scaleto.Play();
+				}
+			}
+			_isDetailShown = value;
+		}
+	}
+
+
+	#endregion
+
+	//public string sasd;
+
+	// Use this for initialization
+	void Start()
     {
         initWeTagUI();
     }
@@ -160,7 +195,48 @@ public class WeTagHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Vector3 touchPos = new Vector3();
+        bool isTouch = false;
 
+        if( Input.GetMouseButtonDown(0) ){
+            isTouch = true;
+            touchPos = Input.mousePosition;
+        }
+
+		foreach(var touch in Input.touches)
+		{
+			//Debug.Log("here");
+			touchPos = touch.position;
+			isTouch = true;
+			if (touch.phase == TouchPhase.Began)
+			{
+			}
+		}
+
+		if (isTouch){
+			var ray = Camera.main.ScreenPointToRay(touchPos);
+			var hits = Physics.RaycastAll(ray);
+			foreach (var hit in hits)
+			{
+				if (hit.collider.tag == "RecogItemTag")
+				{
+                    // create touch effect: change background shader color
+                    var tagObject = hit.collider.transform.parent;
+
+                    //hit.collider.GetComponent<Renderer>().material.color = new Color(0.0f, 0.0f, 0.4f);
+                    var rect = tagObject.GetComponent<RectTransform>();
+                    var origin = tagObject.localScale;
+                    var after = origin * 1.2f;
+
+                    var scaleback = UIAnimator.Scale(rect, after, origin, 0.2f);
+                    var scaleto = UIAnimator.ScaleTo(rect, after, 0.2f).SetCallback(scaleback.Play);
+                    scaleto.Play();
+
+                    string searchName = tagObject.GetComponentInChildren<TextMesh>().text;
+					StartCoroutine(SearchWiki(searchName));
+				}
+			}
+        }
 
     }
 
@@ -294,8 +370,15 @@ public class WeTagHandler : MonoBehaviour
         }
     }
 
+    private string currentDisplayWikiName;
     public IEnumerator SearchWiki(string name)
     {
+        if ( currentDisplayWikiName == null )
+            currentDisplayWikiName = name;
+
+        if( currentDisplayWikiName == name ){
+            yield return null;
+        }
 
         UnityWebRequest req = UnityWebRequest.Get(string.Format(mediaWikiURL, name));
 
@@ -311,7 +394,7 @@ public class WeTagHandler : MonoBehaviour
 
             //}
             var resp = JSON.Parse(System.Text.Encoding.UTF8.GetString(req.downloadHandler.data));
-            Debug.Log(resp.ToString());
+            //Debug.Log(resp.ToString());
 
             bool isFound = false;
             //int minIndex = 1;
@@ -321,13 +404,16 @@ public class WeTagHandler : MonoBehaviour
                 if (item["title"].ToString().Contains(name) && item["index"].AsInt == 1)
                 {
                     //minIndex = System.Math.Max(minIndex, item["index"]);
-                    boxText = item["extract"];
-                    Debug.Log("BoxText = " + boxText);
+                    //boxText = item["extract"];
+                    Debug.Log("BoxText = " + item["extract"]);
                     //boxText = Regex.Replace(boxText, "<[^>]*>", "");
                     var infoText = GameObject.Find("InfoText").GetComponent<Text>();
-                    infoText.text = boxText;
+                    infoText.text = item["extract"];
 
-                    GameObject.Find("WeTagCanvas").transform.Find("InfoTitle").gameObject.SetActive(true);
+                    var title = GameObject.Find("WeTagCanvas").transform.Find("InfoTitle").gameObject;
+                    title.GetComponentInChildren<Text>().text = "About " + name;
+                    title.SetActive(true);
+
                     //Debug.Log(GameObject.Find("WeTagCanvas").transform.Find("InfoTitle") == null);
                     isDetailShown = true;
                     isFound = true;
@@ -338,6 +424,16 @@ public class WeTagHandler : MonoBehaviour
                 Debug.Log("No wiki items");
         }
         //yield return null;
+    }
+
+    public void showNoRecogItemDialog(){
+		//boxText = 
+		var infoText = GameObject.Find("InfoText").GetComponent<Text>();
+		infoText.text = "Cannot recognize any " + (tagOption == TagOption.Celebrity ? "celebrities" : "landmarks");
+        var title = GameObject.Find("WeTagCanvas").transform.Find("InfoTitle").gameObject;
+        title.GetComponentInChildren<Text>().text = "Info";
+		title.SetActive(true);
+		isDetailShown = true;
     }
 
 
@@ -382,31 +478,6 @@ public class WeTagHandler : MonoBehaviour
             GL.End();
         }
 
-    }
-
-    public bool isDetailShown{
-        get{
-            return _isDetailShown;
-        }
-        set{
-			if (_isDetailShown != value) {
-				float duration = 0.2f;
-				var infoTitle = GameObject.Find("InfoTitle").GetComponent<RectTransform>();
-				var infoContent = GameObject.Find("InfoBackground").GetComponent<RectTransform>();
-
-				if( value ){        // hide -> show
-					var scaleto = UIAnimator.ScaleTo(infoContent, Vector3.one, duration);
-					var move = UIAnimator.MoveVerticalTo(infoTitle, titlePosition, duration).SetCallback(scaleto.Play);
-					move.Play();
-                }else{          // show -> hide
-					var move = UIAnimator.MoveVerticalTo(infoTitle, 0, duration);
-					var scaleto = UIAnimator.ScaleTo(infoContent, new Vector3(0, 1, 0), duration).SetCallback(move.Play);
-					//move.Play();
-					scaleto.Play();
-                }
-            }
-			_isDetailShown = value;
-		}
     }
 
 
@@ -498,57 +569,5 @@ public class WeTagHandler : MonoBehaviour
     }
 
     #endregion
-    //private IEnumerator ShowMessage(string message, float delay)
-    //{
-    //	popUpText.text = message;
-    //	popUpText.enabled = true;
-    //	yield return new WaitForSeconds(delay);
-    //	popUpText.enabled = false;
-    //}
-
-
-    //public static Vector2 NativeResolution = new Vector2(480, 320);
-
-    //   private bool _didResizeUI = false;
-
-    //private static float _guiScaleFactor = -1.0f;
-    //private static Vector3 _offset = Vector3.zero;
-
-    //static List<Matrix4x4> stack = new List<Matrix4x4>();
-    //public void BeginUIResizing()
-    //{
-    //	Vector2 nativeSize = NativeResolution;
-
-    //	_didResizeUI = true;
-
-    //	stack.Add(GUI.matrix);
-    //	Matrix4x4 m = new Matrix4x4();
-    //	var w = (float)Screen.width;
-    //	var h = (float)Screen.height;
-    //	var aspect = w / h;
-    //	var offset = Vector3.zero;
-    //	if (aspect < (nativeSize.x / nativeSize.y))
-    //	{
-    //		//screen is taller
-    //		_guiScaleFactor = (Screen.width / nativeSize.x);
-    //		offset.y += (Screen.height - (nativeSize.y * guiScaleFactor)) * 0.5f;
-    //	}
-    //	else
-    //	{
-    //		// screen is wider
-    //		_guiScaleFactor = (Screen.height / nativeSize.y);
-    //		offset.x += (Screen.width - (nativeSize.x * guiScaleFactor)) * 0.5f;
-    //	}
-
-    //	m.SetTRS(offset, Quaternion.identity, Vector3.one * guiScaleFactor);
-    //	GUI.matrix *= m;
-    //}
-
-    //public void EndUIResizing()
-    //{
-    //	GUI.matrix = stack[stack.Count - 1];
-    //	stack.RemoveAt(stack.Count - 1);
-    //	_didResizeUI = false;
-    //}
 
 }

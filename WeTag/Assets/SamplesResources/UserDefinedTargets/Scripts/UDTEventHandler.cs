@@ -179,6 +179,7 @@ public class UDTEventHandler : MonoBehaviour, IUserDefinedTargetEventHandler
 	public void BuildNewTarget()
 	{
 		clearTags();
+
         if( isRecognizing ){
             return;
 		}
@@ -223,6 +224,7 @@ public class UDTEventHandler : MonoBehaviour, IUserDefinedTargetEventHandler
             Destroy(GameObject.Find(kv.Value));
 		}
 		celebrityTags.Clear();
+        wetag.isDetailShown = false;
 	}
 	#endregion //PUBLIC_METHODS
 
@@ -236,16 +238,24 @@ public class UDTEventHandler : MonoBehaviour, IUserDefinedTargetEventHandler
 		{
             var array = wetag.tagOption == TagOption.Celebrity ? res.celebrities : res.landmarks;
             var recogItemMap = new Dictionary<string, RecogItem>();
-			foreach (RecogItem item in array)
-			{
-				// create a new text on (left, top) of item.faceRect
-                recogItemMap[item.name] = item;
-				StartCoroutine(wetag.SearchWiki(item.name));
-			}
-			updateTags(recogItemMap);
+            if( array.Length == 0 ){
+                wetag.showNoRecogItemDialog();
+            }else{
+	            foreach (RecogItem item in array)
+	            {
+	                // create a new text on (left, top) of item.faceRect
+	                recogItemMap[item.name] = item;
+				}
+				updateTags(recogItemMap);
+            }
 			isRecognizing = false;
 		}
 	}
+
+    private void onTapTag(string name){
+        Debug.Log("OnTap " + name);
+        //StartCoroutine(wetag.SearchWiki(name));
+    }
 
 	private void OnVuforiaStarted()
 	{
@@ -281,22 +291,19 @@ public class UDTEventHandler : MonoBehaviour, IUserDefinedTargetEventHandler
 
     private void updateTags(Dictionary<string, RecogItem> recogItemMap)
 	{
+        Debug.Log("In update Tags");
 		foreach (var kv in recogItemMap)
 		{
 			RecogItem item = kv.Value;
-			if (celebrityTags.ContainsKey(item.name))
-			    Destroy(GameObject.Find(celebrityTags[item.name]));
-
-			//Vector3 pos = Camera.main.ScreenToWorldPoint(new Vector3(item.faceRectangle.left, item.faceRectangle.top, Camera.main.nearClipPlane));
-			//Quaternion quat = Quaternion.Euler(90, 0, 0);
-			//var newTag = Instantiate(pos, )
-
+			//if (celebrityTags.ContainsKey(item.name))
+			    //Destroy(GameObject.Find(celebrityTags[item.name]));
+            
 			//Ray ray = Camera.main.ScreenPointToRay(new Vector3(item.faceRectangle.left, Screen.height - item.faceRectangle.top));
 
 			Ray ray = Camera.main.ScreenPointToRay(new Vector3(item.faceRectangle.left + item.faceRectangle.width / 2, Screen.height - (item.faceRectangle.top + item.faceRectangle.height / 2)));
 			//var xzPlane = tagPlane.GetComponent<Collider>();
 			Quaternion quat = Quaternion.Euler(90, 0, 0);
-
+            Debug.Log("RecogItem.name = " + kv.Key);
 			RaycastHit hit;
 			if (Physics.Raycast(ray, out hit, Camera.main.farClipPlane) && hit.collider.tag == tagPlane.tag)
 			{  // work
