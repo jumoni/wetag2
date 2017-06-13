@@ -161,8 +161,9 @@
 		40F5DAA51EEC2594009DA054 /* VuforiaRenderDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 40F5DA131EEC2592009DA054 /* VuforiaRenderDelegate.mm */; };
 		40F5DAA61EEC2594009DA054 /* RegisterFeatures.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 40F5DA151EEC2592009DA054 /* RegisterFeatures.cpp */; };
 		40F5DAA71EEC2594009DA054 /* RegisterMonoModules.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 40F5DA171EEC2592009DA054 /* RegisterMonoModules.cpp */; };
-		BA2C008A1EEF723300DC2038 /* InfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2C00891EEF723300DC2038 /* InfoTableViewController.swift */; };
 		BA2C008C1EEF7C3C00DC2038 /* InfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2C008B1EEF7C3C00DC2038 /* InfoTableViewCell.swift */; };
+		BA2C008E1EEF989000DC2038 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2C008D1EEF989000DC2038 /* ImageViewController.swift */; };
+		BA2C00921EEF99D200DC2038 /* InfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2C00911EEF99D200DC2038 /* InfoTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -5287,9 +5288,9 @@
 		40F5DA161EEC2592009DA054 /* RegisterFeatures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterFeatures.h; sourceTree = "<group>"; };
 		40F5DA171EEC2592009DA054 /* RegisterMonoModules.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RegisterMonoModules.cpp; sourceTree = "<group>"; };
 		40F5DA181EEC2593009DA054 /* RegisterMonoModules.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterMonoModules.h; sourceTree = "<group>"; };
-		BA2C00851EEE67F600DC2038 /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
-		BA2C00891EEF723300DC2038 /* InfoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InfoTableViewController.swift; path = ../InfoTableViewController.swift; sourceTree = "<group>"; };
 		BA2C008B1EEF7C3C00DC2038 /* InfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoTableViewCell.swift; sourceTree = "<group>"; };
+		BA2C008D1EEF989000DC2038 /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
+		BA2C00911EEF99D200DC2038 /* InfoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -5328,9 +5329,9 @@
 			children = (
 				40A46ACE1EE073A400D36E16 /* AppDelegate.swift */,
 				40A46AD01EE073A400D36E16 /* ViewController.swift */,
-				BA2C00851EEE67F600DC2038 /* ImageViewController.swift */,
 				40A49B2C1EE1346100D36E16 /* UnityGLViewController.swift */,
-				BA2C00891EEF723300DC2038 /* InfoTableViewController.swift */,
+				BA2C008D1EEF989000DC2038 /* ImageViewController.swift */,
+				BA2C00911EEF99D200DC2038 /* InfoTableViewController.swift */,
 				BA2C008B1EEF7C3C00DC2038 /* InfoTableViewCell.swift */,
 				40A46AD21EE073A400D36E16 /* Main.storyboard */,
 				40A46AD51EE073A400D36E16 /* Assets.xcassets */,
@@ -11203,6 +11204,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA2C00921EEF99D200DC2038 /* InfoTableViewController.swift in Sources */,
 				40F5DA7B1EEC2594009DA054 /* UnresolvedVirtualCallStubs.cpp in Sources */,
 				40F5DA1A1EEC2593009DA054 /* iPhone_Sensors.mm in Sources */,
 				40F5DA461EEC2593009DA054 /* Bulk_UnityEngine_3.cpp in Sources */,
@@ -11236,7 +11238,6 @@
 				40F5DA2D1EEC2593009DA054 /* Bulk_Generics_5.cpp in Sources */,
 				40F5DA831EEC2594009DA054 /* SplashScreen.mm in Sources */,
 				40F5DA5C1EEC2593009DA054 /* Il2CppCompilerCalculateTypeValues_21Table.cpp in Sources */,
-				BA2C008A1EEF723300DC2038 /* InfoTableViewController.swift in Sources */,
 				40F5DA761EEC2593009DA054 /* Il2CppMetadataUsage.cpp in Sources */,
 				40F5DA9E1EEC2594009DA054 /* Il2CppOptions.cpp in Sources */,
 				40F5DA961EEC2594009DA054 /* UnityReplayKit.mm in Sources */,
@@ -11297,6 +11298,7 @@
 				40F5DA1D1EEC2593009DA054 /* Bulk_Assembly-CSharp_0.cpp in Sources */,
 				40F5DA221EEC2593009DA054 /* Bulk_Assembly-CSharp_5.cpp in Sources */,
 				40F5DA551EEC2593009DA054 /* Il2CppCompilerCalculateTypeValues_15Table.cpp in Sources */,
+				BA2C008E1EEF989000DC2038 /* ImageViewController.swift in Sources */,
 				40F5DA721EEC2593009DA054 /* Il2CppGenericMethodTable.cpp in Sources */,
 				40F5DA441EEC2593009DA054 /* Bulk_UnityEngine_1.cpp in Sources */,
 				40F5DA991EEC2594009DA054 /* WWWConnection.mm in Sources */,

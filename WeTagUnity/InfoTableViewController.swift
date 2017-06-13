@@ -17,24 +17,24 @@ class InfoTableViewController: UITableViewController {
         super.viewDidLoad()
         
         /*self.allnames = [
-            0:[String]([
-                "版本号",
-                "隐私声明",
-                "服务协议"]),
-            1:[String]([
-                "反馈",
-                "关于我们"])
-        ]
-        
-        self.adHeaders = ["产品信息","作者信息"]
-        
-        self.tableView = UITableView(frame: self.view.frame, style: .grouped)
-        self.tableView!.delegate = self
-        self.tableView!.dataSource = self
-        
-        
-        self.tableView!.register(UITableViewCell.self, forCellReuseIdentifier: "InfoTableViewCell")
-        self.view.addSubview(self.tableView!)*/
+         0:[String]([
+         "版本号",
+         "隐私声明",
+         "服务协议"]),
+         1:[String]([
+         "反馈",
+         "关于我们"])
+         ]
+         
+         self.adHeaders = ["产品信息","作者信息"]
+         
+         self.tableView = UITableView(frame: self.view.frame, style: .grouped)
+         self.tableView!.delegate = self
+         self.tableView!.dataSource = self
+         
+         
+         self.tableView!.register(UITableViewCell.self, forCellReuseIdentifier: "InfoTableViewCell")
+         self.view.addSubview(self.tableView!)*/
     }
     
     
@@ -45,27 +45,27 @@ class InfoTableViewController: UITableViewController {
         return 2
     }
     /*
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        let data = self.allnames?[section]
-        return data!.count
-    }
-    
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return self.adHeaders?[section]
-    }
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // Table view cells are reused and should be dequeued using a cell identifier.
-        let cellIdentifier = "InfoTableViewCell"
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
-        let secno = indexPath.section
-        var data = self.allnames?[secno]
-        cell.textLabel?.text = data![indexPath.row]
-        
-        return cell
-    }*/
+     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+     // #warning Incomplete implementation, return the number of rows
+     let data = self.allnames?[section]
+     return data!.count
+     }
+     
+     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+     return self.adHeaders?[section]
+     }
+     
+     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+     // Table view cells are reused and should be dequeued using a cell identifier.
+     let cellIdentifier = "InfoTableViewCell"
+     
+     let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
+     let secno = indexPath.section
+     var data = self.allnames?[secno]
+     cell.textLabel?.text = data![indexPath.row]
+     
+     return cell
+     }*/
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.tableView!.deselectRow(at: indexPath, animated: true)

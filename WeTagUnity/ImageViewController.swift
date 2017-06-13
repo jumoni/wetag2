@@ -2,7 +2,7 @@
 //  ImageViewController.swift
 //  WeTagUnity
 //
-//  Created by 冯丽文 on 2017/6/12.
+//  Created by 冯丽文 on 2017/6/13.
 //  Copyright © 2017年 cs. All rights reserved.
 //
 
@@ -23,13 +23,6 @@ class ImageViewController: UIViewController, UIImagePickerControllerDelegate , U
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func returnButton(_ sender: UIButton) {
-    }
-    
-    @IBAction func useButton(_ sender: UIButton) {
-        recognize(image: pickedImage)
-        
-    }
     
     /*
      override func didReceiveMemoryWarning() {
@@ -146,14 +139,27 @@ class ImageViewController: UIViewController, UIImagePickerControllerDelegate , U
                             let width = faceRectangle?["width"] as? Int
                             let height = faceRectangle?["height"] as? Int
                             
-                            //显示tag
-                            //let label = UILabel(frame: CGRect(x: left!, y: top!, width: width!, height: height!))
-                            let label = UILabel(frame: CGRect(x: 100, y: 100, width: 50, height: 50))
-                            label.text = "bill "
-                            label.backgroundColor = UIColor.gray
-                            label.textColor = UIColor.black
+                            //框住人脸
+                            let labelX = Int(self.photoImageView.frame.minX)+left!
+                            let labelY = Int(self.photoImageView.frame.minY)+top!
+                            let label = UILabel(frame: CGRect(x: labelX, y: labelY, width: width!, height: height!))
+                            label.layer.borderWidth = 5
+                            label.layer.borderColor = UIColor.red.cgColor
                             
-                            self.view.addSubview(label)
+                            label.backgroundColor = UIColor.clear
+                            self.photoImageView.addSubview(label)
+                            
+                            //显示tag
+                            let button = UIButton(frame: CGRect(x: left!, y: top!, width: 200, height: 80))
+                            //let button = UIButton(frame: CGRect(x: 100, y: 100, width: 50, height: 50))
+                            button.setTitle(name, for: .normal)
+                            button.backgroundColor = UIColor.gray
+                            button.setTitleColor(UIColor.black, for: .normal)
+                    
+                            self.photoImageView.addSubview(button)
+                            
+                            button.addTarget(self, action: #selector(self.tapped(sender:)), for: .touchUpInside)
+                            
                         }
                     }else{
                         if let message = json?["message"] as? String{   // 请求的错误信息，如"Input image is too large."
@@ -172,7 +178,15 @@ class ImageViewController: UIViewController, UIImagePickerControllerDelegate , U
         
     }
     
+    func tapped(sender: UIButton) {
+        let labelY = Int(self.view.frame.maxY) - 200
+        let labelWidth = Int(self.view.frame.width)
+        let label = UILabel(frame: CGRect(x: 0, y: 500, width: 800, height: 200))
+        label.backgroundColor = UIColor.white
+        self.view.addSubview(label)
+    }
     
     
 }
+
 
