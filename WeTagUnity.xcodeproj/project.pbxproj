@@ -161,6 +161,8 @@
 		40F5DAA51EEC2594009DA054 /* VuforiaRenderDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 40F5DA131EEC2592009DA054 /* VuforiaRenderDelegate.mm */; };
 		40F5DAA61EEC2594009DA054 /* RegisterFeatures.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 40F5DA151EEC2592009DA054 /* RegisterFeatures.cpp */; };
 		40F5DAA71EEC2594009DA054 /* RegisterMonoModules.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 40F5DA171EEC2592009DA054 /* RegisterMonoModules.cpp */; };
+		BA2C008A1EEF723300DC2038 /* InfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2C00891EEF723300DC2038 /* InfoTableViewController.swift */; };
+		BA2C008C1EEF7C3C00DC2038 /* InfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2C008B1EEF7C3C00DC2038 /* InfoTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -5285,6 +5287,9 @@
 		40F5DA161EEC2592009DA054 /* RegisterFeatures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterFeatures.h; sourceTree = "<group>"; };
 		40F5DA171EEC2592009DA054 /* RegisterMonoModules.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RegisterMonoModules.cpp; sourceTree = "<group>"; };
 		40F5DA181EEC2593009DA054 /* RegisterMonoModules.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterMonoModules.h; sourceTree = "<group>"; };
+		BA2C00851EEE67F600DC2038 /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
+		BA2C00891EEF723300DC2038 /* InfoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InfoTableViewController.swift; path = ../InfoTableViewController.swift; sourceTree = "<group>"; };
+		BA2C008B1EEF7C3C00DC2038 /* InfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -5323,12 +5328,15 @@
 			children = (
 				40A46ACE1EE073A400D36E16 /* AppDelegate.swift */,
 				40A46AD01EE073A400D36E16 /* ViewController.swift */,
+				BA2C00851EEE67F600DC2038 /* ImageViewController.swift */,
+				40A49B2C1EE1346100D36E16 /* UnityGLViewController.swift */,
+				BA2C00891EEF723300DC2038 /* InfoTableViewController.swift */,
+				BA2C008B1EEF7C3C00DC2038 /* InfoTableViewCell.swift */,
 				40A46AD21EE073A400D36E16 /* Main.storyboard */,
 				40A46AD51EE073A400D36E16 /* Assets.xcassets */,
 				40A46AD71EE073A400D36E16 /* LaunchScreen.storyboard */,
 				40A46ADA1EE073A400D36E16 /* Info.plist */,
 				40A49B281EE116A300D36E16 /* main.swift */,
-				40A49B2C1EE1346100D36E16 /* UnityGLViewController.swift */,
 				4096294B1EE3E0F8003A4297 /* CognitiveAPI.swift */,
 			);
 			path = WeTagUnity;
@@ -11133,7 +11141,7 @@
 				TargetAttributes = {
 					40A46ACA1EE073A400D36E16 = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = BGGFVWJ694;
+						DevelopmentTeam = NQMA3RK5EZ;
 						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
@@ -11228,6 +11236,7 @@
 				40F5DA2D1EEC2593009DA054 /* Bulk_Generics_5.cpp in Sources */,
 				40F5DA831EEC2594009DA054 /* SplashScreen.mm in Sources */,
 				40F5DA5C1EEC2593009DA054 /* Il2CppCompilerCalculateTypeValues_21Table.cpp in Sources */,
+				BA2C008A1EEF723300DC2038 /* InfoTableViewController.swift in Sources */,
 				40F5DA761EEC2593009DA054 /* Il2CppMetadataUsage.cpp in Sources */,
 				40F5DA9E1EEC2594009DA054 /* Il2CppOptions.cpp in Sources */,
 				40F5DA961EEC2594009DA054 /* UnityReplayKit.mm in Sources */,
@@ -11274,6 +11283,7 @@
 				40A48B2C1EE1156600D36E16 /* UnityUtils.mm in Sources */,
 				40F5DA2C1EEC2593009DA054 /* Bulk_Generics_4.cpp in Sources */,
 				40F5DA491EEC2593009DA054 /* Bulk_Vuforia.UnityExtensions_1.cpp in Sources */,
+				BA2C008C1EEF7C3C00DC2038 /* InfoTableViewCell.swift in Sources */,
 				40F5DA251EEC2593009DA054 /* Bulk_Generics_0.cpp in Sources */,
 				40F5DA291EEC2593009DA054 /* Bulk_Generics_12.cpp in Sources */,
 				40F5DA711EEC2593009DA054 /* Il2CppGenericMethodPointerTable.cpp in Sources */,
@@ -11506,8 +11516,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = BGGFVWJ694;
+				DEVELOPMENT_TEAM = NQMA3RK5EZ;
 				INFOPLIST_FILE = WeTagUnity/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_GENERATE_MAP_FILE = YES;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
@@ -11555,7 +11566,7 @@
 					"-liPhone-lib",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = zju;
+				PRODUCT_BUNDLE_IDENTIFIER = feng.li.wen;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -11571,8 +11582,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = BGGFVWJ694;
+				DEVELOPMENT_TEAM = NQMA3RK5EZ;
 				INFOPLIST_FILE = WeTagUnity/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_GENERATE_MAP_FILE = YES;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
@@ -11620,7 +11632,7 @@
 					"-liPhone-lib",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = zju;
+				PRODUCT_BUNDLE_IDENTIFIER = feng.li.wen;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				UNITY_IOS_EXPORT_PATH = "$(PROJECT_DIR)/UnityFix";
