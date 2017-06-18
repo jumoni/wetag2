@@ -5,13 +5,21 @@
 //  Created by 冯丽文 on 2017/6/13.
 //  Copyright © 2017年 cs. All rights reserved.
 //
-
 import UIKit
 
 class ImageViewController: UIViewController, UIImagePickerControllerDelegate , UINavigationControllerDelegate {
     
-    public var pickedImage: UIImage!
+    enum RecognizeType{
+        case Celebrity
+        case Landmark
+    }
     
+    public var pickedImage: UIImage!
+    var ratio: CGFloat = 0.0
+    var wikiInfo: String = ""
+    
+    
+    @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var photoImageView: UIImageView!
     
     override func viewDidLoad() {
@@ -19,10 +27,14 @@ class ImageViewController: UIViewController, UIImagePickerControllerDelegate , U
         
         photoImageView.image = pickedImage;
         //        searchWiki(name: "Jack%20Ma");
-        recognize(image: pickedImage)
-        // Do any additional setup after loading the view.
+        recognize(image: pickedImage, type: RecognizeType.Celebrity)
+        
+        
+        //        print("wiki:\(self.wikiInfo)")
+        //label.text = self.wikiInfo
+        
+        //self.view.addSubview(label)        // Do any additional setup after loading the view.
     }
-    
     
     /*
      override func didReceiveMemoryWarning() {
@@ -43,22 +55,25 @@ class ImageViewController: UIViewController, UIImagePickerControllerDelegate , U
     
     
     
+    
     // ============ Web API Functions ===========
     
     private var mediaWikiURL = "http://en.wikipedia.org/w/api.php?format=json&action=query&generator=search&gsrlimit=10&prop=extracts&exintro&explaintext&gsrsearch=";
     
-    private var cognitiveURL =  "https://api.cognitive.azure.cn/vision/v1.0/models/celebrities/analyze"
+    private var cognitiveURL_Celebrity =  "https://api.cognitive.azure.cn/vision/v1.0/models/celebrities/analyze"
+    private var cognitiveURL_Landmark =  "https://api.cognitive.azure.cn/vision/v1.0/models/landmarks/analyze"
     
     private var auth = "974c0cbdf8b244c28024aaab33ab2fdb"
-    
     
     func searchWiki(name: String) {
         let url = mediaWikiURL + name;
         
-        var request = URLRequest(url: URL(string: url)!)
+        var request = URLRequest(url: URL(string: url.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed)!)!)
+        
         request.httpMethod = "GET"
         
         let task = URLSession.shared.dataTask(with: request){ data, response, error in
+            
             guard let data = data, error == nil else{
                 print("error=\(error)")
                 return
@@ -67,6 +82,7 @@ class ImageViewController: UIViewController, UIImagePickerControllerDelegate , U
                 print("statusCode should be 200, but is \(httpStatus.statusCode)")
                 print("response = \(response)")
             }
+            print("c")
             let responseString = String(data: data, encoding: .utf8)
             print("responseString = \(responseString)")
             
@@ -75,12 +91,18 @@ class ImageViewController: UIViewController, UIImagePickerControllerDelegate , U
                 ,let pages = query["pages"] as? [String:Any]
             {
                 //                print("response json = \(pages)")
-                for (key, _value) in pages.enumerated(){
+                
+                for (key, _value) in pages{
                     let value = _value as? [String:Any]
+                    //                    print("_value = \(_value)")
+                    
                     let index = value?["index"] as? Int
+                    //                    print("key = \(key)")
                     if index == 1 {
                         // 异步函数不方便返回值，因此暂时把查询结果直接写到对象的私有成员里，之后修改UI显示的文字为wikiInfo字符串
-                        let wikiInfo = (value?["extract"] as? String)!
+                        self.wikiInfo = (value?["extract"] as? String)!
+                        print("wiki:\(self.wikiInfo)")
+                        
                     }
                 }
             } else {
@@ -92,11 +114,17 @@ class ImageViewController: UIViewController, UIImagePickerControllerDelegate , U
         task.resume()
     }
     
-    public func recognize(image: UIImage){
+    public func recognize(image: UIImage, type: RecognizeType){
         let quality: CGFloat = 0.3
         if let imageData = UIImageJPEGRepresentation(image, quality) {
+            var url: URL
+            if( type == RecognizeType.Celebrity ){
+                url = URL(string: cognitiveURL_Celebrity)!
+            }else{
+                url = URL(string: cognitiveURL_Landmark)!
+            }
             
-            var request = URLRequest(url: URL(string: cognitiveURL)!)
+            var request = URLRequest(url: url)
             request.addValue(auth, forHTTPHeaderField: "Ocp-Apim-Subscription-Key");
             request.addValue("application/octet-stream", forHTTPHeaderField: "Content-Type")
             //            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -118,49 +146,62 @@ class ImageViewController: UIViewController, UIImagePickerControllerDelegate , U
                 
                 if let json = try? JSONSerialization.jsonObject(with: (responseString?.data(using: .utf8))!) as? [String:Any]{
                     if let result = json?["result"] as? [String:Any]
-                        ,let celebrities = result["celebrities"] as? [[String:Any]]{
+                        ,let items = ( type == RecognizeType.Celebrity ? result["celebrities"] : result["landmarks"] ) as? [[String:Any]]{
                         //                print("response json = \(pages)")
-                        for object in celebrities {
-                            /*
-                             {
-                             "name": "ROBERT DOWNEY JR.",
-                             "faceRectangle": {
-                             "left": 483,
-                             "top": 174,
-                             "width": 52,
-                             "height": 52
-                             }
-                             }
-                             */
-                            let name = object["name"] as? String
-                            let faceRectangle = object["faceRectangle"] as? [String:Any]
-                            let top = faceRectangle?["top"] as? Int
-                            let left = faceRectangle?["left"] as? Int
-                            let width = faceRectangle?["width"] as? Int
-                            let height = faceRectangle?["height"] as? Int
-                            
-                            //框住人脸
-                            let labelX = Int(self.photoImageView.frame.minX)+left!
-                            let labelY = Int(self.photoImageView.frame.minY)+top!
-                            let label = UILabel(frame: CGRect(x: labelX, y: labelY, width: width!, height: height!))
-                            label.layer.borderWidth = 5
-                            label.layer.borderColor = UIColor.red.cgColor
-                            
-                            label.backgroundColor = UIColor.clear
-                            self.photoImageView.addSubview(label)
-                            
-                            //显示tag
-                            let button = UIButton(frame: CGRect(x: left!, y: top!, width: 200, height: 80))
-                            //let button = UIButton(frame: CGRect(x: 100, y: 100, width: 50, height: 50))
-                            button.setTitle(name, for: .normal)
-                            button.backgroundColor = UIColor.gray
-                            button.setTitleColor(UIColor.black, for: .normal)
-                    
-                            self.photoImageView.addSubview(button)
-                            
-                            button.addTarget(self, action: #selector(self.tapped(sender:)), for: .touchUpInside)
-                            
+                        if( items.count > 0 ){
+                            for object in items {
+                                let name = object["name"] as? String
+                                var top, left, width, height: CGFloat?
+                                
+                                if let faceRectangle = object["faceRectangle"] as? [String:Any] {
+                                    top = faceRectangle["top"] as? CGFloat
+                                    left = faceRectangle["left"] as? CGFloat
+                                    width = faceRectangle["width"] as? CGFloat
+                                    height = faceRectangle["height"] as? CGFloat
+                                }else{      // Landmark无 faceRectangle, 把标签放中间
+                                    top = image.size.height / 2
+                                    left = image.size.width / 2
+                                    width = image.size.width / 2
+                                    height = image.size.height / 2
+                                }
+                                
+                                //calculate the actual number
+                                self.ratio = self.photoImageView.frame.width / self.pickedImage.size.width
+                                top = top! * self.ratio
+                                left = left! * self.ratio
+                                width = width! * self.ratio
+                                height = height! * self.ratio
+                                
+                                //框住人脸
+                                
+                                let labelX = self.photoImageView.center.x + left! - self.photoImageView.frame.width / 2
+                                let labelY = self.photoImageView.center.y + top! - self.pickedImage.size.height * self.ratio / 2
+                                if (object["faceRectangle"] as? [String:Any]) != nil {
+                                    let label = UILabel(frame: CGRect(x: labelX, y: labelY, width: width!, height: height!))
+                                    label.layer.borderWidth = 2
+                                    label.layer.borderColor = UIColor.red.cgColor
+                                    label.backgroundColor = UIColor.clear
+                                    self.view.addSubview(label)
+                                }
+                                
+                                
+                                //显示tag
+                                let buttonY = labelY - 60
+                                let buttonX = labelX
+                                let button = UIButton(frame: CGRect(x: buttonX, y: buttonY , width: 200, height: 50))
+                                //let button = UIButton(frame: CGRect(x: 100, y: 100, width: 50, height: 50))
+                                button.setTitle(name, for: .normal)
+                                button.backgroundColor = UIColor.white
+                                button.setTitleColor(UIColor.black, for: .normal)
+                                button.addTarget(self, action: #selector(self.tapped(_:)), for: .touchUpInside)
+                                
+                                self.view.addSubview(button)
+                            }
+                        }else{
+                            print("Cannot recognize celebrities, try landmarks")
+                            self.recognize(image: image, type: RecognizeType.Landmark)
                         }
+                        
                     }else{
                         if let message = json?["message"] as? String{   // 请求的错误信息，如"Input image is too large."
                             print("request error = \(message)")
@@ -178,15 +219,15 @@ class ImageViewController: UIViewController, UIImagePickerControllerDelegate , U
         
     }
     
-    func tapped(sender: UIButton) {
-        let labelY = Int(self.view.frame.maxY) - 200
-        let labelWidth = Int(self.view.frame.width)
-        let label = UILabel(frame: CGRect(x: 0, y: 500, width: 800, height: 200))
-        label.backgroundColor = UIColor.white
-        self.view.addSubview(label)
+    func tapped(_ button: UIButton) {
+        let celebraty = button.currentTitle
+        searchWiki(name: celebraty!)
+        
+        textView.text = self.wikiInfo
     }
     
     
 }
+
 
 

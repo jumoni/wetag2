@@ -11568,7 +11568,7 @@
 					"-liPhone-lib",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = feng.li.wen;
+				PRODUCT_BUNDLE_IDENTIFIER = feng.beryl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -11634,7 +11634,7 @@
 					"-liPhone-lib",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = feng.li.wen;
+				PRODUCT_BUNDLE_IDENTIFIER = feng.beryl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				UNITY_IOS_EXPORT_PATH = "$(PROJECT_DIR)/UnityFix";
